@@ -46,7 +46,7 @@ function Footer() {
             
         </div>
         <div className='bg-defaultWhite p-6'>
-            <div className='container flex flex-col justify-between items-center space-y-3 md:flex-row'>
+            <div className='container flex flex-col justify-between items-center space-y-3 mx-auto md:flex-row'>
                 <p className='text-xs text-textPrimary'>{new Date().getFullYear()} Data Integrated Ltd. All Rights Reserved</p>
                 <div className='flex gap-2 items-center'>
                     <a href='' className='text-xs text-textPrimary hover:text-primary'>Privacy Policy</a>

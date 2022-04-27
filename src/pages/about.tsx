@@ -4,7 +4,7 @@ import { Header } from 'src/components/header';
 import { Navbar } from 'src/components/navbar';
 import { Footer } from 'src/components/footer';
 
-const clients: NextPage =()=> {
+const about: NextPage =()=> {
   return (
     <>
       <Header />
@@ -15,4 +15,4 @@ const clients: NextPage =()=> {
   )
 }
 
-export default clients
+export default about
