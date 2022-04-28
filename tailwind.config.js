@@ -17,6 +17,9 @@ module.exports = {
       lg: '1080px',
       xl: '1440px'
     },
+    fontFamily:{
+      sans:['Satoshi-Regular','Satoshi-Bold','Satoshi-Black','Satoshi-Medium','Cera Round Pro Regular','Cera Round Pro Bold'],
+    },
     extend: {
       colors: {
         primary: '#093749',
