@@ -2,7 +2,7 @@ import React from 'react'
 
 function PrimaryTitle() {
   return (
-    <h1>Priary title</h1>
+    <h1>Primary title</h1>
   )
 }
 

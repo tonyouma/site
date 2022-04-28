@@ -5,7 +5,7 @@ import { Link } from './../link';
 function Navbar() {
   const [open, setOpen] = useState<boolean>(false)
   return (
-    <nav id="navbar" className="container relative mx-auto bg-defaultWhite p-6">
+    <nav id="navbar" className="container relative mx-auto bg-defaultWhite p-6 ">
       <div className="flex items-center justify-between">
         <div className="pt-2">
           <Link name={"Logo"} url={"/"} image={"/assets/logo.svg"} />
