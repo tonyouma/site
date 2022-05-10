@@ -21,3 +21,7 @@ h2 {
 h3 {
     @apply text-xl font-SatoshiNormal
 }
+
+p {
+    @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary
+}
