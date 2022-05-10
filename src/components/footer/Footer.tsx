@@ -10,13 +10,13 @@ function Footer() {
                     <Link name="Logo" url={"/"} image={"/assets/logo.svg"} />
                     <p className='text-sm text-textPrimary'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut accusamus adipisci nisi quasi.</p>
                     <div className="flex flex-col space-y-4">
-                        <h3 className="text-lg font-SatoshiBold">Get M-Epesi</h3>
+                        <h4 className="text-lg font-SatoshiBold">Get M-Epesi</h4>
                         <Link name="Play Store" blank url="#" image={"/assets/playstore.svg"} />
                     </div>
                 </div>
 
                 <div className="flex flex-col p-5 md:p-0 items-center flex-1 justify-between  space-y-3 md-y-0 md:items-start">
-                    <h3 className='text-lg font-SatoshiBold'>Our Products</h3>
+                    <h4 className='text-lg font-SatoshiBold'>Our Products</h4>
                     <p className="text-sm text-textPrimary">M-Epesi App</p>
                     <p className="text-sm text-textPrimary">Mobitill Epesi</p>
                     <p className="text-sm text-textPrimary">SME Payroll - Mapato</p>
@@ -26,7 +26,7 @@ function Footer() {
                 </div>
 
                 <div className="flex flex-col p-5 md:p-0 items-center flex-1 justify-between space-y-3  md-y-0 md:items-start">
-                    <h3 className='text-lg font-SatoshiBold'>Company</h3>
+                    <h4 className='text-lg font-SatoshiBold'>Company</h4>
                     <a href='/news' className="text-sm text-textPrimary">News</a>
                     <a href='/clients' className="text-sm text-textPrimary">Partners</a>
                     <a href='/about' className="text-sm text-textPrimary">About</a>
@@ -34,7 +34,7 @@ function Footer() {
                 </div>
 
                 <div className="flex flex-col p-5 md:p-0 items-center  justify-between space-y-3 sm-y-0 md:items-start">
-                    <h3 className='text-lg font-SatoshiBold'>Get in touch</h3>
+                    <h4 className='text-lg font-SatoshiBold'>Get in touch</h4>
                     <p className="text-sm text-textPrimary">Phone: +254 711 520 705</p>
                     <p className="text-sm text-textPrimary">communications@dataintegrated.co.ke</p>
                     <p className="text-sm text-textPrimary">Avon Centre, 2nd Floor, Industrial Area</p>
