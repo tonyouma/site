@@ -41,7 +41,7 @@
   @font-face {
     font-family: 'Cera Round Pro Regular';
     font-style: normal;
-    font-weight: normal;
+    font-weight: 400;
     src: local('Cera Round Pro Regular'), url('../../public/fonts/CeraRoundProRegular.woff') format('woff');
     }
 
