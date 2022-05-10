@@ -1,19 +1,17 @@
 import React from "react";
 import type { NextPage } from "next";
 import { Link } from "../components/link";
-import { type } from "os";
+import { EpesiFeatures } from "../components/products";
+import {featureContent} from ".././constants/epesiFeatures";
 
-type feature = {
-    id: string;
-    title: string;
-    icon: string;
-    text: string;
+type Feature ={
+  id: number;
+  title: string;
+  icon: string;
+  text: string;
 }
 
-
-
 const products: NextPage = () => {
-
   return (
     <div>
       <div className="container mx-auto">
@@ -46,18 +44,27 @@ const products: NextPage = () => {
             </div>
           </div>
           <div className="border-solid border-2 border-red-500 flex justify-center">
-            <img
-              src="/assets/products/grouped.svg"
-              className="absolute w-96"
-            />
+            <img src="/assets/products/grouped.svg" className="absolute w-96" />
           </div>
         </div>
       </div>
-      <div className="h-full bg-gradient-to-r from-transparent via-white mt-24">
-        <div className="container mx-auto">
-          <div className=" mt-28">
+      <div className="h-full bg-gradient-to-r from-transparent via-primary mt-24">
+        <div className="container mx-auto p-20">
+          <div className="">
             <h3 className="text-lg font-bold">Why choose M-Epesi?</h3>
-            
+            <div className="grid grid-cols-3 m-4">
+            {featureContent.map((feature:Feature, index:number) => {
+              return (
+                <EpesiFeatures
+                  key={index}
+                  id={feature.id}
+                  title={feature.title}
+                  icon={feature.icon}
+                  text={feature.text}
+                />
+              );
+            })}
+            </div>
           </div>
         </div>
       </div>
