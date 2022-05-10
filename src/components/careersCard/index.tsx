@@ -3,11 +3,11 @@ import Link from "next/link"
 function CareersCard() {
     return (
         <div>
-            <div className='bg-defaultWhite p-5 rounded-lg'>
+            <div className='p-5 rounded-lg bg-defaultWhite'>
                 <p className='uppercase'>Administration</p>
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                     <p>Customer Success Manager</p>
-                    <Link href="/careers" passHref><img src="../../../public/assets/link.svg" alt="" /></Link>
+                    <Link href="/careers" passHref><img src="/assets/link.svg" alt="" /></Link>
                 </div>
 
                 <ul className='list-disc list-inside'>
