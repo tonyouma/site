@@ -3,9 +3,11 @@ import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
   return (
-    <div>
-      index
-    </div>
+    <>
+      <div className="container">
+        <h1>index </h1>
+      </div>
+    </>
   )
 }
 
