@@ -14,7 +14,7 @@ function Navbar() {
           <Link  url='/' name='Who we are'/>
           <Link  url='/clients' name='Clients & Partners'/>
           <Link  url='/news' name='News'/>
-          <Link  url='/about' name='About'/>
+          <Link  url='/products' name='Products & Solutions'/>
           <Link  url='/careers' name='Careers'/>
         </div>
 
@@ -33,7 +33,7 @@ function Navbar() {
             <Link  url='/' name='Who we are'/>
             <Link  url='/clients' name='Clients & Partners'/>
             <Link  url='/news' name='News'/>
-            <Link  url='/about' name='About'/>
+            <Link  url='/products' name='Products & Solutions'/>
             <Link  url='/careers' name='Careers'/>
             
             <div className="flex space-x-6 items-end">
