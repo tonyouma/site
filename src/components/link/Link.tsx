@@ -12,7 +12,7 @@ const Link: React.FC<Props> = (props: Props): JSX.Element => {
   return (
     <a href={props.url} 
       target={props.blank? `_blank`: ''}
-      className={`text-textSecondary hover:text-textPrimary hover:font-bold active:text-textPrimary active:font-bold ${!props.blank&&router.pathname === props.url ? 'text-textPrimary font-bold': 'font-normal'}`}>
+      className={`text-textPrimary ${!props.blank&&router.pathname === props.url ? 'text-secondary font-bold': 'font-normal'}`}>
       {!props.image&&props.name}
       {props.image&&<img src={`${props.image}`} alt={`${props.name}`}/>}
     </a>
