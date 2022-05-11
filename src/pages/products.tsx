@@ -1,15 +1,15 @@
 import React from "react";
 import type { NextPage } from "next";
 import { Link } from "../components/link";
-import { EpesiFeatures } from "../components/products";
-import {featureContent} from ".././constants/epesiFeatures";
+import { EpesiFeatures, Features,Review } from "../components/products";
+import { featureContent, featureContent2 } from ".././constants/epesiFeatures";
 
-type Feature ={
+type Feature = {
   id: number;
   title: string;
   icon: string;
-  text: string;
-}
+  text?: string;
+};
 
 const products: NextPage = () => {
   return (
@@ -20,7 +20,7 @@ const products: NextPage = () => {
             <h3 className="text-xs font-medium text-slate-500 m-4">
               YOUR ULTIMATE PASSENGER APP
             </h3>
-            <h3 className="text-lg font-black m-4">M-EPESI APPLICATION</h3>
+            <h2 className="text-lg font-black m-4">M-EPESI APPLICATION</h2>
             <p className="font-normal text-slate-400 m-4">
               A smartphone application that allows users to view and utilize
               real-time public transit. It simplifies transportation by allowing
@@ -53,18 +53,61 @@ const products: NextPage = () => {
           <div className="">
             <h3 className="text-lg font-bold">Why choose M-Epesi?</h3>
             <div className="grid grid-cols-3 m-4">
-            {featureContent.map((feature:Feature, index:number) => {
-              return (
-                <EpesiFeatures
-                  key={index}
-                  id={feature.id}
-                  title={feature.title}
-                  icon={feature.icon}
-                  text={feature.text}
-                />
-              );
-            })}
+              {featureContent.map((feature: Feature, index: number) => {
+                return (
+                  <EpesiFeatures
+                    key={index}
+                    id={feature.id}
+                    title={feature.title}
+                    icon={feature.icon}
+                    text={feature.text}
+                  />
+                );
+              })}
             </div>
+          </div>
+        </div>
+      </div>
+      <div className="container mx-auto grid grid-cols-2 mt-8">
+        <div className="flex justify-center">
+          <img
+            src="/assets/products/phonemockup.svg"
+            className="absolute w-72 -z-10  "
+          />
+        </div>
+        <div className=" mt-8">
+          <h3 className="text-lg font-black m-4">Download M-Epesi</h3>
+          <p className="font-normal text-slate-600 m-4 max-w-md">
+            Join over a thousand users currently using M-Epesi to book their
+            rides and also get customised traffic updates to effeciently commute
+            in Nairobi
+          </p>
+          {featureContent2.map((feature: Feature, index: number) => {
+            return (
+              <Features
+                key={index}
+                id={feature.id}
+                title={feature.title}
+                icon={feature.icon}
+              />
+            );
+          })}
+          <h3 className="m-4">Happy clients say...</h3>
+          <Review />
+          <div className="flex mt-10 ml-4">
+            <a>
+              <img
+                className="inline w-32 mr-4 "
+                src="/assets/appstore.svg"
+                alt=""
+              />
+            </a>
+            <Link
+              name="Play Store"
+              blank
+              url="#"
+              image={"/assets/playstore.svg"}
+            />
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
-type Props = { id: number; title: string; icon: string; text: string };
+
+interface Props  { id: number; title: string; icon: string; text?: string };
 
 function EpesiFeatures({ id, title, icon, text }: Props) {
   return (
@@ -10,7 +11,7 @@ function EpesiFeatures({ id, title, icon, text }: Props) {
       </div>
       <div className="">
         <h3 className="">{title}</h3>
-        <p className="max-w-xs">{text}</p>
+        <p className="max-w-xs text-slate-500">{text}</p>
       </div>
     </div>
   );
