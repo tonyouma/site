@@ -27,17 +27,17 @@ const News: NextPage =()=> {
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 py-8 items-baseline'>
         <div >
-          <img src='/assets/news/news2.png' width="320" height="190" className='mx-auto border rounded-xl'></img>
+          <img src='/assets/news/news2.png' width="320" height="190" className='rounded-xl'></img>
           <h4 className='p-2'>This is blog title 01</h4>
           <p className='p-1'>Sed ut perspiciatis unde omnis istenat error sit voluptatem accusantium doloremque lauda lorem ipsum dolor...</p>
         </div>
         <div>
-        <img src='/assets/news/news3.png' className='mx-auto border rounded-xl' width="320" height="190"></img>
+        <img src='/assets/news/news3.png' className='rounded-xl' width="320" height="190"></img>
         <h4 className='p-2'>This is blog title 01</h4>
         <p className='p-1'>Sed ut perspiciatis unde omnis istenat error sit voluptatem accusantium doloremque lauda lorem ipsum dolor...</p>
         </div>
         <div>
-        <img src='/assets/news/news2.png' width="320" height="190" className='mx-auto border rounded-xl'></img>
+        <img src='/assets/news/news2.png' width="320" height="190" className=' rounded-xl'></img>
          <h4 className='p-2'>This is blog title 01</h4>
          <p className='p-1'>Sed ut perspiciatis unde omnis istenat error sit voluptatem accusantium doloremque lauda lorem ipsum dolor...</p>
         </div>
