@@ -54,13 +54,13 @@ function Footer() {
             
         <div className='bg-white p-2'>
             <div className='container flex flex-col justify-between items-center space-y-3 mx-auto md:flex-row px-5 md:px-0'>
-                <p className='text-xs text-textPrimary'>{new Date().getFullYear()} Data Integrated Ltd. All Rights Reserved</p>
+                <p className='text-xs text-textPrimary'>{new Date().getFullYear()} &copy; Data Integrated Ltd. All Rights Reserved</p>
                 <div className='flex gap-2 items-center'>
-                    <a href='' className='text-xs text-textPrimary hover:text-primary'>Privacy Policy</a>
+                    <a href='' className='text-xs text-textPrimary hover:text-secondary'>Privacy Policy</a>
                     <span className='text-4xl -mt-6'>.</span>
-                    <a href='' className='text-xs text-textPrimary hover:text-primary'>Terms of Use</a>
+                    <a href='' className='text-xs text-textPrimary hover:text-secondary'>Terms of Use</a>
                     <span className='text-4xl -mt-6'>.</span>
-                    <a href='' className='text-xs text-textPrimary hover:text-primary'>Credits</a>
+                    <a href='' className='text-xs text-textPrimary hover:text-secondary'>Credits</a>
                 </div>
 
             </div>
