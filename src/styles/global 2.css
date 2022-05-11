@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    @apply font-CeraRoundProNormal text-sm
+}
+
+a:hover {
+    @apply text-secondary
+}
+
+h1 {
+    @apply text-5xl font-SatoshiBlack
+}
+
+h2 {
+    @apply text-3xl font-SatoshiBlack
+}
+
+h3 {
+    @apply text-xl font-SatoshiNormal
+}
+
+p {
+    @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary
+}
