@@ -26,5 +26,5 @@ h4 {
 }
 
 p {
-    @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary
+    @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary opacity-90
 }
