@@ -1,7 +1,7 @@
 import React from "react";
 import type { NextPage } from "next";
 import { Link } from "../components/link";
-import { EpesiFeatures, Features,Review } from "../components/products";
+import { EpesiFeatures, Features, Review } from "../components/products";
 import { featureContent, featureContent2 } from ".././constants/epesiFeatures";
 
 type Feature = {
@@ -15,8 +15,8 @@ const products: NextPage = () => {
   return (
     <div>
       <div className="container mx-auto">
-        <div className="grid grid-cols-2">
-          <div className=" mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="mt-5 md:mt-24 ">
             <h3 className="text-xs font-medium text-slate-500 m-4">
               YOUR ULTIMATE PASSENGER APP
             </h3>
@@ -30,7 +30,7 @@ const products: NextPage = () => {
             <div className="flex mt-10 ml-4">
               <a>
                 <img
-                  className="inline w-32 mr-4 "
+                  className="inline w-32 mr-4"
                   src="/assets/appstore.svg"
                   alt=""
                 />
@@ -43,16 +43,16 @@ const products: NextPage = () => {
               />
             </div>
           </div>
-          <div className="border-solid border-2 border-red-500 flex justify-center">
+          <div className="justify-center hidden md:flex">
             <img src="/assets/products/grouped.svg" className="absolute w-96" />
           </div>
         </div>
       </div>
       <div className="h-full bg-gradient-to-r from-transparent via-primary mt-24">
-        <div className="container mx-auto p-20">
+        <div className="container mx-auto p-5 md:p-20">
           <div className="">
             <h3 className="text-lg font-bold">Why choose M-Epesi?</h3>
-            <div className="grid grid-cols-3 m-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-4">
               {featureContent.map((feature: Feature, index: number) => {
                 return (
                   <EpesiFeatures
@@ -68,14 +68,14 @@ const products: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto grid grid-cols-2 mt-8">
-        <div className="flex justify-center">
+      <div className="container mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 ">
+        <div className="flex justify-center hidden md:block">
           <img
             src="/assets/products/phonemockup.svg"
-            className="absolute w-72 -z-10  "
+            className="absolute mt-4 w-72 -z-10  "
           />
         </div>
-        <div className=" mt-8">
+        <div className=" mt-8 p-5 md:p-0">
           <h3 className="text-lg font-black m-4">Download M-Epesi</h3>
           <p className="font-normal text-slate-600 m-4 max-w-md">
             Join over a thousand users currently using M-Epesi to book their
@@ -94,21 +94,6 @@ const products: NextPage = () => {
           })}
           <h3 className="m-4">Happy clients say...</h3>
           <Review />
-          <div className="flex mt-10 ml-4">
-            <a>
-              <img
-                className="inline w-32 mr-4 "
-                src="/assets/appstore.svg"
-                alt=""
-              />
-            </a>
-            <Link
-              name="Play Store"
-              blank
-              url="#"
-              image={"/assets/playstore.svg"}
-            />
-          </div>
         </div>
       </div>
     </div>
