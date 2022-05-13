@@ -4,20 +4,21 @@ import { investors, partners } from 'src/constants/partners'
 
 
 const Partners: NextPage = () => {
-
-  const [scroll, setScroll] = React.useState(false)
-  const [forward, setForward] = React.useState(false)
-  const [back, setBack] = React.useState(false)
   const [email, setEmail] = React.useState('');
 
   const handleScroll =(item: string, e: any)=>{
-    console.log(e)
+    const element = document.getElementById("scroll")!;   
+    if(item === 'forward'){
+      element.scrollLeft += 200;
+    }
+    if(item === 'back'){
+      element.scrollLeft -= 200;
+    }
   }
 
   const requestDemo =()=>{
     console.log("Email: ",email)
   }
-  
 
   return (
     <>
@@ -101,7 +102,7 @@ const Partners: NextPage = () => {
             <div className="hidden md:flex gap-3 justify-center items-center p-3 md:p-0">
               <button 
                 onClick={(e)=> handleScroll("back", e)}
-                className="rounded-[50%] h-[35px] w-[35px] border-2 border-textSecondary flex justify-center items-center">
+                className="rounded-[50%] h-[35px] w-[35px] border-2 border-textPrimary flex justify-center items-center">
                 <img src="/assets/back-arrow.svg" alt="<" />
               </button>
 
@@ -113,8 +114,7 @@ const Partners: NextPage = () => {
             </div>
           </div>
           {/* Testimonials */}
-          <div className="flex  justify-start overflow-x-auto md:overflow-hidden">
-
+          <div id='scroll' className="flex justify-start overflow-x-auto md:overflow-hidden">
             <div className="flex flex-col gap-4 p-8 min-w-[490px] m-6 rounded-[9px] shadow-[0_0_10px_10px_rgba(50,50,93,0.05)]">
               <div className="flex justify-between items-center">
                 <div className='flex gap-3'>
