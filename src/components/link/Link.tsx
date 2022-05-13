@@ -16,7 +16,7 @@ const Link: React.FC<Props> = (props: Props): JSX.Element => {
       
       className={`text-textPrimary ${!props.blank&&router.pathname === props.url ? 'text-secondary font-bold': 'font-normal'}`}>
       {!props.image&&props.name}
-      {props.image&&<img id={props.id ? props.id: Math.random()} className='transition-300' src={`${props.image}`} alt={`${props.name}`}/>}
+      {props.image&&<img id={props.id ? props.id: null} className='transition-300' src={`${props.image}`} alt={`${props.name}`}/>}
     </a>
   )    
 }
