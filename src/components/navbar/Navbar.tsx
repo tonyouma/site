@@ -16,16 +16,11 @@ function Navbar() {
       document.getElementById("nav")!.classList.remove("bg-white");
       document.getElementById("nav")!.classList.add("bg-primary");
       document.getElementById("navbar")!.classList.add("p-2");
-      document.getElementById("navbar_links")!.classList.remove("space-x-6");
-      document.getElementById("navbar_links")!.classList.add("space-x-3");
-
     } else {
       document.getElementById("logo")!.style.maxWidth=("100%");
       document.getElementById("nav")!.classList.add("bg-white");
       document.getElementById("navbar")!.classList.remove("p-2");
       document.getElementById("navbar")!.classList.add("p-5");
-      document.getElementById("navbar_links")!.classList.remove("space-x-3");
-      document.getElementById("navbar_links")!.classList.add("space-x-6");
     }
   }
   
