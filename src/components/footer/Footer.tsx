@@ -39,7 +39,7 @@ function Footer() {
                     <p className="text-sm text-textPrimary">communications@dataintegrated.co.ke</p>
                     <p className="text-sm text-textPrimary">Avon Centre, 2nd Floor, Industrial Area</p>
                     <p className="text-sm text-textPrimary">P.O Box 17615 - 00500 Enterprise Rd, Nairobi</p>
-                    <div className="hidden space-x-6 mt-3 md:flex items-center">
+                    <div className=" space-x-6 mt-3 md:flex items-center">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'}/>
                         <Link blank url='https://linked.com' name='YouTube' image={'/assets/youtube.svg'}/>
                         <Link blank url='https://linked.com' name='Twitter' image={'/assets/twitter.svg'}/>
