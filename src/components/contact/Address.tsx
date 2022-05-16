@@ -14,7 +14,9 @@ function Address({ id, title, icon, content }: Props) {
         <img className="w-6 h-6" src={icon} alt={title} />
       </div>
       <div className="">
-        <h4 className="">{title}</h4>
+        <h4 className=" font-CeraRoundProNormal font-medium text-[16px]">
+          {title}
+        </h4>
         <p className=" text-slate-500">{content}</p>
       </div>
     </div>

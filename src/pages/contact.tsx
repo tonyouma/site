@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import { ContactForm } from ".././components/contact";
 import { contacts } from "src/constants/contact";
 import { Address } from "../components/contact";
+import { Link } from "../components/link";
 
 type Contacts = {
   id: number;
@@ -23,7 +24,7 @@ const Contact: NextPage = () => {
               an idea that you think is brilliant for Africa, please do reach
               out to us. Our doors are always open.
             </p>
-            <div className="flex mb-5">
+            <div className=" mb-5">
               <img src="/assets/contactus/enquiry.svg" alt="" />
               <h4>Partnership Inquiries</h4>
             </div>
@@ -49,15 +50,15 @@ const Contact: NextPage = () => {
           //referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
-      {/* <div className="container mx-auto">
-        <div className="justify-center">
+      <div className="container mx-auto">
+        <div className="">
           <div className="p-5">
-            <h4>
+            <h4 className="text-center">
               Questions? We&apos;ve got answers. Please don&apos;t hesitate to
               reach out.
             </h4>
           </div>
-          <div className="p-5">
+          <div className="md:flex p-5">
             {contacts.map((contact: Contacts, index: number) => {
               return (
                 <Address
@@ -70,8 +71,44 @@ const Contact: NextPage = () => {
               );
             })}
           </div>
+          <div className="text-center mb-5">
+            <h4>Socials</h4>
+
+            <div className=" space-x-6 mt-3 items-center flex justify-center ">
+              <Link
+                blank
+                url="https://linked.com"
+                name="LinkedIn"
+                image={"/assets/linkedin.svg"}
+              />
+              <Link
+                blank
+                url="https://linked.com"
+                name="YouTube"
+                image={"/assets/youtube.svg"}
+              />
+              <Link
+                blank
+                url="https://linked.com"
+                name="Twitter"
+                image={"/assets/twitter.svg"}
+              />
+              <Link
+                blank
+                url="https://linked.com"
+                name="Instagram"
+                image={"/assets/instagram.svg"}
+              />
+              <Link
+                blank
+                url="https://linked.com"
+                name="Facebook"
+                image={"/assets/facebook.svg"}
+              />
+            </div>
+          </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
