@@ -74,6 +74,14 @@ const News: NextPage = () => {
           })}
         </div>
         <div className="flex justify-center flex-col  md:flex-row gap-6  ">
+        <div className="px-5 py-12">
+          <h4 className="p-2">Featured On</h4>
+          <p className="p-2">Autem aut laboriosam distinctio. Modi sunt blanditiis beatae consectetur nesciunt alias. Ad distinctio ab quidem voluptas enim illo. Quia consequatur voluptas veniam 
+          </p>
+          <a href="#" className="text-secondary p-2">
+                  learn more ...
+                </a>
+        </div>
           {news2.map((news2, i) => {
             return (
               <div className="px-5 py-12 shadow-md">
@@ -86,27 +94,22 @@ const News: NextPage = () => {
                 <h4 className="p-1">{news2.title}</h4>
                 <p className="p-2">{news2.body}</p>
 
-                <a href={`${news2.link}`} className="text-secondary p-2">
-                  learn more....
-                </a>
+                
               </div>
             );
           })}
         </div>
       </div>
-      <div className="mt-12">
-        <img
-          src="/assets/news/nairobi.png"
-          alt=""
-          className="object-cover"
-        ></img>
+      <div className="mt-12 relative w-full h-80 items-center justify-center flex bg-[url('/assets/news/nairobi.png')]">
+          <h2 className="text-center text-white w-1/2 m-auto">Our Mission is to automate payment services through an integrated, reliable, secure, easy to use platform.</h2>
+        
       </div>
 
       <div className="container p-3 flex flex-col">
         <div className="w-full md:w-1/2 py-10">
           <h3 className="capitalize">media assets</h3>
           <p>
-            Our guidelines lay out and reflect our values and our community.
+            Our guidelines layout and reflect our values and our community.
             Simple yet diverse. Follow these guidelines and use only approved
             brand assets from this site
           </p>
@@ -139,7 +142,6 @@ const News: NextPage = () => {
               <a href="http://">download</a>
             </div>
           </div>
-          {/*  */}
         </div>
       </div>
     </>
