@@ -48,7 +48,7 @@ const products: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="h-full bg-gradient-to-r from-transparent via-primary mt-24">
+      <div className="h-full bg-gradient-to-r from-transparent via-primary mt-6 md:mt-24">
         <div className="container mx-auto p-5 md:p-20">
           <div className="">
             <h3 className="text-lg font-bold">Why choose M-Epesi?</h3>
@@ -69,13 +69,13 @@ const products: NextPage = () => {
         </div>
       </div>
       <div className="container mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 ">
-        <div className="flex justify-center hidden md:block">
+        <div className="justify-center hidden md:flex">
           <img
             src="/assets/products/phonemockup.svg"
             className="absolute mt-4 w-72 -z-10  "
           />
         </div>
-        <div className=" mt-8 p-5 md:p-0">
+        <div className=" md:mt-8 p-5 md:p-0">
           <h3 className="text-lg font-black m-4">Download M-Epesi</h3>
           <p className="font-normal text-slate-600 m-4 max-w-md">
             Join over a thousand users currently using M-Epesi to book their

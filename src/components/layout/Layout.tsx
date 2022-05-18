@@ -12,7 +12,10 @@ const Layout: React.FunctionComponent<LayoutProps> = ({children}: LayoutProps) =
     <>
       <Header />
       <Navbar />
-      {children}
+      <div className='mt-[100px]'>
+        {children}
+      </div>
+      
       <Footer />
     </>
   )
