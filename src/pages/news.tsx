@@ -53,19 +53,22 @@ const News: NextPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 py-10 items-baseline">
           {news.map((news, i) => {
             return (
-              <div className="p-1" key={i}>
+              <div className="" key={i}>
                 <img
                   src={`${news.image}`}
-                  className="p-2  rounded-xl"
+                  className="rounded-t-xl"
                   width="320"
                   height="190"
                 />
-                <h4 className="p-2">{news.title}</h4>
-                <p className="p-2">{news.body}</p>
+                <div className="p-5">
+                <h4 >{news.title}</h4>
+                <p className="">{news.body}</p>
                 <h5>
-                  <span className="px-1">By</span>
+                  <span className="">By</span>
                   {news.author}
                 </h5>
+                </div>
+                
               </div>
             );
           })}
@@ -73,7 +76,7 @@ const News: NextPage = () => {
         <div className="flex justify-center flex-col  md:flex-row gap-6  ">
           {news2.map((news2, i) => {
             return (
-              <div className="p-2 shadow-md">
+              <div className="px-5 py-12 shadow-md">
                 <img
                   src={`${news2.image}`}
                   className="p-2"
@@ -91,46 +94,52 @@ const News: NextPage = () => {
           })}
         </div>
       </div>
-      <div className="bg-fixed">
-        <img src= "/assets/news/nairobi.png" alt="" className="object-cover"></img>
+      <div className="mt-12">
+        <img
+          src="/assets/news/nairobi.png"
+          alt=""
+          className="object-cover"
+        ></img>
       </div>
 
       <div className="container p-3 flex flex-col">
-        <div className=" justify-start p-1">
-          <h3 className="">title</h3>
-        </div>
-        <div className="p-2">
-          <p className="">
+        <div className="w-full md:w-1/2 py-10">
+          <h3 className="capitalize">media assets</h3>
+          <p>
             Our guidelines lay out and reflect our values and our community.
             Simple yet diverse. Follow these guidelines and use only approved
             brand assets from this site
           </p>
         </div>
-        <div className="flex   flex-col md:flex-row  justify-center gap-5 py-5 ">
-          <div className="flex ">
-          <div className="justify-items-center">
-            <img src="/assets/news/dtl.svg" alt="" ></img>
-          </div>
-          <div>
-            <h5 className="p-1">Data Integrated Limited Logos</h5>
-            <p className="p-1">Our primary logo is Data Integrated, combination two colors desire and pressian blue. Available in different variants</p>
-          </div>
-          </div>
-          <div >
-          <img src="/assets/news/Rectangle.svg" alt="" />
-             <h5>Press Kit</h5>
-            <p>Official Images</p>
-            <a href="http://">download</a>
 
+        <div className="flex pb-10 gap-x-5 gap-y-5 flex-col md:flex-row">
+          <div className="flex gap-4 pr-3 shadow-md items-center rounded-md md:w-1/2 w-full">
+            <div className=" bg-primary px-4 h-full rounded-l-md">
+              <img src="/assets/news/dtl.svg" alt=""></img>
+            </div>
+            <div>
+              <h5 className="">Data Integrated Limited Logos</h5>
+              <p className="">
+                Our primary logo is Data Integrated, combination two colors
+                desire and pressian blue. Available in different variants
+              </p>
+            </div>
           </div>
-          <div>
-            <img src="/assets/news/Rectangle.svg" alt="" />
-            <h5>Press Kit</h5>
-            <p>Official Images</p>
-            <a href="http://">download</a>
-
+          <div className="flex w-full md:w-1/2 gap-x-5">
+            <div className="shadow-md px-9 rounded-md bg-primary w-1/2  py-6">
+              <img src="/assets/news/folder.svg" alt="" />
+              <h5>Press Kit</h5>
+              <p>Official Images</p>
+              <a href="http://">download</a>
+            </div>
+            <div className="shadow-md px-6 rounded-md bg-primary w-1/2 py-6">
+              <img src="/assets/news/folder.svg" alt="" />
+              <h5>Press Kit</h5>
+              <p>Official Images</p>
+              <a href="http://">download</a>
+            </div>
           </div>
-
+          {/*  */}
         </div>
       </div>
     </>
