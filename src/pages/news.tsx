@@ -118,7 +118,7 @@ const News: NextPage = () => {
         <div className="flex pb-10 gap-x-5 gap-y-5 flex-col md:flex-row">
           <div className="flex gap-4 pr-3 shadow-md items-center rounded-md md:w-1/2 w-full">
             <div className=" bg-primary px-4 h-full rounded-l-md">
-              <img src="/assets/news/dtl.svg" alt=""></img>
+              <img src="/assets/news/dtl.svg" alt="" className="h-full"></img>
             </div>
             <div>
               <h5 className="">Data Integrated Limited Logos</h5>
