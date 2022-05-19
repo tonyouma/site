@@ -1,9 +1,12 @@
+import { GetStaticProps } from "next";
+import { ICareer } from "src/models/career";
 
-function Career() {
+
+const Career = ({ title, location, publishedAt }: ICareer) => {
     return (
         <div className="">
             <div className="container md:pt-16">
-                <h2 className="capitalize">Frontend developer</h2>
+                <h2 className="capitalize">{title}</h2>
                 <p>Integrated Limited (DIL)</p>
                 <div className="flex items-center justify-between py-10">
                     <p>icons</p>
@@ -41,7 +44,18 @@ function Career() {
                             </ul>
                         </div>
                         <div className="p-5 rounded-md bg-defaultWhite md:w-1/3">
-                            <p>hello world</p>
+                            <h4>Role Overview</h4>
+                            <div className="flex flex-col gap-y-4">
+                                <div>
+                                    <p className="capitalize">location</p>
+                                    <p>{location}</p>
+                                </div>
+                                <div>
+                                    <p className="capitalize">Posted On</p>
+                                    <p>{new Date(publishedAt).toISOString()}</p>
+                                    {/* <p>{publishedAt}</p> */}
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -108,3 +122,21 @@ function Career() {
 }
 
 export default Career
+
+export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
+    const pageSlug = pageContext.query.slug;
+    const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
+    const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+    const result = await fetch(url).then(res => res.json());
+    const career = result.result[0];
+    console.log(career);
+    return {
+        props: {
+            title: career?.title,
+            location: career?.location,
+            publishedAt: career?.publishedAt,
+        }
+    }
+};
+
+
