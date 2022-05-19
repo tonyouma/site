@@ -1,9 +1,15 @@
+import { GetStaticProps } from "next";
+import { ICareer } from "src/models/career";
 
-function Career() {
+
+interface Props extends ICareer {
+  
+}
+const Career = ({title, location, publishedAt}: Props) => {
     return (
         <div className="">
             <div className="container md:pt-16">
-                <h2 className="capitalize">Frontend developer</h2>
+                <h2 className="capitalize">{title}</h2>
                 <p>Integrated Limited (DIL)</p>
                 <div className="flex items-center justify-between py-10">
                     <p>icons</p>
@@ -41,7 +47,18 @@ function Career() {
                             </ul>
                         </div>
                         <div className="p-5 rounded-md bg-defaultWhite md:w-1/3">
-                            <p>hello world</p>
+                            <h4>Role Overview</h4>
+                            <div className="flex flex-col gap-y-4">
+                            <div>
+                                <p className="capitalize">location</p>
+                                <p>{location}</p>
+                            </div>
+                            <div>
+                                <p className="capitalize">Posted On</p>
+                                    <p>{new Date(publishedAt).toISOString()}</p>
+                                    {/* <p>{publishedAt}</p> */}
+                            </div>
+                        </div>
                         </div>
                     </div>
 
@@ -108,3 +125,96 @@ function Career() {
 }
 
 export default Career
+
+// export const getServerSideProps = async (pageContext: { query: { slug: any; }; }) => {
+//     const pageSlug = pageContext.query.slug;
+//     // const query = encodeURIComponent(`*[ _type == "post" && slug.current == "${pageSlug}" ]`);
+
+//     const query = encodeURIComponent(`
+//   *[_type == "career"]
+// {
+//   _id,
+//   _createdAt,
+//   title,
+//   slug,
+//   categories
+// }`);
+
+//     // const url = `${process.env.NEXT_PUBLIC_SANITY_URL}query=${query}`;
+//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+//     const result = await fetch(url).then(res => res.json());
+//     const post = result.result[0];
+//     console.log(post);
+//     return {
+//         props: {
+//             title: post.title,
+//         }
+//     }
+// };
+
+export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
+    const pageSlug = pageContext.query.slug;
+    const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
+    const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+    const result = await fetch(url).then(res => res.json());
+    const career = result.result[0];
+    console.log(career);
+    return {
+        props: {
+            title: career?.title,
+            location: career?.location,
+            publishedAt: career?.publishedAt,
+        }
+    }
+};
+
+// export const getStaticPaths = async () => {
+//     const query = `*[_type == "career"]{
+//   _id,
+//   slug,
+// }`
+//     debugger
+
+//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+//     const data = await fetch(url).then(res => res.json());
+//     const careers = data.result;
+    
+//     const paths = careers.map((career: ICareer) => {
+//         params: {
+//             slug: career?.slug.current
+//         }
+//     })
+
+//     return {
+//         paths,
+//         fallback: 'blocking'
+//     }
+
+// }
+
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//     const query = `*[_type == "career" && slug.current == $slug][0]{
+//   _id,
+//   slug,
+//   _createdAt,
+//   title
+// }`
+
+//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}&params.slug=${params?.slug}`;
+//     const data = await fetch(url).then(res => res.json());
+//     const career = data.result
+//     console.log(career)
+//     if (!career) {
+//         return {
+//             notFound: true
+//         }
+//     }
+//     return {
+//         props: career
+//     }
+
+// }
+
+
+
+

@@ -1,18 +1,25 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import Link from 'next/link'
 
-import CareersCard from 'src/components/careersCard'
+// import CareersCard from 'src/components/careersCard'
+import { ICareer } from 'src/models/career'
+
+interface Props {
+  careers: [ICareer]
+}
 
 // const TitleItem = (title: string) => {
 //   return (
 //     <h3 className='py-4 text-center'>{title}</h3>
 //   )
 // }
-const careers: NextPage = () => {
+const careers = ({ careers }: Props) => {
+
   return (
     <div className=''>
       <div>
-        <img src="/assets/careers.png" alt="" />
+        <img src="/assets/careers.png" alt="" className='object-cover' />
       </div>
       <div className='container px-5 md:px-40 pt-11'>
         <h3 className='pb-6'>About Data Integrated Limited (DIL)</h3>
@@ -27,9 +34,19 @@ const careers: NextPage = () => {
         <div className="container px-5 md:px-40">
           <h4 className='text-center'>Currently Open Roles</h4>
           <div className='flex flex-col py-5 gap-y-5'>
-            <CareersCard />
-            <CareersCard />
-            <CareersCard />
+            {careers.map(career => (
+              <div className='p-5 rounded-lg bg-defaultWhite' key={career._id}>
+                <p className='mb-2 font-extrabold uppercase'>Administration</p>
+                <div className="flex items-center justify-between">
+                  <p>{career.title}</p>
+                  <Link href={`/careers/${career.slug.current}`} passHref ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></Link>
+                </div>
+                <div className="flex">
+                  <p>{career?.location}</p>
+                  <p>{career?.employmentType}</p>
+                </div>
+              </div>
+            ))}
           </div>
           <div className='text-center'>
             <h4 className='pb-3'>Open Application</h4>
@@ -44,10 +61,28 @@ const careers: NextPage = () => {
         <h4 className=''>Benefits of working for us</h4>
         <p className='pt-6'>In addition to contributing to the great cause of easing the lives of millions of Africans with world-class financial products, you also get competitive base salaries, social and statuatory benefits, generous holidays, commissions / bonus / profit sharing schemes based on responsibilities and results of different positions.</p>
       </div>
-
-
     </div>
   )
 }
 
 export default careers
+
+export const getServerSideProps = async () => {
+  const query = encodeURIComponent(`*[_type == "career"]{
+  _id,
+  _createdAt,
+  title,
+  slug,
+  location,
+}`);
+
+  const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+  const data = await fetch(url).then((res) => res.json());
+  const careers = data.result
+  return {
+    props: {
+      careers
+    }
+  }
+}
+
