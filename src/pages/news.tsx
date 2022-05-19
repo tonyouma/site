@@ -2,33 +2,25 @@ import React from "react";
 import type { NextPage } from "next";
 import { news } from "src/constants/news";
 import { news2 } from "src/constants/news2";
-import { brotliDecompressSync } from "zlib";
 import Link from "next/link";
+import { FooterForm } from "src/components/form";
+import { Hero } from "src/components/hero";
 
 const News: NextPage = () => {
+
+  const intro = "Making headlines is good when you’re truly doing good."
+  const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
+
   return (
     <>
-      <div className="container p-5 md:p-0 flex flex-col">
-        <div className="flex flex-col justify-center md:flex-row gap-4 md:gap-8 mb-6">
-          <div className="flex-2 flex md:justify-end ">
-            <h2 className="pr-3 md:p-6 h-fit border-r-4">DIL Newsroom</h2>
-          </div>
-          <div className="flex-3 flex flex-col">
-            <h2 className="py-4">
-              Making headlines is good when you’re truly doing good.
-            </h2>
-            <p>
-              We genuinely believe we are creating payment solutions that
-              positively affect the lives of millions of Africans. Sometimes we
-              like to talk about what we do more openly. Sometimes, others do
-              for us.
-            </p>
-          </div>
-        </div>
+      <div className="container flex flex-col p-5 md:p-0">
+
+        <Hero title={intro} description={description} />
+
         <h3 className="pb-2">Top News</h3>
 
-        <div className="flex gap-x-12 md:flex-row flex-col">
-          <div className="md:w-1/2 w-full">
+        <div className="flex flex-col gap-x-12 md:flex-row">
+          <div className="w-full md:w-1/2">
             <img
               src="/assets/news/new1.png"
               className="mx-auto border rounded-sm"
@@ -36,7 +28,7 @@ const News: NextPage = () => {
               height="300px"
             />
           </div>
-          <div className="p-1 md:w-1/2 md:my-auto w-full">
+          <div className="w-full p-1 md:w-1/2 md:my-auto">
             <h4>
               Matatu transport digitalization events by DIL with Toyota Kenya
               and Mobility 54.
@@ -50,7 +42,7 @@ const News: NextPage = () => {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 py-10 items-baseline">
+        <div className="grid items-baseline grid-cols-1 gap-3 py-10 sm:grid-cols-2 md:grid-cols-3">
           {news.map((news, i) => {
             return (
               <div className="" key={i}>
@@ -61,30 +53,30 @@ const News: NextPage = () => {
                   height="190"
                 />
                 <div className="p-5">
-                <h4 >{news.title}</h4>
-                <p className="">{news.body}</p>
-                <h5>
-                  <span className="">By</span>
-                  {news.author}
-                </h5>
+                  <h4 >{news.title}</h4>
+                  <p className="">{news.body}</p>
+                  <h5>
+                    <span className="">By</span>
+                    {news.author}
+                  </h5>
                 </div>
-                
+
               </div>
             );
           })}
         </div>
-        <div className="flex justify-center flex-col  md:flex-row gap-6  ">
-        <div className="px-5 py-12">
-          <h4 className="p-2">Featured On</h4>
-          <p className="p-2">Autem aut laboriosam distinctio. Modi sunt blanditiis beatae consectetur nesciunt alias. Ad distinctio ab quidem voluptas enim illo. Quia consequatur voluptas veniam 
-          </p>
-          <a href="#" className="text-secondary p-2">
-                  learn more ...
-                </a>
-        </div>
+        <div className="flex flex-col justify-center gap-6 md:flex-row ">
+          <div className="px-5 py-12">
+            <h4 className="p-2">Featured On</h4>
+            <p className="p-2">Autem aut laboriosam distinctio. Modi sunt blanditiis beatae consectetur nesciunt alias. Ad distinctio ab quidem voluptas enim illo. Quia consequatur voluptas veniam
+            </p>
+            <a href="#" className="p-2 text-secondary">
+              learn more ...
+            </a>
+          </div>
           {news2.map((news2, i) => {
             return (
-              <div className="px-5 py-12 shadow-md">
+              <div className="px-5 py-12 shadow-md" key="i">
                 <img
                   src={`${news2.image}`}
                   className="p-2"
@@ -94,19 +86,19 @@ const News: NextPage = () => {
                 <h4 className="p-1">{news2.title}</h4>
                 <p className="p-2">{news2.body}</p>
 
-                
+
               </div>
             );
           })}
         </div>
       </div>
       <div className="mt-12 relative w-full h-80 items-center justify-center flex bg-[url('/assets/news/nairobi.png')]">
-          <h2 className="text-center text-white w-1/2 m-auto">Our Mission is to automate payment services through an integrated, reliable, secure, easy to use platform.</h2>
-        
+        <h2 className="w-1/2 m-auto text-center text-white">Our Mission is to automate payment services through an integrated, reliable, secure, easy to use platform.</h2>
+
       </div>
 
-      <div className="container p-3 flex flex-col">
-        <div className="w-full md:w-1/2 py-10">
+      <div className="container flex flex-col p-3">
+        <div className="w-full py-10 md:w-1/2">
           <h3 className="capitalize">media assets</h3>
           <p>
             Our guidelines layout and reflect our values and our community.
@@ -115,9 +107,9 @@ const News: NextPage = () => {
           </p>
         </div>
 
-        <div className="flex pb-10 gap-x-5 gap-y-5 flex-col md:flex-row">
-          <div className="flex gap-4 pr-3 shadow-md items-center rounded-md md:w-1/2 w-full max-h-full">
-            <div className=" bg-primary px-4 max-h-full h-full rounded-l-md">
+        <div className="flex flex-col pb-10 gap-x-5 gap-y-5 md:flex-row">
+          <div className="flex items-center w-full max-h-full gap-4 pr-3 rounded-md shadow-md md:w-1/2">
+            <div className="h-full max-h-full px-4 bg-primary rounded-l-md">
               <img src="/assets/news/dtl.svg" alt="" className="h-full md:h-full"></img>
             </div>
             <div>
@@ -129,13 +121,13 @@ const News: NextPage = () => {
             </div>
           </div>
           <div className="flex w-full md:w-1/2 gap-x-5">
-            <div className="shadow-md px-9 rounded-md bg-primary w-1/2  py-6">
-              <img src="/assets/news/folder.svg" alt=""/>
+            <div className="w-1/2 py-6 rounded-md shadow-md px-9 bg-primary">
+              <img src="/assets/news/folder.svg" alt="" />
               <h5>Press Kit</h5>
               <p>Official Images</p>
               <a href="http://">download</a>
             </div>
-            <div className="shadow-md px-6 rounded-md bg-primary w-1/2 py-6">
+            <div className="w-1/2 px-6 py-6 rounded-md shadow-md bg-primary">
               <img src="/assets/news/folder.svg" alt="" />
               <h5>Press Kit</h5>
               <p>Official Images</p>
@@ -144,6 +136,9 @@ const News: NextPage = () => {
           </div>
         </div>
       </div>
+
+      <FooterForm />
+
     </>
   );
 };

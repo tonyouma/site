@@ -3,28 +3,32 @@
 @tailwind utilities;
 
 body {
-    @apply font-CeraRoundProNormal text-sm
+  @apply font-CeraRoundProNormal text-sm;
 }
 
 a:hover {
-    @apply text-secondary
+  @apply text-secondary;
 }
 
 h1 {
-    @apply text-5xl font-SatoshiBlack
+  @apply text-5xl font-SatoshiBlack leading-[120%];
 }
 
 h2 {
-    @apply text-3xl font-SatoshiBlack
+  @apply text-3xl font-SatoshiBlack;
 }
 
 h3 {
-    @apply text-2xl font-SatoshiNormal text-secondary
+  @apply text-2xl font-SatoshiNormal text-secondary;
 }
 h4 {
-    @apply text-xl font-SatoshiNormal
+  @apply text-xl font-SatoshiNormal;
 }
 
 p {
-    @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary opacity-90
+  @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary opacity-90;
+}
+
+.hero-bg {
+  background: url("/assets/hero-bg.png") top left/94px 153.41px no-repeat;
 }
