@@ -25,7 +25,7 @@ const Partners: NextPage = () => {
       <div className='container flex flex-col p-5 md:p-0'>
         <Hero title={intro} description={description} />
 
-        <h3>Solution Partners</h3>
+        <h3 className='text-center'>Solution Partners</h3>
         <div className="flex flex-wrap justify-center py-3 my-3">
           {partners.map((partner, i) => {
             return (
@@ -37,7 +37,7 @@ const Partners: NextPage = () => {
 
         </div>
 
-        <h3>Client Partners</h3>
+        <h3 className='text-center'>Client Partners</h3>
         <div className="flex flex-col justify-between py-3 mx-20 my-3 md:mx-0 md:flex-row">
           <div className="flex flex-col gap-2">
             <h4 className='pb-2'>Saccos:</h4>

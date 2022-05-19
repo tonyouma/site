@@ -24,7 +24,7 @@ function FooterForm() {
             name="email" />
           <button
             onClick={requestDemo}
-            className='md:w-[118px] h-[50px] p-3 rounded-tr-lg rounded-br-lg bg-textPrimary text-white ' >
+            className='md:w-[118px] h-[50px] p-3 rounded-tr-lg rounded-br-lg bg-textPrimary text-white' >
             Send
           </button>
         </form>

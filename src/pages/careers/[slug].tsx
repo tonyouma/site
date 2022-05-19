@@ -2,10 +2,7 @@ import { GetStaticProps } from "next";
 import { ICareer } from "src/models/career";
 
 
-interface Props extends ICareer {
-  
-}
-const Career = ({title, location, publishedAt}: Props) => {
+const Career = ({ title, location, publishedAt }: ICareer) => {
     return (
         <div className="">
             <div className="container md:pt-16">
@@ -49,16 +46,16 @@ const Career = ({title, location, publishedAt}: Props) => {
                         <div className="p-5 rounded-md bg-defaultWhite md:w-1/3">
                             <h4>Role Overview</h4>
                             <div className="flex flex-col gap-y-4">
-                            <div>
-                                <p className="capitalize">location</p>
-                                <p>{location}</p>
-                            </div>
-                            <div>
-                                <p className="capitalize">Posted On</p>
+                                <div>
+                                    <p className="capitalize">location</p>
+                                    <p>{location}</p>
+                                </div>
+                                <div>
+                                    <p className="capitalize">Posted On</p>
                                     <p>{new Date(publishedAt).toISOString()}</p>
                                     {/* <p>{publishedAt}</p> */}
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
 
@@ -126,32 +123,6 @@ const Career = ({title, location, publishedAt}: Props) => {
 
 export default Career
 
-// export const getServerSideProps = async (pageContext: { query: { slug: any; }; }) => {
-//     const pageSlug = pageContext.query.slug;
-//     // const query = encodeURIComponent(`*[ _type == "post" && slug.current == "${pageSlug}" ]`);
-
-//     const query = encodeURIComponent(`
-//   *[_type == "career"]
-// {
-//   _id,
-//   _createdAt,
-//   title,
-//   slug,
-//   categories
-// }`);
-
-//     // const url = `${process.env.NEXT_PUBLIC_SANITY_URL}query=${query}`;
-//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-//     const result = await fetch(url).then(res => res.json());
-//     const post = result.result[0];
-//     console.log(post);
-//     return {
-//         props: {
-//             title: post.title,
-//         }
-//     }
-// };
-
 export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
     const pageSlug = pageContext.query.slug;
     const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
@@ -167,54 +138,5 @@ export const getServerSideProps = async (pageContext: { query: { slug: string; }
         }
     }
 };
-
-// export const getStaticPaths = async () => {
-//     const query = `*[_type == "career"]{
-//   _id,
-//   slug,
-// }`
-//     debugger
-
-//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-//     const data = await fetch(url).then(res => res.json());
-//     const careers = data.result;
-    
-//     const paths = careers.map((career: ICareer) => {
-//         params: {
-//             slug: career?.slug.current
-//         }
-//     })
-
-//     return {
-//         paths,
-//         fallback: 'blocking'
-//     }
-
-// }
-
-// export const getStaticProps: GetStaticProps = async ({ params }) => {
-//     const query = `*[_type == "career" && slug.current == $slug][0]{
-//   _id,
-//   slug,
-//   _createdAt,
-//   title
-// }`
-
-//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}&params.slug=${params?.slug}`;
-//     const data = await fetch(url).then(res => res.json());
-//     const career = data.result
-//     console.log(career)
-//     if (!career) {
-//         return {
-//             notFound: true
-//         }
-//     }
-//     return {
-//         props: career
-//     }
-
-// }
-
-
 
 
