@@ -3,6 +3,7 @@ import { ContactForm } from ".././components/contact";
 import { contacts } from "src/constants/contact";
 import { Address } from "../components/contact";
 import { Link } from "../components/link";
+import { Socials } from "src/components/socials";
 
 type Contacts = {
   id: number;
@@ -73,39 +74,7 @@ const Contact: NextPage = () => {
           </div>
           <div className="text-center mb-5">
             <h4>Socials</h4>
-
-            <div className=" space-x-6 mt-3 items-center flex justify-center ">
-              <Link
-                blank
-                url="https://linked.com"
-                name="LinkedIn"
-                image={"/assets/linkedin.svg"}
-              />
-              <Link
-                blank
-                url="https://linked.com"
-                name="YouTube"
-                image={"/assets/youtube.svg"}
-              />
-              <Link
-                blank
-                url="https://linked.com"
-                name="Twitter"
-                image={"/assets/twitter.svg"}
-              />
-              <Link
-                blank
-                url="https://linked.com"
-                name="Instagram"
-                image={"/assets/instagram.svg"}
-              />
-              <Link
-                blank
-                url="https://linked.com"
-                name="Facebook"
-                image={"/assets/facebook.svg"}
-              />
-            </div>
+            <Socials items="center" justify="justify-center" margin="mt-3" />
           </div>
         </div>
       </div>

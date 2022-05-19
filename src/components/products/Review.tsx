@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Review = () => {
   return (
-    <div className="container mx-auto m-2">
+    <div className="container pb-6 md:pb-12 mx-auto m-2">
       <div className="grid grid-cols-6 ml-2">
         <div className="m-0 md:ml-6">
           <img src="/assets/products/customer.png" alt="" />
