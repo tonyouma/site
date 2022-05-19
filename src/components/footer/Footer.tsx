@@ -53,7 +53,7 @@ function Footer() {
                 <div className='flex gap-2 items-center'>
                     <a href='' className='text-xs text-textPrimary hover:text-secondary'>Privacy Policy</a>
                     <span className='text-4xl -mt-6'>.</span>
-                    <a href='' className='text-xs text-textPrimary hover:text-secondary'>Terms of Use</a>
+                    <a href='/terms' className='text-xs text-textPrimary hover:text-secondary'>Terms of Use</a>
                     <span className='text-4xl -mt-6'>.</span>
                     <a href='' className='text-xs text-textPrimary hover:text-secondary'>Credits</a>
                 </div>
