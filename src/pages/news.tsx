@@ -116,9 +116,9 @@ const News: NextPage = () => {
         </div>
 
         <div className="flex pb-10 gap-x-5 gap-y-5 flex-col md:flex-row">
-          <div className="flex gap-4 pr-3 shadow-md items-center rounded-md md:w-1/2 w-full">
-            <div className=" bg-primary px-4 h-full rounded-l-md">
-              <img src="/assets/news/dtl.svg" alt="" className="h-full"></img>
+          <div className="flex gap-4 pr-3 shadow-md items-center rounded-md md:w-1/2 w-full max-h-full">
+            <div className=" bg-primary px-4 max-h-full h-full rounded-l-md">
+              <img src="/assets/news/dtl.svg" alt="" className="h-full md:h-full"></img>
             </div>
             <div>
               <h5 className="">Data Integrated Limited Logos</h5>
@@ -130,7 +130,7 @@ const News: NextPage = () => {
           </div>
           <div className="flex w-full md:w-1/2 gap-x-5">
             <div className="shadow-md px-9 rounded-md bg-primary w-1/2  py-6">
-              <img src="/assets/news/folder.svg" alt="" />
+              <img src="/assets/news/folder.svg" alt=""/>
               <h5>Press Kit</h5>
               <p>Official Images</p>
               <a href="http://">download</a>
