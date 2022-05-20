@@ -25,7 +25,6 @@ function Footer() {
                     <p className="text-sm text-textPrimary">Epesi Tap & Go Cashless Card</p>
                     <p className="text-sm text-textPrimary">Epesi Scheduling</p>
                 </div>
-
                 <div className="flex flex-col p-5 md:p-0 items-center flex-1 justify-between space-y-3  md-y-0 md:items-start">
                     <h4 className='text-lg font-SatoshiBold'>Company</h4>
                     <a href='/news' className="text-sm text-textPrimary">News</a>
@@ -42,16 +41,13 @@ function Footer() {
                     <p className="text-sm text-textPrimary mb-3">P.O Box 17615 - 00500 Enterprise Rd, Nairobi</p>
                     <Socials items='end'/>
                 </div>
-
-                
-
             </footer>
             
         <div className='bg-white p-2'>
             <div className='container flex flex-col justify-between items-center space-y-3 mx-auto md:flex-row px-5 md:px-0'>
                 <p className='text-xs text-textPrimary'>{new Date().getFullYear()} &copy; Data Integrated Ltd. All Rights Reserved</p>
                 <div className='flex gap-2 items-center'>
-                    <a href='' className='text-xs text-textPrimary hover:text-secondary'>Privacy Policy</a>
+                    <a href='/policy' className='text-xs text-textPrimary hover:text-secondary'>Privacy Policy</a>
                     <span className='text-4xl -mt-6'>.</span>
                     <a href='/terms' className='text-xs text-textPrimary hover:text-secondary'>Terms of Use</a>
                     <span className='text-4xl -mt-6'>.</span>
