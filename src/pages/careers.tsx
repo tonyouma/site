@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // import CareersCard from 'src/components/careersCard'
-import { ICareer } from 'src/models/career'
+import { ICareer } from 'src/models/careers'
 
 interface Props {
   careers: [ICareer]
@@ -18,8 +18,11 @@ const careers = ({ careers }: Props) => {
 
   return (
     <div className=''>
-      <div>
-        <img src="/assets/careers.png" alt="" className='object-cover' />
+      <div className='h-[552px] bg-black relative text-center'>
+        <img src="/assets/careers.png" alt=""  className='object-cover opacity-70'/>
+        <h1 className='careers-intro'>Careers at DIL</h1>
+
+        
       </div>
       <div className='container px-5 md:px-40 pt-11'>
         <h3 className='pb-6'>About Data Integrated Limited (DIL)</h3>
@@ -34,19 +37,25 @@ const careers = ({ careers }: Props) => {
         <div className="container px-5 md:px-40">
           <h4 className='text-center'>Currently Open Roles</h4>
           <div className='flex flex-col py-5 gap-y-5'>
-            {careers.map(career => (
+            {!careers  || careers.length === 0 ? (<div className='p-4 bg-white rounded'><p>No roles available at the moment</p></div>) :(
+             careers.map(career => (
               <div className='p-5 rounded-lg bg-defaultWhite' key={career._id}>
-                <p className='mb-2 font-extrabold uppercase'>Administration</p>
+                {career.categories && (
+                  <ul>
+                    {career.categories.map(category => <p className='mb-2 font-extrabold uppercase' key={category}>{category}</p>)}
+                  </ul>
+                )}
+
                 <div className="flex items-center justify-between">
                   <p>{career.title}</p>
-                  <Link href={`/careers/${career.slug.current}`} passHref ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></Link>
+                  <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></Link>
                 </div>
                 <div className="flex">
                   <p>{career?.location}</p>
                   <p>{career?.employmentType}</p>
                 </div>
               </div>
-            ))}
+            )))}
           </div>
           <div className='text-center'>
             <h4 className='pb-3'>Open Application</h4>
@@ -74,15 +83,25 @@ export const getServerSideProps = async () => {
   title,
   slug,
   location,
+  "categories": categories[]->title,
 }`);
 
+
   const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-  const data = await fetch(url).then((res) => res.json());
-  const careers = data.result
-  return {
-    props: {
-      careers
+  try {
+    const data = await fetch(url).then((res) => res.json());
+    const careers = data.result
+
+    return {
+      props: {
+        careers
+      }
+    }
+  } catch (error) {
+    return {
+      props: {}
     }
   }
+
 }
 

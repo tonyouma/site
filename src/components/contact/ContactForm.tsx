@@ -11,22 +11,19 @@ const Contactform = () => {
           <div className="flex flex-wrap -mx-3 ">
             <div className="w-full px-3 md:mb-0">
               <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                 htmlFor="grid-name"
               >
                 Name
               </label>
               <input
-                className=" block w-full bg-gray-200
-       text-gray-700 border rounded 
-       py-3 px-4 mb-3 leading-tight focus:outline-none
-        focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border rounded focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-name"
                 type="text"
                 placeholder="Your Name"
               />
 
-              {/* <p className="text-red-500 text-xs italic">
+              {/* <p className="text-xs italic text-red-500">
                 Please fill out this field.
               </p> */}
             </div>
@@ -34,13 +31,13 @@ const Contactform = () => {
           <div className="flex flex-wrap -mx-3 ">
             <div className="w-full px-3">
               <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                 htmlFor="grid-email"
               >
                 Email
               </label>
               <input
-                className=" block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-email"
                 type="email"
                 placeholder="you@company.com"
@@ -50,26 +47,26 @@ const Contactform = () => {
           <div className="flex flex-wrap -mx-3 ">
             <div className="w-full px-3">
               <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                 htmlFor="grid-subject"
               >
                 Subject
               </label>
               <input
-                className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                className="block w-full px-4 py-3 mb-3 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
                 id="grid-password"
                 type="text"
                 placeholder="Subject"
               />
-              {/* <p className="text-gray-600 text-xs italic">
+              {/* <p className="text-xs italic text-gray-600">
                 Make it as long and as crazy as you`d like
               </p> */}
             </div>
           </div>
-          <div className="flex flex-wrap -mx-3 mb-2">
-            <div className="w-full  px-3  md:mb-0">
+          <div className="flex flex-wrap mb-2 -mx-3">
+            <div className="w-full px-3 md:mb-0">
               <label
-                className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                className="block mb-2 text-xs font-bold tracking-wide text-gray-700 uppercase"
                 htmlFor="grid-content"
               >
                 How can we help?
@@ -83,10 +80,10 @@ const Contactform = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap -mx-3 mb-4 px-3 justify-center ">
+          <div className="flex flex-wrap justify-center px-3 mb-4 -mx-3 ">
             <div className="w-full mb-2">
               <p className="text-xs">
-                By proceeding, I agree to DIL&apos;s <span className=" underline cursor-pointer"> Terms of Use</span> and acknowledge
+                By proceeding, I agree to DIL&apos;s <a href="/terms" className="underline cursor-pointer "> Terms of Use</a> and acknowledge
                 that I have read the <span className="underline cursor-pointer">Privacy Policy</span> .
               </p>
             </div>
@@ -98,10 +95,10 @@ const Contactform = () => {
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap -mx-3 mb-2">
-            <div className="w-full px-3  md:mb-0">
+          <div className="flex flex-wrap mb-2 -mx-3">
+            <div className="w-full px-3 md:mb-0">
               <button
-                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                className="px-4 py-2 font-bold text-white bg-red-500 rounded hover:bg-red-700 focus:outline-none focus:shadow-outline"
                 type="submit"
               >
                 Submit

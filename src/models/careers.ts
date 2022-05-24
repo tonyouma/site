@@ -5,7 +5,7 @@ export interface ICareer {
     slug: {
         current: string;
     };
-    // categories: any;
+    categories: [];
     createdAt: string;
     location: string;
     employmentType: string;

@@ -5,6 +5,7 @@ import { news2 } from "src/constants/news2";
 import Link from "next/link";
 import { FooterForm } from "src/components/form";
 import { Hero } from "src/components/hero";
+import Image from "next/image";
 
 const News: NextPage = () => {
 
@@ -77,12 +78,13 @@ const News: NextPage = () => {
           {news2.map((news2, i) => {
             return (
               <div className="px-5 py-12 shadow-md" key="i">
-                <img
+                <Image
                   src={`${news2.image}`}
                   className="p-2"
                   width="100px"
                   height="50px"
-                ></img>
+                  alt=""
+                ></Image>
                 <h4 className="p-1">{news2.title}</h4>
                 <p className="p-2">{news2.body}</p>
 
@@ -93,7 +95,7 @@ const News: NextPage = () => {
         </div>
       </div>
       <div className="mt-12 relative w-full h-80 items-center justify-center flex bg-[url('/assets/news/nairobi.png')]">
-        <h2 className="w-1/2 m-auto text-center text-white">Our Mission is to automate payment services through an integrated, reliable, secure, easy to use platform.</h2>
+        <h2 className="m-auto text-center text-white md:w-1/2">Our Mission is to automate payment services through an integrated, reliable, secure, easy to use platform.</h2>
 
       </div>
 
