@@ -4,7 +4,7 @@ import { Link } from 'src/components/link'
 
 const Team = () => {
     return (
-        <div className='md:pb-16'>
+        <div className='p-5 md:pb-16'>
             <div className="mx-auto md:max-w-2xl md:pb-12">
                 <h1 className='mb-4'>A team with conviction.</h1>
                 <p>We started with a conviction that every single one in Africa should have access to great and easy payment solutions. Say hello to a team that works hard on this goal every single day.</p>

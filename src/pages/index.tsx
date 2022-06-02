@@ -1,29 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import FooterForm from 'src/components/form/FooterForm'
 import Team from 'src/components/team'
+import { partnersInfo } from 'src/constants/partners'
 import { stats } from 'src/constants/stats'
 import { formatCount } from 'src/utils/formatCount'
-import EcobankLogo from '../../public/assets/landing/ecobank-logo.svg'
 
-type IPartnersProps = {
-  icon: any,
-  name: string
-}
-
-const partners: IPartnersProps[] = [
-  { name: 'Ecobank', icon: <EcobankLogo /> },
-  { name: 'Microsoft', icon: <EcobankLogo /> },
-  { name: 'Mastercard', icon: <EcobankLogo /> },
-  { name: 'Safaricom', icon: <EcobankLogo /> },
-  { name: 'AWS', icon: <EcobankLogo /> },
-  { name: 'Interswitch', icon: <EcobankLogo /> },
-]
 
 const Home: NextPage = () => {
   return (
     <>
       <div className="">
-        <div className="container py-14">
+        <div className="container p-5 md:py-14">
           <div className='max-w-3xl'>
             <h1 className="mt-12 mb-6 uppercase">
               Soulful solutions that <span className='leading-[120%] text-secondary'>Connect African streets</span> to high finance
@@ -59,34 +47,15 @@ const Home: NextPage = () => {
       <div className='pt-12 text-center'>
         <p className='font-bold'>TRUSTED PARTNERS</p>
         <div className="container grid grid-cols-2 gap-4 p-5 md:grid-cols-6 lg:grid-cols-6 md:p-5">
-         {/* {partners.map((partner, index) => (
-            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" key={index}>
-              <p>{partner.name}</p>
+          {partnersInfo.map((partner, index) => (
+            <div className="flex col-span-1 md:justify-center md:items-center md:col-span-2 lg:col-span-1" key={index}>
+              <img src={partner.icon} alt={partner.name} />
             </div>
-          ))} */}
-         
-          <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-            <img src="/assets/landing/microsoft-logo.svg" alt="" />         </div>
-
-          <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-            <img src="/assets/landing/mastercard-logo.svg" alt="" />        </div>
-
-          <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
-
-            <img src="/assets/landing/ecobank-logo.svg" alt="" />
-          </div>
-          <div className="flex items-center justify-center col-span-1 md:col-span-3 lg:col-span-1">
-            <img src="/assets/landing/safaricom-logo.svg" alt="" />        </div>
-
-          <div className="flex items-center justify-center col-span-2 md:col-span-3 lg:col-span-1">
-            <img src="/assets/landing/aws-logo.svg" alt="" />        </div>
-          <div className="flex items-center justify-center col-span-2 md:col-span-3 lg:col-span-1">
-            <img src="/assets/landing/interswitch-logo.svg" alt="" />
-          </div>
+          ))}
         </div>
       </div>
 
-      <div className='container'>
+      <div className='container p-5'>
         <div className='max-w-xl py-12 mx-auto'>
           <h1>Products and Solutions</h1>
           <p>From smart public transport solutions to retail payments to payroll management, our products cater to the growing everyday financial needs of African population.</p>
@@ -96,43 +65,41 @@ const Home: NextPage = () => {
       </div>
 
 
-      <section>
-        <div className="py-16 mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="relative z-10 lg:py-16">
-              <div className="relative h-40 sm:h-80 lg:h-full">
-                <img
-                  className="absolute inset-0 object-cover w-full h-full"
-                  src="/assets/cardholder.png"
-                  alt="Card Holder"
-                />
-              </div>
+      <div className="py-16 mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="relative z-10 lg:py-16">
+            <div className="relative h-40 sm:h-80 lg:h-full">
+              <img
+                className="absolute inset-0 object-cover w-full h-full"
+                src="/assets/cardholder.png"
+                alt="Card Holder"
+              />
             </div>
+          </div>
 
-            <div className="relative flex items-center p-5 bg-gray-100">
-              <span
-                className="hidden lg:inset-y-0 lg:absolute lg:w-16 lg:bg-gray-100 lg:block lg:-left-16"
-              ></span>
+          <div className="relative flex items-center p-5 bg-gray-100">
+            <span
+              className="hidden lg:inset-y-0 lg:absolute lg:w-16 lg:bg-gray-100 lg:block lg:-left-16"
+            ></span>
 
-              <div className="py-8 sm:p-16 md:pr-[180px] md:py-32 ">
-                <h1 className="">
-                  We work with you and for you
-                </h1>
+            <div className="py-8 sm:p-16 md:pr-[180px] md:py-32 ">
+              <h1 className="">
+                We work with you and for you
+              </h1>
 
-                <p className="mt-4 text-gray-600">
-                  Our solutions are developed to be compatible with public, banking and regulatory platforms as well as people on the ground. We strive to have financial inclusion for all.
-                </p>
+              <p className="mt-4 text-gray-600">
+                Our solutions are developed to be compatible with public, banking and regulatory platforms as well as people on the ground. We strive to have financial inclusion for all.
+              </p>
 
-                <button
-                  className="px-5 py-2.5 text-white bg-[#093749] rounded-md duration-150 active:shadow-lg"
-                >
-                  Get in touch
-                </button>
-              </div>
+              <button
+                className="px-5 py-2.5 text-white bg-[#093749] rounded-md duration-150 active:shadow-lg"
+              >
+                Get in touch
+              </button>
             </div>
           </div>
         </div>
-      </section>
+      </div>
       <Team />
       <FooterForm />
     </>

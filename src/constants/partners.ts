@@ -1,3 +1,4 @@
+
 export const partners = [
     {
         name: 'Layers',
@@ -39,3 +40,13 @@ export const investors = [
         logo: 'assets/partners/logo-2.png'
     }
 ]
+
+export const partnersInfo = [
+    { name: 'Ecobank', icon: 'assets/landing/microsoft-logo.svg' },
+    { name: 'Mastercard', icon: 'assets/landing/mastercard-logo.svg' },
+    { name: 'Ecobank', icon: 'assets/landing/ecobank-logo.svg' },
+    { name: 'Safaricom', icon: 'assets/landing/safaricom-logo.svg' },
+    { name: 'AWS', icon: 'assets/landing/aws-logo.svg' },
+    { name: 'Interswitch', icon: 'assets/landing/interswitch-logo.svg' },
+]
+
