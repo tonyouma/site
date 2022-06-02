@@ -87,7 +87,7 @@ export const getServerSideProps = async () => {
 }`);
 
 
-  const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+  const url = `process.env.NEXT_PUBLIC_SANITY_URL?query=${query}`;
   try {
     const data = await fetch(url).then((res) => res.json());
     const careers = data.result

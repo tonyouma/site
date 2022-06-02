@@ -1,8 +1,23 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
 import FooterForm from 'src/components/form/FooterForm'
+import Team from 'src/components/team'
+import { stats } from 'src/constants/stats'
+import { formatCount } from 'src/utils/formatCount'
+import EcobankLogo from '../../public/assets/landing/ecobank-logo.svg'
 
+type IPartnersProps = {
+  icon: any,
+  name: string
+}
+
+const partners: IPartnersProps[] = [
+  { name: 'Ecobank', icon: <EcobankLogo /> },
+  { name: 'Microsoft', icon: <EcobankLogo /> },
+  { name: 'Mastercard', icon: <EcobankLogo /> },
+  { name: 'Safaricom', icon: <EcobankLogo /> },
+  { name: 'AWS', icon: <EcobankLogo /> },
+  { name: 'Interswitch', icon: <EcobankLogo /> },
+]
 
 const Home: NextPage = () => {
   return (
@@ -23,26 +38,20 @@ const Home: NextPage = () => {
             <div className="flex items-center gap-x-3"><p>Products Demo</p> <button className=" play-button">
               <img src="/assets/play-button.svg" alt="" />
             </button></div>
-
-
           </div>
-          {/* <div className="flex w-full">
-            <div className="w-full h-full">
-              <Image
-                src="/assets/Illustration1.png"
-                alt="VPN Illustrasi"
-                quality={100}
-                width={612}
-                height={383}
-                layout="responsive"
-              />
-            </div>
-          </div> */}
         </div>
 
-        <div className="bg-primary">
-          <div className="md:ml-[180px] bg-primary">
+        <div className="relative bg-primary fore-ground">
+          <div className="md:ml-[180px] relative">
             <img src="/assets/placeholder.png" alt="" className="w-full h-96" />
+          </div>
+          <div className="grid grid-cols-1 gap-4 py-12 mx-auto md:grid-cols-3 md:max-w-3xl md:gap-0">
+            {stats.map((stat, index) => (
+              <div className="text-center md:border-r border-[#d9d9d9] border-solid last:border-r-0" key={index}>
+                <h1 className='text-secondary'>{formatCount(stat.count, stat.percentage)}</h1>
+                <p className='w-2/3 mx-auto'>{stat.title}</p>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -50,6 +59,12 @@ const Home: NextPage = () => {
       <div className='pt-12 text-center'>
         <p className='font-bold'>TRUSTED PARTNERS</p>
         <div className="container grid grid-cols-2 gap-4 p-5 md:grid-cols-6 lg:grid-cols-6 md:p-5">
+         {/* {partners.map((partner, index) => (
+            <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1" key={index}>
+              <p>{partner.name}</p>
+            </div>
+          ))} */}
+         
           <div className="flex items-center justify-center col-span-1 md:col-span-2 lg:col-span-1">
             <img src="/assets/landing/microsoft-logo.svg" alt="" />         </div>
 
@@ -60,9 +75,6 @@ const Home: NextPage = () => {
 
             <img src="/assets/landing/ecobank-logo.svg" alt="" />
           </div>
-
-
-
           <div className="flex items-center justify-center col-span-1 md:col-span-3 lg:col-span-1">
             <img src="/assets/landing/safaricom-logo.svg" alt="" />        </div>
 
@@ -74,10 +86,15 @@ const Home: NextPage = () => {
         </div>
       </div>
 
-      <div className='max-w-xl py-12 mx-auto'>
-        <h1>Products and Solutions</h1>
-        <p>From smart public transport solutions to retail payments to payroll management, our products cater to the growing everyday financial needs of African population.</p>
+      <div className='container'>
+        <div className='max-w-xl py-12 mx-auto'>
+          <h1>Products and Solutions</h1>
+          <p>From smart public transport solutions to retail payments to payroll management, our products cater to the growing everyday financial needs of African population.</p>
+        </div>
+        {/* <SimpleSlider /> */}
+
       </div>
+
 
       <section>
         <div className="py-16 mx-auto">
@@ -87,7 +104,7 @@ const Home: NextPage = () => {
                 <img
                   className="absolute inset-0 object-cover w-full h-full"
                   src="/assets/cardholder.png"
-                  alt="Indoors house"
+                  alt="Card Holder"
                 />
               </div>
             </div>
@@ -97,7 +114,7 @@ const Home: NextPage = () => {
                 className="hidden lg:inset-y-0 lg:absolute lg:w-16 lg:bg-gray-100 lg:block lg:-left-16"
               ></span>
 
-              <div className="py-8 sm:p-16 md:pr-24 md:py-32 ">
+              <div className="py-8 sm:p-16 md:pr-[180px] md:py-32 ">
                 <h1 className="">
                   We work with you and for you
                 </h1>
@@ -116,37 +133,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </section>
-      <div className=''>
-        <div className="max-w-2xl pb-12 mx-auto">
-          <h1 className='mb-4'>A team with conviction.</h1>
-          <p>We started with a conviction that every single one in Africa should have access to great and easy payment solutions. Say hello to a team that works hard on this goal every single day.</p>
-        </div>
-
-        <div className="container grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="flex items-center justify-center ">
-            <img src="/assets/mary_ceo.png" alt="" className='min-w-[100%]' />
-          </div>
-          <div className="">
-            <img src="/assets/team.png" alt="" className='min-w-[100%]' />
-          </div>
-          <div className="my-auto "><p>Irene</p>
-          </div>
-          <div className=""><p>Mary Mwangi</p>
-          </div>
-          <div className=""><img src="/assets/team3.png" alt="" className='min-w-[100%]' /></div>
-          <div className="">
-            <img src="/assets/team2.png" alt="" className='min-w-[100%]' />
-          </div>
-          <div className="">
-          </div>
-          <div className="">
-          </div>
-          <div className="">
-          </div>
-          <div className="">
-          </div>
-        </div>
-      </div>
+      <Team />
       <FooterForm />
     </>
   )

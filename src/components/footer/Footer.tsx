@@ -6,7 +6,7 @@ function Footer() {
   return (
       <>
         <div className="bg-primary">
-            <footer className="container flex flex-col items-center justify-between py-3 m-auto space-x-4 space-y-3 md:items-start md:flex-row md:space-y-3">
+            <footer className="container flex flex-col items-center justify-between py-3 m-auto space-x-4 space-y-3 md:py-12 md:items-start md:flex-row md:space-y-3">
                 <div className="flex flex-col items-center justify-between flex-1 p-5 m-auto space-y-3 md:p-0 md:flex-col md-y-0 md:items-start">
                     <Link name="Logo" url={"/"} image={"/assets/logo.svg"} />
                     <p className='text-sm text-textPrimary'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut accusamus adipisci nisi quasi.</p>
