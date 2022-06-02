@@ -3,7 +3,7 @@ interface IProps {
     description: string
 }
 
-const Hero = ({ title, description }: IProps) => {
+const Hero = ({title, description}: IProps) => {
     return (
         <div className="mx-auto md:w-2/3 hero-bg md:my-16">
             <div className="p-3">

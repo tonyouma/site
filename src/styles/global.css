@@ -32,3 +32,22 @@ p {
 .hero-bg {
   background: url("/assets/hero-bg.png") top left/94px 153.41px no-repeat;
 }
+
+.play-button {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06))
+    drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.03));
+  @apply inline-flex items-center justify-center h-8 w-8 pl-[0.6px]   text-pink-100 transition-colors duration-150 bg-white rounded-full hover:bg-textPrimary;
+}
+
+.careers-intro {
+  @apply absolute translate-y-[-50%] top-1/2 left-1/2 text-white;
+  transform: translate(-50%, -50%);
+}
+
+.fore-ground::before {
+  position: absolute;
+  height: 15%;
+  background-color: #fff;
+  content: "";
+  width: 100%;
+}

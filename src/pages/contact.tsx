@@ -15,17 +15,19 @@ type Contacts = {
 const Contact: NextPage = () => {
   return (
     <>
-      <div className="m-5 p-5  sm:container sm:mx-auto">
+      <div className="p-5 m-5 sm:container sm:mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-2">
-          <div className="md:pt-20 md:pr-5">
-            <h2 className="mb-5">Always within reach. Always with a smile.</h2>
-            <p className="mb-5">
-              Whether it&apos;s about learning about our growth plans or a
-              technical glitch that you need to solve immediately or co-develop
-              an idea that you think is brilliant for Africa, please do reach
-              out to us. Our doors are always open.
-            </p>
-            <div className=" mb-5">
+          <div className=" md:pr-5">
+            <div className="hero-bg md:pt-5 md:mt-12">
+              <h2 className="mb-5">Always within reach. Always with a smile.</h2>
+              <p className="mb-5">
+                Whether it&apos;s about learning about our growth plans or a
+                technical glitch that you need to solve immediately or co-develop
+                an idea that you think is brilliant for Africa, please do reach
+                out to us. Our doors are always open.
+              </p>
+            </div>
+            <div className="mb-5 ">
               <img src="/assets/contactus/enquiry.svg" alt="" />
               <h4>Partnership Inquiries</h4>
             </div>
@@ -48,7 +50,7 @@ const Contact: NextPage = () => {
           style={{ border: 0, height: 300 }}
           //allowfullscreen=""
           loading="lazy"
-          //referrerpolicy="no-referrer-when-downgrade"
+        //referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
       <div className="container mx-auto">
@@ -59,7 +61,7 @@ const Contact: NextPage = () => {
               reach out.
             </h4>
           </div>
-          <div className="md:flex p-5">
+          <div className="p-5 md:flex">
             {contacts.map((contact: Contacts, index: number) => {
               return (
                 <Address
@@ -72,7 +74,7 @@ const Contact: NextPage = () => {
               );
             })}
           </div>
-          <div className="text-center mb-5">
+          <div className="mb-5 text-center">
             <h4>Socials</h4>
             <Socials items="center" justify="justify-center" margin="mt-3" />
           </div>

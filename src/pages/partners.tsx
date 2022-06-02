@@ -22,58 +22,63 @@ const Partners: NextPage = () => {
 
   return (
     <>
-      <div className='container flex flex-col p-5 md:p-0'>
-        <Hero title={intro} description={description} />
+      <div className='flex flex-col p-5 md:p-0'>
+        <div className="container">
+          <Hero title={intro} description={description} />
+        </div>
 
         <h3 className='text-center'>Solution Partners</h3>
-        <div className="flex flex-wrap justify-center py-3 my-3">
-          {partners.map((partner, i) => {
-            return (
-              <div className='p-6' key={i}>
-                <img src={`${partner.logo}`} alt="logo" />
-              </div>
-            )
-          })}
 
+        <div className='py-5 my-5 bg-primary'>
+          <div className="container flex flex-wrap justify-center">
+            {partners.map((partner, i) => {
+              return (
+                <div className='p-6' key={i}>
+                  <img src={`${partner.logo}`} alt="logo" />
+                </div>
+              )
+            })}
+
+          </div>
         </div>
+        <div className="container">
+          <h3 className='text-center'>Client Partners</h3>
+          <div className="flex flex-col justify-between py-3 mx-20 my-3 md:mx-0 md:flex-row">
+            <div className="flex flex-col gap-2">
+              <h4 className='pb-2'>Saccos:</h4>
+              <ul>
+                <li className='p-1'>City Shuttle Sacco</li>
+                <li className='p-1'>Obamana Sacco</li>
+                <li className='p-1'>44 owners Sacco</li>
+                <li className='p-1'>Globology Limited</li>
+                <li className='p-1'>Mwiki Sacco</li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-2">
+              <h4 className='pb-2'>Government Agencies:</h4>
+              <ul>
+                <li className='p-1'>Kenya Revenue Authority</li>
+                <li className='p-1'>Rwanda Revenue Authority</li>
+              </ul>
+            </div>
 
-        <h3 className='text-center'>Client Partners</h3>
-        <div className="flex flex-col justify-between py-3 mx-20 my-3 md:mx-0 md:flex-row">
-          <div className="flex flex-col gap-2">
-            <h4 className='pb-2'>Saccos:</h4>
-            <ul>
-              <li className='p-1'>City Shuttle Sacco</li>
-              <li className='p-1'>Obamana Sacco</li>
-              <li className='p-1'>44 owners Sacco</li>
-              <li className='p-1'>Globology Limited</li>
-              <li className='p-1'>Mwiki Sacco</li>
-            </ul>
-          </div>
-          <div className="flex flex-col gap-2">
-            <h4 className='pb-2'>Government Agencies:</h4>
-            <ul>
-              <li className='p-1'>Kenya Revenue Authority</li>
-              <li className='p-1'>Rwanda Revenue Authority</li>
-            </ul>
-          </div>
+            <div className="flex flex-col gap-2">
+              <h4 className='pb-2'>Banks:</h4>
+              <ul>
+                <li className='p-1'>Equity Bank</li>
+                <li className='p-1'>Ecobank</li>
+                <li className='p-1'>Interswitch</li>
+                <li className='p-1'>Spire Bank</li>
+                <li className='p-1'>United Bank of Africa</li>
+              </ul>
+            </div>
 
-          <div className="flex flex-col gap-2">
-            <h4 className='pb-2'>Banks:</h4>
-            <ul>
-              <li className='p-1'>Equity Bank</li>
-              <li className='p-1'>Ecobank</li>
-              <li className='p-1'>Interswitch</li>
-              <li className='p-1'>Spire Bank</li>
-              <li className='p-1'>United Bank of Africa</li>
-            </ul>
           </div>
-
         </div>
-
-        <h3>Investors</h3>
-        <div className="flex flex-wrap justify-start">
+        <h3 className='text-center'>Investors</h3>
+        <div className="container flex flex-wrap justify-center">
           <p className='max-w-2xl p-3 md:p-6'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
-          <div className="flex flex-wrap justify-center my-3 md:py-3">
+          <div className="flex flex-wrap justify-center my-3 md:py-2">
             {investors.map((investor, i) => {
               return (
                 <div className='p-3 md:p-6' key={i}>
