@@ -8,7 +8,7 @@ function Footer() {
         <>
             <div className="">
                 <div className='container'>
-                    <h1>Soulful<br /> Solutions</h1>
+                    <h1 className='text-center md:text-left'>Soulful<br /> Solutions</h1>
                 </div>
                 <footer className="container flex flex-col items-center justify-between py-2 m-auto space-x-4 space-y-3 md:py-12 md:items-start md:flex-row md:space-y-3">
 

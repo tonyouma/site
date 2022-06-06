@@ -10,14 +10,14 @@ import type { NextPage } from "next";
 const Contact: NextPage = () => {
   return (
     <div className="">
-      <div className="md:mx-auto md:max-w-4xl">
-        <div className='mb-4 text-center md:max-w-md md:mx-auto'>
+      <div className="md:pt-16 md:mx-auto md:max-w-4xl">
+        <div className='p-5 mb-4 md:text-center md:max-w-md md:mx-auto md:p-0'>
           <h1 className=''>Always within reach. Always with a smile.</h1>
         </div>
 
-        <p className='max-w-2xl py-8 mx-auto text-center'>
+        <p className='p-5 py-4 mx-auto md:text-center md:py-8 md:max-w-2xl md:p-0'>
           Whether it’s about learning about our growth plans or a technical glitch that you need to solve immediately or co-develop an idea that you think is brilliant for Africa, please do reach out to us. Our doors are always open.  </p>    </div>
-      <div className="container py-5">
+      <div className="container p-5 py-5 md:p-0 md:py-5">
         <button className="text-2xl text-secondary">Reach Out</button>
       </div>
       <div className="bg-[#F9DADD]">

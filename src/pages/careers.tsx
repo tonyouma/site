@@ -17,11 +17,12 @@ const careers = () => {
   return (
     <div className='container'>
 
-      <h1 className='mb-4 text-center'>A meaningful challenge to solve. A <br /> soulful company to work for.</h1>
+      <div className="p-5 md:pt-16 md:p-0">
+        <h1 className='mb-4 text-center'>A meaningful challenge to solve. A <br /> soulful company to work for.</h1>
 
-      <p className='max-w-2xl py-8 mx-auto text-center'>
-        “I never lose. I either win or learn”, says an African proverb. We go all-in when we try to come up with products that make a common man’s life easy. And we do that by standing for and supporting each other.</p>
-
+        <p className='py-8 mx-auto text-center md:max-w-2xl'>
+          “I never lose. I either win or learn”, says an African proverb. We go all-in when we try to come up with products that make a common man’s life easy. And we do that by standing for and supporting each other.</p>
+      </div>
 
       <div className='py-12 my-6'>
         <div className="container px-5 md:px-40">
@@ -56,7 +57,7 @@ const careers = () => {
         </div>
       </div>
 
-      <div className='container px-8 py-8 mx-auto text-center md:px-40'>
+      <div className='container px-8 py-8 mx-auto md:text-center md:px-40'>
         <h1 className=''>Benefits of working for us</h1>
         <p className='pt-6'>In addition to contributing to the great cause of easing the lives of millions of Africans with world-class financial products, you also get competitive base salaries, social and statuatory benefits, generous holidays, commissions / bonus / profit sharing schemes based on responsibilities and results of different positions.</p>
       </div>

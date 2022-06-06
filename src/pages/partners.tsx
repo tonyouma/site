@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import { investors, partners } from 'src/constants/partners'
 import { FooterForm } from 'src/components/form';
-// import { Hero } from 'src/components/hero';
 
 
 const Partners: NextPage = () => {
@@ -16,13 +15,12 @@ const Partners: NextPage = () => {
     }
   }
 
-  // const intro = "Making headlines is good when you’re truly doing good."
-  // const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
+  
 
   return (
     <>
       <div className='flex flex-col p-5 md:p-0'>
-        <div className='max-w-3xl mx-auto'>
+        <div className='mx-auto md:max-w-2xl md:pt-16'>
           <h1 className='mb-4 text-center'>A growing list of people who believe in us.</h1>
           <p className='max-w-2xl py-8 mx-auto text-center'>
             From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
