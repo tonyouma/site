@@ -1,120 +1,47 @@
-/* @font-face {
-    font-family: 'Satoshi-Black';
-    src: url('../../public/fonts/Satoshi-Black.woff2') format('woff2'),
-         url('../../public/fonts/Satoshi-Black.woff') format('woff'),
-         url('../../public/fonts/Satoshi-Black.ttf') format('truetype');
-         font-weight: 900;
-         font-display: swap;
-         font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Satoshi-Bold';
-    src: url('../../public/fonts/Satoshi-Bold.woff2') format('woff2'),
-         url('../../public/fonts/Satoshi-Bold.woff') format('woff'),
-         url('../../public/fonts/Satoshi-Bold.ttf') format('truetype');
-         font-weight: 700;
-         font-display: swap;
-         font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Satoshi-Medium';
-    src: url('../../public/fonts/Satoshi-Medium.woff2') format('woff2'),
-         url('../../public/fonts/Satoshi-Medium.woff') format('woff'),
-         url('../../public/fonts/Satoshi-Medium.ttf') format('truetype');
-         font-weight: 500;
-         font-display: swap;
-         font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Satoshi-Regular';
-    src: url('../../public/fonts/Satoshi-Regular.woff2') format('woff2'),
-         url('../../public/fonts/Satoshi-Regular.woff') format('woff'),
-         url('../../public/fonts/Satoshi-Regular.ttf') format('truetype');
-         font-weight: 400;
-         font-display: swap;
-         font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Cera Round Pro Regular';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Cera Round Pro Regular'), url('../../public/fonts/CeraRoundProRegular.woff') format('woff');
-    }
-
-    @font-face {
-        font-family: 'Cera Round Pro Bold';
-        font-style: normal;
-        font-weight: normal;
-        src: local('Cera Round Pro Bold'), url('../../public/fonts/CeraRoundProBold.woff') format('woff');
-        } */
-
-
 @font-face {
-    font-family: 'necoblack';
-    src: url('../../public/fonts/neco-black-webfont.woff2') format('woff2'),
-         url('../../public/fonts/neco-black-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'necobold';
-    src: url('../../public/fonts/neco-bold-webfont.woff2') format('woff2'),
-         url('../../public/fonts/neco-bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'necomedium';
-    src: url('../../public/fonts/neco-medium-webfont.woff2') format('woff2'),
-         url('../../public/fonts/neco-medium-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
-}
-
-
-
-
-@font-face {
-    font-family: 'necoregular';
-    src: url('../../public/fonts/neco-regular-webfont.woff2') format('woff2'),
-         url('../../public/fonts/neco-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "necoblack";
+  src: url("../../public/fonts/neco-black-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'soralight';
-    src: url('../../public/fonts/sora-light-webfont.woff2') format('woff2'),
-         url('../../public/fonts/sora-light-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-
+  font-family: "necobold";
+  src: url("../../public/fonts/neco-bold-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
-
-
+@font-face {
+  font-family: "necomedium";
+  src: url("../../public/fonts/neco-medium-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 @font-face {
-    font-family: 'soraregular';
-    src: url('../../public/fonts/sora-regular-webfont.woff2') format('woff2'),
-         url('../../public/fonts/sora-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: "necoregular";
+  src: url("../../public/fonts/neco-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
+@font-face {
+  font-family: "soralight";
+  src: url("../../public/fonts/sora-light-webfont.woff2") format("woff2"),
+    url("../../public/fonts/sora-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "soraregular";
+  src: url("../../public/fonts/sora-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/sora-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
