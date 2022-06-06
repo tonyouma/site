@@ -1,59 +1,59 @@
 import React from "react";
 import { FooterForm } from "src/components/form";
 import { Hero } from "src/components/hero";
-import Image from "next/image";
-
 
 const products = () => {
-  // const title =
-  //   "Meaningful. Affordable. Easy. Our solutions are of today's Africa";
-  // const description =
-  //   "We genuinely believe we are creating payment solutions that positively affect the lives of millions of Africans. Sometimes we like to talk about what we do more openly. Sometimes, others do for us.";
+  const title =
+    "Meaningful. Affordable. Easy. Our solutions are of today's Africa";
+  const description =
+    "We genuinely believe we are creating payment solutions that positively affect the lives of millions of Africans. Sometimes we like to talk about what we do more openly. Sometimes, others do for us.";
   return (
     <div>
-      <div className="container ">
-        <div className="grid md:grid-cols-2">
-          <div className="">
-            <div className="h-full">
-              {" "}
-              <h4>
-                Meaningful. Affordable. Easy. Our solutions are for today’s
-                Africa.
-              </h4>
-              <p>
-                We genuinely believe we are creating payment solutions that
-                positively affect the lives of millions of Africans. Sometimes
-                we like to talk about what we do more openly. Sometimes, others
-                do for us.
+
+      <div className="container">
+        <Hero title={title} description={description} />
+      </div>
+
+      <div className="bg-primary">
+        <div className="container ">
+          <div className="grid grid-cols-1 gap-8 py-5 md:grid-cols-2">
+            <div className="py-6">
+              <h4 className="p-2">Mobitill Epesi Booking Portal</h4>
+              <p className="p-2">
+                MobiTill Epesi is a smart public transport solution developed by
+                Data Integrated to address daily operational challenges. Our
+                fully customizable solution helps reduce your transport business
+                operational costs and improve your services.
               </p>
-              {/* <Hero title={title} description={description} /> */}
-              <button className="w-40 h-5 mt-10 text-center bg-slate-400 rounded-xl">
-                <span className="pt-5"> contact sales </span>
-              </button>
+              <h5 className="pr-5">Product Features</h5>
+              <div className="grid grid-cols-1 md:grid-cols-2">
+                <div className="">
+                  <ol className="pl-5 list-disc md:pl-5">
+                    <li className="">
+                      <p>Payment Acceptance</p>
+                    </li>
+                    <li className="">
+                      <p>Receipting</p>
+                    </li>
+                  </ol>
+                </div>
+                <div className="pl-5 md:pr-5">
+                  <ol className="list-disc">
+                    <li className="">
+                      <p>Reporting</p>
+                    </li>
+                    <li className="">
+                      <p>Remote Transaction Monitoring</p>
+                    </li>
+                  </ol>
+                </div>
+              </div>
+              <a href="#" className="p-2 text-blue-700">
+                Learn more about Mobitill Epesi Booking portal{" "}
+                <span className="focus-visible:">.......</span>
+              </a>
             </div>
-          </div>
-          <div className="grid gap-10 p-5 md:grid-rows-3">
-            <div className="items-start mr-5">
-              <Image
-                src="/assets/products/mobitil_logo.png"
-                alt=""
-                width={334}
-                height={76}
-                layout="responsive"
-              />
-            </div>
-
-            <div className="pl-10 ml-10 justify-items-end">
-              <img
-                src="/assets/products/mobitil_logo.png"
-                alt=""
-                className=""
-                width="150"
-                height="20"
-              />
-            </div>
-
-            <div className="mr-5 justify-items-start">
+            <div className="my-10">
               <img
                 src="/assets/products/mobitil_logo.png"
                 alt=""
@@ -61,55 +61,6 @@ const products = () => {
                 height="20"
               />
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="bg-primary">
-        <div className="container grid grid-cols-1 gap-8 py-5 md:grid-cols-2">
-          <div className="py-16">
-            <h4 className="font-bold">Mobitill Epesi Booking Portal</h4>
-            <p className="py-3">
-              MobiTill Epesi is a smart public transport solution developed by
-              Data Integrated to address daily operational challenges. Our
-              fully customizable solution helps reduce your transport business
-              operational costs and improve your services.
-            </p>
-            <h5 className="">Product Features</h5>
-            <div className="grid grid-cols-1 my-5 md:grid-cols-2">
-              <div className="">
-                <ol className="">
-                  <li className="">
-                    <p>Payment Acceptance</p>
-                  </li>
-                  <li className="">
-                    <p>Receipting</p>
-                  </li>
-                </ol>
-              </div>
-              <div className="pl-5 md:pr-5">
-                <ol className="">
-                  <li className="">
-                    <p>Reporting</p>
-                  </li>
-                  <li className="">
-                    <p>Remote Transaction Monitoring</p>
-                  </li>
-                </ol>
-              </div>
-            </div>
-            <a href="#" className="text-blue-700">
-              Learn more about Mobitill Epesi Booking portal{" "}
-            </a>
-          </div>
-          <div className="my-auto">
-            <Image
-              src="/assets/products/mobitil_logo.png"
-              alt=""
-              width="373"
-              height="85"
-              layout="responsive"
-            />
           </div>
         </div>
       </div>
@@ -169,6 +120,18 @@ const products = () => {
                 Learn more about Mapato Payroll ....
               </a>
             </div>
+            <a href="#" className="text-blue-700">
+              Learn more about Mobitill Epesi Booking portal{" "}
+            </a>
+          </div>
+          <div className="my-auto">
+            <Image
+              src="/assets/products/mobitil_logo.png"
+              alt=""
+              width="373"
+              height="85"
+              layout="responsive"
+            />
           </div>
         </div>
       </div>
