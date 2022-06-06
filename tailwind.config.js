@@ -13,7 +13,7 @@ module.exports = {
     container: {
       center: true,
     },
-    screens:{
+    screens: {
       sm: '480px',
       // md: '768px',
       md: '900px',
@@ -21,19 +21,19 @@ module.exports = {
       xl: '1080px'
       // xl: '1440px'
     },
-    fontFamily:{
+    fontFamily: {
       CeraRoundProNormal: ["Cera Round Pro Regular", "sans"],
       CeraRoundProBold: ["Cera Round Pro Bold"],
       SatoshiBold: ['Satoshi-Bold'],
       SatoshiBlack: ['Satoshi-Black'],
       SatoshiNormal: ['Satoshi-Medium'],
-      sans:['Satoshi-Regular','Satoshi-Bold','Satoshi-Black','Satoshi-Medium','Cera Round Pro Regular','Cera Round Pro Bold'],
+      sans: ['Satoshi-Regular', 'Satoshi-Bold', 'Satoshi-Black', 'Satoshi-Medium', 'Cera Round Pro Regular', 'Cera Round Pro Bold'],
     },
     extend: {
       colors: {
 
-        primary: '#F2F2F2', 
-        secondary: '#EE3F4F',
+        primary: '#F2F2F2',
+        secondary: '#EE3D4E',
         defaultWhite: "#FFFFFF",
         white: "#FFFFFF",
         grey: "#CEDADD",

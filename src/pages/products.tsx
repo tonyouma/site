@@ -1,6 +1,6 @@
 import React from "react";
-import { FooterForm } from "src/components/form";
 import { Hero } from "src/components/hero";
+import Image from "next/image";
 
 const products = () => {
   const title =
@@ -9,7 +9,7 @@ const products = () => {
     "We genuinely believe we are creating payment solutions that positively affect the lives of millions of Africans. Sometimes we like to talk about what we do more openly. Sometimes, others do for us.";
   return (
     <div>
-    
+
       <div className="container">
         <Hero title={title} description={description} />
       </div>
@@ -120,6 +120,18 @@ const products = () => {
                 Learn more about Mapato Payroll ....
               </a>
             </div>
+            <a href="#" className="text-blue-700">
+              Learn more about Mobitill Epesi Booking portal{" "}
+            </a>
+          </div>
+          <div className="my-auto">
+            <Image
+              src="/assets/products/mobitil_logo.png"
+              alt=""
+              width="373"
+              height="85"
+              layout="responsive"
+            />
           </div>
         </div>
       </div>

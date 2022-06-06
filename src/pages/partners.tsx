@@ -23,13 +23,13 @@ const Partners: NextPage = () => {
   return (
     <>
       <div className='flex flex-col p-5 md:p-0'>
-        <div className="container">
-          <Hero title={intro} description={description} />
+        <div className='max-w-3xl mx-auto'>
+          <h1 className='mb-4 text-center'>A growing list of people who believe in us.</h1>
+          <p className='max-w-2xl py-8 mx-auto text-center'>
+            From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
         </div>
 
-        <h3 className='text-center'>Solution Partners</h3>
-
-        <div className='py-5 my-5 bg-primary'>
+        <div className='py-5 my-5 '>
           <div className="container flex flex-wrap justify-center">
             {partners.map((partner, i) => {
               return (
@@ -45,7 +45,7 @@ const Partners: NextPage = () => {
           <h3 className='text-center'>Client Partners</h3>
           <div className="flex flex-col justify-between py-3 mx-20 my-3 md:mx-0 md:flex-row">
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2'>Saccos:</h4>
+              <h4 className='pb-2 text-secondary'>SACCOs:</h4>
               <ul>
                 <li className='p-1'>City Shuttle Sacco</li>
                 <li className='p-1'>Obamana Sacco</li>
@@ -55,7 +55,7 @@ const Partners: NextPage = () => {
               </ul>
             </div>
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2'>Government Agencies:</h4>
+              <h4 className='pb-2 text-secondary'>GOVERNMENTS</h4>
               <ul>
                 <li className='p-1'>Kenya Revenue Authority</li>
                 <li className='p-1'>Rwanda Revenue Authority</li>
@@ -63,7 +63,7 @@ const Partners: NextPage = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2'>Banks:</h4>
+              <h4 className='pb-2 text-secondary'>BANKS:</h4>
               <ul>
                 <li className='p-1'>Equity Bank</li>
                 <li className='p-1'>Ecobank</li>
