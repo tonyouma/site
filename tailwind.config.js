@@ -22,12 +22,13 @@ module.exports = {
       // xl: '1440px'
     },
     fontFamily: {
-      CeraRoundProNormal: ["Cera Round Pro Regular", "sans"],
-      CeraRoundProBold: ["Cera Round Pro Bold"],
-      SatoshiBold: ['Satoshi-Bold'],
-      SatoshiBlack: ['Satoshi-Black'],
-      SatoshiNormal: ['Satoshi-Medium'],
-      sans: ['Satoshi-Regular', 'Satoshi-Bold', 'Satoshi-Black', 'Satoshi-Medium', 'Cera Round Pro Regular', 'Cera Round Pro Bold'],
+      necoblack: ["necoblack", "sans"],
+      necobold: ["necobold", "sans"],
+      necomedium: ["necomedium", "sans"],
+      soralight: ["soralight", "sans"],
+      soraregular: ["soraregular", "sans"],
+      necoregular: ["necoregular", "sans"],
+      sans: ['necoblack', 'necobold', 'necomedium', 'necomedium', 'soraregular'],
     },
     extend: {
       colors: {

@@ -1,8 +1,7 @@
-import React from 'react'
 import type { NextPage } from 'next'
 import { investors, partners } from 'src/constants/partners'
 import { FooterForm } from 'src/components/form';
-import { Hero } from 'src/components/hero';
+// import { Hero } from 'src/components/hero';
 
 
 const Partners: NextPage = () => {
@@ -17,8 +16,8 @@ const Partners: NextPage = () => {
     }
   }
 
-  const intro = "Making headlines is good when you’re truly doing good."
-  const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
+  // const intro = "Making headlines is good when you’re truly doing good."
+  // const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
 
   return (
     <>
