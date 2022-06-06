@@ -8,18 +8,17 @@ import { Hero } from "src/components/hero";
 import Image from "next/image";
 
 const News: NextPage = () => {
-  
-  return (  
+
+  return (
     <>
       <div className="container flex flex-col p-5 md:p-0">
-        <div className="flex flex-col gap-10 content-center mb-8"> 
-          <h2 className="mx-auto w-1/2 px-3 font-medium">
-            Making headlines is good when you’re truly doing good.
-          </h2>
-
-          <h3 className="mx-auto w-1/2 py-4">We genuinely believe we are creating payment solutions that
-positively affect the lives of millions of Africans. Sometimes we like
-to talk about what we do more openly. Sometimes, others do for us.</h3>
+        <div className='mx-auto md:max-w-2xl md:pt-16'>
+          <h1 className='mb-4 text-center'>Making headlines is good when you’re truly doing good.</h1>
+          <p className='max-w-2xl py-8 mx-auto text-center'>
+            We genuinely believe we are creating payment solutions that
+            positively affect the lives of millions of Africans. Sometimes we like
+            to talk about what we do more openly. Sometimes, others do for us.
+          </p>
         </div>
 
         <h3 className="py-2 md:pb-3 md:pt-12">Other news in DIL</h3>
@@ -30,7 +29,7 @@ to talk about what we do more openly. Sometimes, others do for us.</h3>
               <Link href="/news[id]" as={`/news/id`} passHref>
                 <img
                   src={`${news.image}`}
-                  className="cursor-pointer rounded-t-xl"
+                  className="cursor-pointer"
                   width="auto"
                   height="190"
                   alt=""
@@ -60,7 +59,7 @@ to talk about what we do more openly. Sometimes, others do for us.</h3>
           </div>
           {news2.map((news, index) => (
             <div
-              className="px-5 py-6 rounded-lg shadow-md md:py-12 md:h-64 bg-primary"
+              className="px-5 py-6 shadow-md md:py-12 md:h-64 bg-primary"
               key={index}
             >
               <Image
@@ -75,16 +74,17 @@ to talk about what we do more openly. Sometimes, others do for us.</h3>
             </div>
           ))}
         </div>
-    
-      <h2 className="text-red-500">Featured on</h2>
-      <div className="grid  md: grid-cols-3 gap-6 py-7">
-        <div className="border-2 border-red-500 h-32  "></div>
-        <div className="border-2 border-red-500 h-32  "></div>
-        <div className="border-2 border-red-500 h-32  "></div>
+
+        <h2 className="text-red-500">Featured on</h2>
+        <div className="grid grid-cols-3 gap-6 md: py-7">
+          <div className="h-32 border-2 border-red-500 "></div>
+          <div className="h-32 border-2 border-red-500 "></div>
+          <div className="h-32 border-2 border-red-500 "></div>
+        </div>
+
       </div>
- 
       <FooterForm />
-      </div>
+
     </>
   );
 };

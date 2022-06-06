@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-  @apply font-necoregular text-secondary;
+  @apply text-[40px] leading-[120%] font-necoregular text-secondary;
 }
 
 h3 {
