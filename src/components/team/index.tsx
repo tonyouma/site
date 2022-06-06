@@ -11,6 +11,8 @@ const Team = () => {
                     We started with a conviction that every single one in Africa should have access to great and easy payment solutions.From the mama selling fruits on the street to the finance manager working on the payroll.Say hello to a team that works hard on this goal every single day.</p>
             </div>
 
+
+
             <div className="container grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="cursor-pointer grayscale hover:grayscale-0">
                     <Image src="/assets/mary_ceo.png" alt="" width="100%" height="100%" layout="responsive" objectFit="contain" />
@@ -65,6 +67,8 @@ const Team = () => {
                 </div> */}
 
             </div>
+
+
         </div>
     )
 }

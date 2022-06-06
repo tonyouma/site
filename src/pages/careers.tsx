@@ -24,14 +24,6 @@ const careers = ({ careers }: Props) => {
       <p className='max-w-2xl py-8 mx-auto text-center'>
         “I never lose. I either win or learn”, says an African proverb. We go all-in when we try to come up with products that make a common man’s life easy. And we do that by standing for and supporting each other.</p>
 
-      {/* <div className='container px-5 md:px-40 pt-11'>
-        <h3 className='pb-6'>About Data Integrated Limited (DIL)</h3>
-        <p>Data Integrated Limited (DIL) is a Kenyan ICT company that offers financial solutions to small and medium scale enterprises (SME’s) in Africa. The company humble beginnings dates back to 2012, armed with a big dream of addressing automation challenges faced by small and medium scale businesses (SME’s) in Africa.
-          We believe that SME’s would realize their financial goals sooner by deploying modern technology. The efficiency thus gained would translate to growth and longevity of the businesses.</p>
-        <p><span className='my-4 font-bold'>Our motto</span>  says a lot on what we believe in, which is connecting “the street” to “high finance”. </p>
-        <p>Over the years, DIL has mastered the African market and offers niche solutions that are customized to the unique African experience. We are committed to giving efficient services, seamless customers experience and user friendly person-to-person payments.<br />
-          Our solutions are developed to be compatible with most payments solutions and platforms. DIL strives to have financial inclusion for all, by increasing payment efficiency through liable, secure, fast and easy to use devices at an affordable price.</p>
-      </div> */}
 
       <div className='py-12 my-6'>
         <div className="container px-5 md:px-40">

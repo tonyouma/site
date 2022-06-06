@@ -46,7 +46,6 @@ function Footer() {
 
                     <div className="flex md:items-end">
                         <Link name="Logo" url={"/"} image={"/assets/logo.svg"} />
-
                     </div>
                 </footer>
 
