@@ -3,15 +3,12 @@ import Image from 'next/image'
 
 const Team = () => {
     return (
-        <div className='p-5 md:pb-16'>
-            <div className="mx-auto md:max-w-2xl md:pb-12">
+        <div className='p-5 md:py-16'>
+            <div className="mx-auto md:text-center md:max-w-2xl md:pb-12">
                 <h1 className='mb-4'>A team with conviction.</h1>
                 <p>
                     We started with a conviction that every single one in Africa should have access to great and easy payment solutions.From the mama selling fruits on the street to the finance manager working on the payroll.Say hello to a team that works hard on this goal every single day.</p>
             </div>
-
-
-
             <div className="container grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="cursor-pointer grayscale hover:grayscale-0">
                     <Image src="/assets/mary_ceo.png" alt="" width="100%" height="100%" layout="responsive" objectFit="contain" />

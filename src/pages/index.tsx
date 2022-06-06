@@ -28,7 +28,7 @@ const Home: NextPage = () => {
                 <div className="grid md:grid-cols-2">
                     <div className="">
                         <div className="bg-[#0D3648]">
-                            <h1 className='text-right md:pl-12 py-8 p-5 md:p-0 md:w-[80%] md:ml-auto md:pr-10 text-secondary'> Soulful Solutions
+                            <h1 className='text-right md:pl-12 py-8 p-5 md:py-8 md:w-[80%] md:ml-auto md:pr-10 text-secondary'> Soulful Solutions
                                 that connect
                                 African streets
                                 to high finance.
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
                     </div>
 
                 </div>
-                <div className='p-5 py-16 mx-auto md:p-0 md:text-center md:max-w-2xl'>
+                <div className='p-5 py-16 mx-auto md:py-16 md:text-center md:max-w-2xl'>
                     <h1>Products and Solutions</h1>
                     <p className='text-[20px] pt-4'>From smart public transport solutions to retail payments to payroll management, our products cater to the growing everyday financial needs of African population.</p>
                 </div>

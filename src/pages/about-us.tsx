@@ -2,6 +2,7 @@
 import type { NextPage } from 'next'
 import FooterForm from 'src/components/form/FooterForm'
 import Team from 'src/components/team'
+// import { motion } from 'framer-motion'
 
 
 const About: NextPage = () => {
