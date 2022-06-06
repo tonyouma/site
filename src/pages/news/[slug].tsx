@@ -24,14 +24,14 @@ export default News
 
 
 
-export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
-  const pageSlug = pageContext.query.slug;
-  const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
-  return {
-    props: {
+// export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
+//   const pageSlug = pageContext.query.slug;
+//   const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
+//   return {
+//     props: {
 
-    }
-  }
-};
+//     }
+//   }
+// };
 
 

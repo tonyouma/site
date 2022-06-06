@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Contactform = () => {
@@ -83,7 +84,7 @@ const Contactform = () => {
           <div className="flex flex-wrap justify-center px-3 mb-4 -mx-3 ">
             <div className="w-full mb-2">
               <p className="text-xs">
-                By proceeding, I agree to DIL&apos;s <a href="/terms" className="underline cursor-pointer "> Terms of Use</a> and acknowledge
+                By proceeding, I agree to DIL&apos;s <Link href="/terms" > Terms of Use</Link> and acknowledge
                 that I have read the <span className="underline cursor-pointer">Privacy Policy</span> .
               </p>
             </div>

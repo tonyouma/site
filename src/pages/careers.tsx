@@ -1,20 +1,18 @@
-import type { NextPage } from 'next'
-import Image from 'next/image'
-import Link from 'next/link'
+
 
 // import CareersCard from 'src/components/careersCard'
-import { ICareer } from 'src/models/careers'
+// import { ICareer } from 'src/models/careers'
 
-interface Props {
-  careers: [ICareer]
-}
+// interface Props {
+//   careers: [ICareer]
+// }
 
 // const TitleItem = (title: string) => {
 //   return (
 //     <h3 className='py-4 text-center'>{title}</h3>
 //   )
 // }
-const careers = ({ careers }: Props) => {
+const careers = () => {
 
   return (
     <div className='container'>

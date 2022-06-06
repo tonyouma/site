@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import React from 'react'
 // import { Socials } from '../socials';
 import { Link } from './../link';
