@@ -1,6 +1,5 @@
-import { ICareer } from "src/models/careers";
 
-const Career = ({ title, location, publishedAt, employmentType }: ICareer) => {
+const Career = () => {
     return (
         <div className="">
 

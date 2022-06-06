@@ -15,6 +15,21 @@ const About: NextPage = () => {
         </p>
       </div>
 
+      <div className="container grid grid-cols-2">
+        <div className="bg-[#EE3D4E]">
+          <img src="/assets/placeholder.png" alt="" className="mr-5 w-[90%]" />
+        </div>
+        <div>
+          <div className="bg-[#0D3648] bottom-0">
+            <h2 className='pr-5 text-right py-14 md:ml-auto text-secondary'> Soulful Solutions
+              that connect
+              African streets
+              to high finance.
+            </h2>
+          </div>
+        </div>
+      </div>
+
       <Team />
       <div className="container">
         <h1 className='mb-4 text-center'>From Africa to the world.</h1>

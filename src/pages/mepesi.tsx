@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable @next/next/no-img-element */
+// import React from "react";
 import type { NextPage } from "next";
 import { Link } from "../components/link";
 import { EpesiFeatures, Features, Review } from "../components/products";
@@ -17,11 +18,11 @@ const products: NextPage = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="mt-5 md:mt-24 ">
-            <h3 className="text-xs font-medium text-slate-500 m-4">
+            <h3 className="m-4 text-xs font-medium text-slate-500">
               YOUR ULTIMATE PASSENGER APP
             </h3>
-            <h2 className="text-lg font-black m-4">M-EPESI APPLICATION</h2>
-            <p className="font-normal text-slate-400 m-4">
+            <h2 className="m-4 text-lg font-black">M-EPESI APPLICATION</h2>
+            <p className="m-4 font-normal text-slate-400">
               A smartphone application that allows users to view and utilize
               real-time public transit. It simplifies transportation by allowing
               customers to know which vehicles are available for booking,
@@ -44,15 +45,15 @@ const products: NextPage = () => {
             </div>
           </div>
           <div className="justify-center hidden md:flex">
-            <img src="/assets/products/grouped.svg" className="absolute w-96" />
+            <img src="/assets/products/grouped.svg" className="absolute w-96" alt=""/>
           </div>
         </div>
       </div>
-      <div className="h-full bg-gradient-to-r from-transparent via-primary mt-6 md:mt-24">
-        <div className="container mx-auto p-5 md:p-20">
+      <div className="h-full mt-6 bg-gradient-to-r from-transparent via-primary md:mt-24">
+        <div className="container p-5 mx-auto md:p-20">
           <div className="">
             <h3 className="text-lg font-bold">Why choose M-Epesi?</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 m-4">
+            <div className="grid grid-cols-1 m-4 sm:grid-cols-2 md:grid-cols-3">
               {featureContent.map((feature: Feature, index: number) => {
                 return (
                   <EpesiFeatures
@@ -68,16 +69,17 @@ const products: NextPage = () => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto mt-4 grid grid-cols-1 md:grid-cols-2 ">
+      <div className="container grid grid-cols-1 mx-auto mt-4 md:grid-cols-2 ">
         <div className="justify-center hidden md:flex">
           <img
             src="/assets/products/phonemockup.svg"
-            className="absolute mt-4 w-72 -z-10  "
+            className="absolute mt-4 w-72 -z-10 "
+            alt=""
           />
         </div>
-        <div className=" md:mt-8 p-5 md:p-0">
-          <h3 className="text-lg font-black m-4">Download M-Epesi</h3>
-          <p className="font-normal text-slate-600 m-4 max-w-md">
+        <div className="p-5 md:mt-8 md:p-0">
+          <h3 className="m-4 text-lg font-black">Download M-Epesi</h3>
+          <p className="max-w-md m-4 font-normal text-slate-600">
             Join over a thousand users currently using M-Epesi to book their
             rides and also get customised traffic updates to effeciently commute
             in Nairobi

@@ -1,25 +1,29 @@
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import FooterForm from 'src/components/form/FooterForm'
-import Team from 'src/components/team'
-import { partnersInfo } from 'src/constants/partners'
-import { stats } from 'src/constants/stats'
-import { formatCount } from 'src/utils/formatCount'
+// import Team from 'src/components/team'
+// import { partnersInfo } from 'src/constants/partners'
+// import { stats } from 'src/constants/stats'
+// import { formatCount } from 'src/utils/formatCount'
 
 
 const Home: NextPage = () => {
     return (
         <>
-            <div className='container p-5'>
-                <div className="grid grid-cols-2"><div className="bg-[#0D3648]">
-                    <h2 className='pr-5 text-right py-14 md:ml-auto text-secondary'> Soulful Solutions
-                        that connect
-                        African streets
-                        to high finance. </h2>
-                </div>
+            <div className='container'>
+                <div className="grid grid-cols-2">
+
+                    <div className="bg-[#0D3648]">
+                        <h2 className='pr-5 text-right py-14 md:ml-auto text-secondary'> Soulful Solutions
+                            that connect
+                            African streets
+                            to high finance.
+                        </h2>
+
+                    </div>
 
                     <div className="bg-[#EE3D4E]">
-                        <img src="/assets/placeholder.png" alt="" className="mr-5" />
+                        <img src="/assets/placeholder.png" alt="" className="mr-5 w-[90%]" />
 
                     </div>
 
@@ -71,6 +75,7 @@ const Home: NextPage = () => {
 
                 <p className='max-w-2xl py-8 mx-auto text-center'>
                     Our homebase is in Kenya. Our immediate focus is Africa. At the same time, our solutions are relevant and modifiable to every growth market in the world. And that’s where we are headed too.</p>
+                <img src="/assets/placeholder.png" alt="" className="w-full h-96" />
                 <div className="bg-[#EE3D4E]">
                     <h1 className='text-center text-white md:pt-14'>We work with you</h1>
 

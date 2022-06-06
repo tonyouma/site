@@ -15,7 +15,7 @@ h1 {
 }
 
 h2 {
-  @apply text-3xl font-SatoshiBlack;
+  @apply text-4xl font-SatoshiBold text-secondary;
 }
 
 h3 {
@@ -26,7 +26,7 @@ h4 {
 }
 
 p {
-  @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary opacity-90;
+  @apply text-base;
 }
 
 .hero-bg {
