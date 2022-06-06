@@ -1,6 +1,6 @@
 import React from "react";
-import { FooterForm } from "src/components/form";
 import { Hero } from "src/components/hero";
+import Image from "next/image";
 
 const products = () => {
   const title =
