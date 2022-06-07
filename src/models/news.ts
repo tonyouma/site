@@ -1,4 +1,4 @@
-export interface ICareer {
+export interface INews {
     _id: string;
     title: string;
     // description: string;
@@ -14,10 +14,11 @@ export interface ICareer {
     //     name: string,
     //     image: string
     // }
-    // body: [object],
-    // mainImage: {
-    //     asset: {
-    //         url: string;
-    //     }
-    // }
+    body: [object],
+    mainImage: {
+        asset: {
+            url: string;
+        }
+    },
+    headline: string,
 }

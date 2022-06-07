@@ -1,11 +1,19 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
+/* eslint-disable @next/next/no-img-element */
 import type { NextPage } from "next";
 import { news } from "src/constants/news";
 import { news2 } from "src/constants/news2";
 import Link from "next/link";
 import { FooterForm } from "src/components/form";
 import Image from "next/image";
+import { INews } from "src/models/news";
+import { sanityClient, urlFor } from "../../sanity";
 
-const News: NextPage = () => {
+interface Props {
+  news: [INews]
+}
+
+const News = ({ news }: Props) => {
 
   return (
     <>
@@ -19,30 +27,20 @@ const News: NextPage = () => {
           </p>
         </div>
 
-        <h3 className="py-2 md:pb-3 md:pt-12">Other news in DIL</h3>
-
-        <div className="grid items-baseline grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
-          {news.map((news, index) => (
-            <div className="" key={index}>
-              <Link href="/news[id]" as={`/news/id`} passHref>
+        <div className="grid items-baseline grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {news.map((item) => (
+            <Link key={item._id} href={`/news/${item.slug.current}`} passHref>
+              <div className="overflow-hidden cursor-pointer group">
                 <img
-                  src={`${news.image}`}
-                  className="cursor-pointer"
-                  width="auto"
-                  height="190"
-                  alt=""
+                  src={urlFor(item.mainImage).url()!}
+                  className="object-cover w-full h-48 transition-transform duration-200 ease-in-out group-hover:scale-105"
+                  alt={item.title}
                 />
-              </Link>
-
-              <div className="p-5">
-                <h4>{news.title}</h4>
-                <p className="py-3">{news.body}</p>
-                <h5>
-                  <span className="">By</span>
-                  {news.author}
-                </h5>
+                <div className="p-5 bg-white">
+                  <p>{item.headline}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -88,3 +86,24 @@ const News: NextPage = () => {
 };
 
 export default News;
+
+
+export const getServerSideProps = async () => {
+  const query = `*[_type == "news"]{
+    _id,
+  _createdAt,
+  title,
+  slug,
+  mainImage,
+  publishedAt,
+  body,
+  headline
+}`;
+
+  const news = await sanityClient.fetch(query)
+  return {
+    props: {
+      news
+    }
+  }
+}

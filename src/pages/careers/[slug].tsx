@@ -1,6 +1,7 @@
 import { useState } from "react"
+import { ICareer } from "src/models/careers"
 
-const Career = () => {
+const Career = ({ title, division }: ICareer) => {
 
     const [open, setOpen] = useState(false)
     const openClick = () => {
@@ -10,8 +11,8 @@ const Career = () => {
         <div className="">
             <div className="container flex flex-wrap p-5 pt-12 md:p-0 md:pt-24">
                 <div className="pb-5 md:pb-10">
-                    <h1 className="pb-5 md:pb-10">Customer Success Manager</h1>
-                    <p>Division: Sales & Marketing</p>
+                    <h1 className="pb-5 md:pb-10">{title}</h1>
+                    <p>Division: </p>
                     <p>Experience: 4-7 Years </p>
                     <p>Location: Nairobi, Kenya or Remote</p>
                 </div>
@@ -24,7 +25,7 @@ const Career = () => {
                     <h3 className="my-6">What you need to have:</h3>
                     <p>Euis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea com- modo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui</p>
                     <h3 className="my-6">What we offer</h3>
-                    <p>Euis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea com- modo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui</p>
+                    <p>In addition to contributing to the great cause of easing the lives of millions of Afri- cans with world-class financial products, you also get competitive base salaries, social and statuatory benefits, generous holidays, commissions / bonus / profit sharing schemes based on responsibilities and results of different positions.</p>
                 </div>
 
             </div>
@@ -85,23 +86,27 @@ const Career = () => {
 
 export default Career
 
+// export const getStaticPaths = async () => {
+    
+// }
 
+export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
+    const pageSlug = pageContext.query.slug;
+    const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
+    const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+    const result = await fetch(url).then(res => res.json());
+    const career = result.result[0];
+    console.log(career)
 
-// export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
-//     const pageSlug = pageContext.query.slug;
-//     const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
-//     const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-//     const result = await fetch(url).then(res => res.json());
-//     const career = result.result[0];
-//     return {
-//         props: {
-//             title: career?.title,
-//             location: career?.location,
-//             publishedAt: new Date(career?.publishedAt).toLocaleDateString(),
-//             employmentType: career?.employmentType,
-//             category: career?.categories,
-//         }
-//     }
-// };
+    return {
+        props: {
+            title: career?.title,
+            location: career?.location,
+            publishedAt: new Date(career?.publishedAt).toLocaleDateString(),
+            // yearsofexperience: career?.yearsofexperience,÷
+            division: career?.division,
+        }
+    }
+};
 
 

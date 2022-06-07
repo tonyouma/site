@@ -1,18 +1,19 @@
 
 
 // import CareersCard from 'src/components/careersCard'
-// import { ICareer } from 'src/models/careers'
-
-// interface Props {
-//   careers: [ICareer]
-// }
+import Link from 'next/link'
+import { ICareer } from 'src/models/careers'
+import { sanityClient } from '../../sanity'
+interface Props {
+  careers: [ICareer]
+}
 
 // const TitleItem = (title: string) => {
 //   return (
 //     <h3 className='py-4 text-center'>{title}</h3>
 //   )
 // }
-const careers = () => {
+const Careers = ({ careers }: Props) => {
 
   return (
     <div className='container'>
@@ -27,26 +28,18 @@ const careers = () => {
       <div className='py-12 my-6'>
         <div className="container px-5 md:px-40">
           <h1 className='text-center'>Available Positions</h1>
-          <div className='flex flex-col py-5 gap-y-5'>
-            {/* {
+          <div className=''>
+            {
               careers.map(career => (
-                <div className='p-5 rounded-lg bg-defaultWhite' key={career._id}>
-                  {career.categories && (
-                    <ul>
-                      {career.categories.map(category => <p className='mb-2 font-extrabold uppercase' key={category}>{category}</p>)}
-                    </ul>
-                  )}
-
-                  <div className="flex items-center justify-between">
-                    <p>{career.title}</p>
-                    <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></Link>
-                  </div>
+                <div className='p-5 text-center' key={career._id}>
+                  <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><p className='cursor-pointer text-secondary'>{career.title}</p></Link>
                   <div className="flex">
+                    {career.division.map((division, index) => <p className='' key={index}>{division}</p>)}
                     <p>{career?.location}</p>
-                    <p>{career?.employmentType}</p>
                   </div>
+
                 </div>
-              ))} */}
+              ))}
           </div>
           <div className='text-center'>
             <h1 className='pb-3'>Open Application</h1>
@@ -65,34 +58,52 @@ const careers = () => {
   )
 }
 
-export default careers
+export default Careers
 
 export const getServerSideProps = async () => {
-  const query = encodeURIComponent(`*[_type == "career"]{
+  const query = `*[_type == "career"]{
   _id,
   _createdAt,
   title,
   slug,
   location,
-  "categories": categories[]->title,
-}`);
+  "division": division[]->title,
+}`;
 
-
-  const url = `process.env.NEXT_PUBLIC_SANITY_URL?query=${query}`;
-  try {
-    const data = await fetch(url).then((res) => res.json());
-    const careers = data.result
-
-    return {
-      props: {
-        careers
-      }
-    }
-  } catch (error) {
-    return {
-      props: {}
+  const careers = await sanityClient.fetch(query)
+  return {
+    props: {
+      careers
     }
   }
-
 }
+
+// export const getServerSideProps = async () => {
+//   const query = encodeURIComponent(`*[_type == "career"]{
+//   _id,
+//   _createdAt,
+//   title,
+//   slug,
+//   location,
+//   "division": division[]->title,
+// }`);
+
+
+//   const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
+//   try {
+//     const data = await fetch(url).then((res) => res.json());
+//     const careers = data.result
+
+//     return {
+//       props: {
+//         careers
+//       }
+//     }
+//   } catch (error) {
+//     return {
+//       props: {}
+//     }
+//   }
+
+// }
 
