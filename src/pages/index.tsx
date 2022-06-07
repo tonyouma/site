@@ -11,8 +11,8 @@ interface IProps {
 const Product = (props: IProps) => {
     const { image, title, description } = props.product
     return (
-        <div className="flex flex-col gap-3 p-5 py-4 md:p-0">
-            <img src={image} alt="" className="md:w-1/2" />
+        <div className="grid grid-cols-1 gap-3 p-5 py-4 md:grid-cols-2 md:p-0">
+            <img src={image} alt={title} />
             <div>
                 <h4 className='py-3 text-secondary'>{title}</h4>
                 <p>{description}</p>
@@ -66,7 +66,7 @@ const Home: NextPage = () => {
                 <div className="bg-[#EE3D4E] p-5">
                     <h1 className='text-white md:text-center md:pt-14'>We work with you and for you</h1>
 
-                    <p className='pt-6 mx-auto md:text-center md:max-w-2xl md:pb-12'>
+                    <p className='pt-6 mx-auto text-xl md:text-center md:max-w-2xl md:pb-12'>
                         Our solutions are developed to be compatible with public, banking and regulatory platforms as well as people on the ground. We strive to have financial inclusion for all.
                     </p>
                 </div>
