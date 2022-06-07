@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Socials } from '../socials';
 import { Link } from './../link'
 
