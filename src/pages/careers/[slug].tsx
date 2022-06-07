@@ -1,15 +1,18 @@
+import { useState } from "react"
 
 const Career = () => {
+
+    const [open, setOpen] = useState(false)
+    const openClick = () => {
+        setOpen(!open)
+    }
     return (
         <div className="">
-
-
             <div className="">
-
                 <div className="pt-24">
                     <div className="container flex flex-wrap">
-                        <div className="">
-                            <h1>Customer Success Manager</h1>
+                        <div className="pb-5 md:pb-10">
+                            <h1 className="pb-5 md:pb-10">Customer Success Manager</h1>
                             <p>Division: Sales & Marketing</p>
                             <p>Experience: 4-7 Years </p>
                             <p>Location: Nairobi, Kenya or Remote</p>
@@ -28,56 +31,55 @@ const Career = () => {
 
                     </div>
                     <div className="container py-5">
-                        <button className="text-2xl text-secondary">Apply Now</button>
+                        <button className="text-2xl text-secondary" onClick={openClick}>Apply Now</button>
                     </div>
-                    <div className="bg-[#F9DADD]">
-                        <div className="container md:pt-10">
 
-                            <form
-                                onSubmit={(e) => e.preventDefault()}
-                                className="max-w-lg mt-3">
-                                <div>
-                                    <label htmlFor="name" className="block py-3 text-gray-500">
-                                        Your Name*
-                                    </label>
-                                    <input
-                                        type="text"
-                                        placeholder=""
-                                        id="name"
-                                        className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
-                                    />
-                                </div>
-                                <div>
-                                    <label htmlFor="email" className="block py-3 text-gray-500">
-                                        Your Email*
-                                    </label>
-                                    <input
-                                        type="email"
-                                        placeholder=""
-                                        id="email"
-                                        className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
-                                    />
-                                </div>
-                                <div className="">
-                                    <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                                    <textarea id="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
-                                </div>
+                    {open &&
+                        <div className="bg-[#F9DADD]">
+                            <div className="container py-5 mb-5 md:py-10">
 
-
-                                <p className="py-6 text-xs">By submitting this form, you agree that we may use the data you provide to contact you with information related to your submission.
-                                    <br />Your data will be used subject to DIL&apos;s Privacy Policy.</p>
-                                <div className="flex items-center justify-between pb-28">
-                                    <button
-                                        className="text-2xl py-2.5 font-SatoshiBold text-secondary"
-                                    >
-                                        Submit
-                                    </button>
-                                </div>
-
-                            </form>
+                                <form
+                                    onSubmit={(e) => e.preventDefault()}
+                                    className="max-w-lg mt-3">
+                                    <div>
+                                        <label htmlFor="name" className="block py-3 text-gray-500">
+                                            Your Name*
+                                        </label>
+                                        <input
+                                            type="text"
+                                            placeholder=""
+                                            id="name"
+                                            className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="email" className="block py-3 text-gray-500">
+                                            Your Email*
+                                        </label>
+                                        <input
+                                            type="email"
+                                            placeholder=""
+                                            id="email"
+                                            className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
+                                        />
+                                    </div>
+                                    <div className="">
+                                        <label htmlFor="message" className="block py-3 text-gray-500">Your cover letter</label>
+                                        <textarea id="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                                    </div>
+                                    <p className="py-6 text-xs">By submitting this form, you agree that we may use the data you provide to contact you with information related to your submission.
+                                        <br />Your data will be used subject to DIL&apos;s Privacy Policy.</p>
+                                    <div className="flex items-center justify-between pb-28">
+                                        <button
+                                            className="text-2xl py-2.5 font-SatoshiBold text-secondary"
+                                        >
+                                            Submit
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
-
-                    </div>
+                    }
 
                 </div>
             </div>

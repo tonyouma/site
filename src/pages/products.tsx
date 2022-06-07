@@ -30,7 +30,7 @@ const ProductItem = (props: IProps) => {
     </div>
   )
 }
-const products = () => {
+const Products = () => {
 
   return (
     <div className="container">
@@ -51,4 +51,4 @@ const products = () => {
   );
 };
 
-export default products;
+export default Products;

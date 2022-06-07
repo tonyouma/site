@@ -1,10 +1,8 @@
-import React from "react";
 import type { NextPage } from "next";
 import { news } from "src/constants/news";
 import { news2 } from "src/constants/news2";
 import Link from "next/link";
 import { FooterForm } from "src/components/form";
-import { Hero } from "src/components/hero";
 import Image from "next/image";
 
 const News: NextPage = () => {
