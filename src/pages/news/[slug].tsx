@@ -45,8 +45,6 @@ const News = ({ news }: Props) => {
           </div>
         </article>
       </div>
-
-
       <FooterForm />
     </div>
   )

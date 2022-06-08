@@ -1,7 +1,5 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @next/next/no-img-element */
-import type { NextPage } from "next";
-import { news } from "src/constants/news";
 import { news2 } from "src/constants/news2";
 import Link from "next/link";
 import { FooterForm } from "src/components/form";
@@ -27,7 +25,7 @@ const News = ({ news }: Props) => {
           </p>
         </div>
 
-        <div className="grid items-baseline grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-baseline grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
           {news.map((item) => (
             <Link key={item._id} href={`/news/${item.slug.current}`} passHref>
               <div className="overflow-hidden cursor-pointer group">
@@ -36,7 +34,7 @@ const News = ({ news }: Props) => {
                   className="object-cover w-full h-48 transition-transform duration-200 ease-in-out group-hover:scale-105"
                   alt={item.title}
                 />
-                <div className="p-5 bg-white">
+                <div className="pt-5 bg-white">
                   <p>{item.headline}</p>
                 </div>
               </div>
@@ -44,18 +42,12 @@ const News = ({ news }: Props) => {
           ))}
         </div>
 
+        <h2 className="text-center text-red-500 md:mt-12">Featured on</h2>
+
         <div className="grid items-baseline grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:pt-12">
-          <div className="md:px-5 md:py-12">
-            <h3 className="p-2">Featured On</h3>
-            <p className="p-2">
-              Autem aut laboriosam distinctio. Modi sunt blanditiis beatae
-              consectetur nesciunt alias. Ad distinctio ab quidem voluptas enim
-              illo. Quia consequatur voluptas veniam
-            </p>
-          </div>
           {news2.map((news, index) => (
             <div
-              className="px-5 py-6 shadow-md md:py-12 md:h-64 bg-primary"
+              className="px-5 py-6 shadow-md md:py-12 md:h-64 "
               key={index}
             >
               <Image
@@ -69,13 +61,6 @@ const News = ({ news }: Props) => {
               <p className="p-2">{news.body}</p>
             </div>
           ))}
-        </div>
-
-        <h2 className="text-red-500">Featured on</h2>
-        <div className="grid grid-cols-3 gap-6 md: py-7">
-          <div className="h-32 border-2 border-red-500 "></div>
-          <div className="h-32 border-2 border-red-500 "></div>
-          <div className="h-32 border-2 border-red-500 "></div>
         </div>
 
       </div>

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-sm font-soraregular;
+  @apply text-sm  font-necoregular;
 }
 
 a:hover {
@@ -11,22 +11,22 @@ a:hover {
 }
 
 h1 {
-  @apply text-[42px] leading-[120%] text-secondary font-necoregular;
+  @apply text-[42px] leading-[120%] text-secondary font-soraregular;
 }
 
 h2 {
-  @apply text-[40px] leading-[120%] font-necoregular text-secondary;
+  @apply text-[40px] leading-[120%] font-soraregular text-secondary;
 }
 
 h3 {
-  @apply text-2xl font-necoregular text-secondary;
+  @apply text-2xl font-soraregular text-secondary;
 }
 h4 {
-  @apply text-xl font-necoregular;
+  @apply text-xl font-soraregular;
 }
 
 p {
-  @apply text-base font-soraregular;
+  @apply text-base font-necoregular;
 }
 
 .hero-bg {
