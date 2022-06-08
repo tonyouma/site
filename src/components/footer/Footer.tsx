@@ -38,7 +38,7 @@ function Footer() {
                     <div className="flex flex-col items-center justify-between flex-1 p-5 space-y-3 md:p-0 md-y-0 md:items-start">
                         <ul>
                             <li><a href='/terms' className="text-sm text-textPrimary">Terms & Conditions</a></li>
-                            <li><a href='/policies' className="text-sm text-textPrimary">Rights & Policies</a></li>
+                            <li><a href='/policy' className="text-sm text-textPrimary">Rights & Policies</a></li>
                             <li><a href='/credits' className="text-sm text-textPrimary">Credits</a></li>
 
                         </ul>
@@ -46,7 +46,7 @@ function Footer() {
 
 
                     <div className="flex md:items-end">
-                        <Link name="Logo" url={"/"} image={"/assets/logo.svg"} />
+                        <Link name="Logo" url={"/"} image={"/assets/logo.svg"}/>
                     </div>
                 </footer>
 

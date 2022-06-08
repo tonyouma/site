@@ -1,29 +1,38 @@
+import { GetStaticProps } from "next"
 import { useState } from "react"
+import { sanityClient } from "../../../sanity"
 import { ICareer } from "src/models/careers"
+import PortableText from "react-portable-text"
 
-const Career = ({ title, division }: ICareer) => {
 
+interface Props {
+    career: ICareer
+}
+const Career = ({ career }: Props) => {
     const [open, setOpen] = useState(false)
     const openClick = () => {
         setOpen(!open)
     }
     return (
         <div className="">
-            <div className="container flex flex-wrap p-5 pt-12 md:p-0 md:pt-24">
+            <div className="container p-5 pt-12 md:p-0 md:pt-24">
                 <div className="pb-5 md:pb-10">
-                    <h1 className="pb-5 md:pb-10">{title}</h1>
-                    <p>Division: </p>
-                    <p>Experience: 4-7 Years </p>
-                    <p>Location: Nairobi, Kenya or Remote</p>
+                    <h1 className="pb-5 md:pb-10">{career.title}</h1>
+                    <p>Division: {career.division}</p>
+                    <p>Experience: {career.yearofexperience} Years </p>
+                    <p>Location: {career.location}</p>
                 </div>
                 <div className="">
-                    <h3 className="mb-6 capitalize">About the role</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril</p>
-                    <h3 className="my-6">What you will do:</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril</p>
-
-                    <h3 className="my-6">What you need to have:</h3>
-                    <p>Euis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea com- modo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui</p>
+                    <PortableText
+                        dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+                        projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                        content={career.body}
+                        serializers={{
+                            h3: (props: any) => (
+                                <h1 className="my-6 text-2xl capitalize" {...props} />
+                            ),
+                        }}
+                    />
                     <h3 className="my-6">What we offer</h3>
                     <p>In addition to contributing to the great cause of easing the lives of millions of Afri- cans with world-class financial products, you also get competitive base salaries, social and statuatory benefits, generous holidays, commissions / bonus / profit sharing schemes based on responsibilities and results of different positions.</p>
                 </div>
@@ -86,27 +95,49 @@ const Career = ({ title, division }: ICareer) => {
 
 export default Career
 
-// export const getStaticPaths = async () => {
-    
-// }
+export const getStaticPaths = async () => {
+    const query = `*[_type == "news"]{
+    _id,
+  slug,
+}`
 
-export const getServerSideProps = async (pageContext: { query: { slug: string; }; }) => {
-    const pageSlug = pageContext.query.slug;
-    const query = encodeURIComponent(`*[ _type == "career" && slug.current == "${pageSlug}" ]`);
-    const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-    const result = await fetch(url).then(res => res.json());
-    const career = result.result[0];
-    console.log(career)
+    const career = await sanityClient.fetch(query)
+    const paths = career.map((career: ICareer) => ({
+        params: {
+            slug: career.slug.current
+        }
+    }))
 
     return {
-        props: {
-            title: career?.title,
-            location: career?.location,
-            publishedAt: new Date(career?.publishedAt).toLocaleDateString(),
-            // yearsofexperience: career?.yearsofexperience,÷
-            division: career?.division,
+        paths,
+        fallback: 'blocking'
+    }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+    const query = `*[_type == "career" && slug.current == $slug][0]{
+    _id,
+  _createdAt,
+  title,
+  "division": division[0]->title,
+  yearofexperience,
+  location,
+  body
+  }`
+
+    const career = await sanityClient.fetch(query, { slug: params?.slug })
+
+    if (!career) {
+        return {
+            notFound: true
         }
     }
-};
+    return {
+        props: {
+            career
+        },
+        revalidate: 60
+    }
+}
 
 

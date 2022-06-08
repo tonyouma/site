@@ -15,6 +15,7 @@ interface Props {
 // }
 const Careers = ({ careers }: Props) => {
 
+  console.log(careers)
   return (
     <div className='container'>
 
@@ -31,10 +32,11 @@ const Careers = ({ careers }: Props) => {
           <div className=''>
             {
               careers.map(career => (
-                <div className='p-5 text-center' key={career._id}>
+                <div className='p-5 text-2xl text-center' key={career._id}>
                   <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><p className='cursor-pointer text-secondary'>{career.title}</p></Link>
-                  <div className="flex">
-                    {career.division.map((division, index) => <p className='' key={index}>{division}</p>)}
+                  <div className="flex justify-between border-[#000] border-solid last:border-r-0">
+                    <p className=''>{career.division}</p>
+                    <p>{career?.yearofexperience} years of experience</p>
                     <p>{career?.location}</p>
                   </div>
 
@@ -67,7 +69,8 @@ export const getServerSideProps = async () => {
   title,
   slug,
   location,
-  "division": division[]->title,
+  "division": division[0]->title,
+  yearofexperience
 }`;
 
   const careers = await sanityClient.fetch(query)

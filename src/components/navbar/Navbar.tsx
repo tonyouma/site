@@ -13,13 +13,13 @@ function Navbar() {
 
   function scrollFunction() {
     if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-      // document.getElementById("logo")!.style.width = "100%";
+      document.getElementById("logo")!.style.maxWidth = "200px";
       document.getElementById("navbar")!.classList.remove("p-5");
       document.getElementById("nav")!.classList.remove("bg-white");
       document.getElementById("nav")!.classList.add("bg-primary");
       document.getElementById("navbar")!.classList.add("p-5");
     } else {
-      document.getElementById("logo")!.style.width = ("200px");
+      document.getElementById("logo")!.style.maxWidth = ("100%");
       document.getElementById("nav")!.classList.add("bg-white");
       document.getElementById("navbar")!.classList.remove("p-5");
       document.getElementById("navbar")!.classList.add("p-5");

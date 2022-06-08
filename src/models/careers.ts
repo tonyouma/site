@@ -14,7 +14,7 @@ export interface ICareer {
     //     name: string,
     //     image: string
     // }
-    // body: [object],
+    body: [object],
     // mainImage: {
     //     asset: {
     //         url: string;
