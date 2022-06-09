@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-sm  font-necoregular;
+}
+
+a:hover {
+  @apply text-secondary;
+}
+
+h1 {
+  @apply md:text-[42px] text-[40px] leading-[120%] text-secondary font-soraregular;
+}
+
+h2 {
+  @apply text-[40px] leading-[120%] font-soraregular text-secondary;
+}
+
+h3 {
+  @apply text-2xl font-soraregular text-secondary;
+}
+h4 {
+  @apply text-xl font-soraregular;
+}
+
+p {
+  @apply text-base font-necoregular;
+}
+
+.hero-bg {
+  background: url("/assets/hero-bg.png") top left/94px 153.41px no-repeat;
+}
+
+.play-button {
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06))
+    drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.03));
+  @apply inline-flex items-center justify-center h-8 w-8 pl-[0.6px]   text-pink-100 transition-colors duration-150 bg-white rounded-full hover:bg-textPrimary;
+}
+
+.careers-intro {
+  @apply absolute translate-y-[-50%] top-1/2 left-1/2 text-white;
+  transform: translate(-50%, -50%);
+}
+
+.fore-ground::before {
+  position: absolute;
+  height: 15%;
+  background-color: #fff;
+  content: "";
+  width: 100%;
+}

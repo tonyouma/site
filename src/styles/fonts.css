@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "necoblack";
+  src: url("../../public/fonts/neco-black-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-black-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "necobold";
+  src: url("../../public/fonts/neco-bold-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "necomedium";
+  src: url("../../public/fonts/neco-medium-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "necoregular";
+  src: url("../../public/fonts/neco-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/neco-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "soralight";
+  src: url("../../public/fonts/sora-light-webfont.woff2") format("woff2"),
+    url("../../public/fonts/sora-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "soraregular";
+  src: url("../../public/fonts/sora-regular-webfont.woff2") format("woff2"),
+    url("../../public/fonts/sora-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
