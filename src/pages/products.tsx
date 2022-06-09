@@ -8,8 +8,8 @@ const ProductItem = (props: IProps) => {
   const { title, image, description, highlights } = props.product
   return (
     <div>
-      <h2 className="mb-8 text-center">{title}</h2>
-      <div className="grid grid-cols-1 gap-6 pt-4 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <h2 className="mb-8 font-bold text-center">{title}</h2>
+      <div className="grid grid-cols-1 gap-6 pt-4 md:grid-cols-3 lg:grid-cols-3">
         <div className="">
           <img src={image} alt="" className="" />
         </div>

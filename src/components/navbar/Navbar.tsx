@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Socials } from '../socials';
 import { Link } from './../link'
 
@@ -7,30 +6,12 @@ import { Link } from './../link'
 function Navbar() {
   const [open, setOpen] = useState<boolean>(false)
 
-  useEffect(() => {
-    window.onscroll = function () { scrollFunction() };
-  }, [])
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-      document.getElementById("logo")!.style.maxWidth = "200px";
-      document.getElementById("navbar")!.classList.remove("p-5");
-      document.getElementById("nav")!.classList.remove("bg-white");
-      document.getElementById("nav")!.classList.add("bg-primary");
-      document.getElementById("navbar")!.classList.add("p-5");
-    } else {
-      document.getElementById("logo")!.style.maxWidth = ("100%");
-      document.getElementById("nav")!.classList.add("bg-white");
-      document.getElementById("navbar")!.classList.remove("p-5");
-      document.getElementById("navbar")!.classList.add("p-5");
-    }
-  }
 
   return (
-    <nav id='nav' className=" fixed w-[100%] bg-white z-20 top-0  ">
-      <div id="navbar" className="container flex items-center justify-between p-5 ease-in md:px-0">
+    <nav id='nav' className=" w-[100%] bg-white top-0  ">
+      <div id="navbar" className="container flex items-center justify-between px-5 pt-10 ease-in md:px-0">
 
-        <div id="navbar_links" className="hidden space-x-6 transition-300 md:flex">
+        <div id="navbar_links" className="hidden ml-0 space-x-6 space-x-reverse transition-300 md:flex">
           <Link url='/' name='' />
           <Link url='/about-us' name='Who we are' />
           <Link url='/products' name='Products & Solutions' />

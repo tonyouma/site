@@ -25,7 +25,7 @@ const News = ({ news }: Props) => {
           </p>
         </div>
 
-        <div className="grid items-baseline grid-cols-1 gap-x-5 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid items-baseline grid-cols-1 gap-x-5 gap-y-8 md:grid-cols-3">
           {news.map((item) => (
             <Link key={item._id} href={`/news/${item.slug.current}`} passHref>
               <div className="overflow-hidden cursor-pointer group">

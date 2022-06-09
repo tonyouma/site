@@ -16,7 +16,7 @@ const News = ({ news }: Props) => {
       <div className="md:pt-16 ">
 
         <img src={urlFor(news.mainImage).url()!} alt={news.title} className="object-cover w-full h-60" />
-        <article className="max-w-3xl p-5 mx-auto">
+        <article className="p-5 mx-auto">
           <h3 className="mt-10 mb-3 text-secondary">{news.title}</h3>
           <h4>{news.headline}</h4>
 
@@ -40,7 +40,17 @@ const News = ({ news }: Props) => {
                     {children}
                   </a>
                 ),
+                img: (props: any) => (
+                  <img src={props.src} className="w-full pt-5" alt={props.alt} />
+                ),
+                p: (props: any) => <p className="py-5" {...props} />,
+                figure: (children: any) => (
+                  <figure className="mt-5">
+                    {children}
+                  </figure>
+                )
               }}
+
             />
           </div>
         </article>

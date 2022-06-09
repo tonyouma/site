@@ -38,7 +38,6 @@ const Home: NextPage = () => {
 
                     <div className="bg-[#EE3D4E]">
                         <img src="/assets/cardholder.png" alt="" className="mr-5 w-[90%]" />
-
                     </div>
 
                 </div>
@@ -62,7 +61,7 @@ const Home: NextPage = () => {
                         Our homebase is in Kenya. Our immediate focus is Africa. At the same time, our solutions are relevant and modifiable to every growth market in the world. And that’s where we are headed too.</p>
                 </div>
 
-                <img src="/assets/nairobi.png" alt="" className="w-full h-96" />
+                <img src="/assets/nairobi.png" alt="" className="object-cover w-full h-96" />
                 <div className="bg-[#EE3D4E] p-5">
                     <h1 className='text-white md:text-center md:pt-14'>We work with you and for you</h1>
 

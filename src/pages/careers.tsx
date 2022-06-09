@@ -1,6 +1,3 @@
-
-
-// import CareersCard from 'src/components/careersCard'
 import Link from 'next/link'
 import { ICareer } from 'src/models/careers'
 import { sanityClient } from '../../sanity'
@@ -8,14 +5,8 @@ interface Props {
   careers: [ICareer]
 }
 
-// const TitleItem = (title: string) => {
-//   return (
-//     <h3 className='py-4 text-center'>{title}</h3>
-//   )
-// }
 const Careers = ({ careers }: Props) => {
 
-  console.log(careers)
   return (
     <div className='container'>
 
@@ -34,10 +25,8 @@ const Careers = ({ careers }: Props) => {
               careers.map(career => (
                 <div className='p-5 text-2xl text-center' key={career._id}>
                   <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><p className='cursor-pointer text-secondary'>{career.title}</p></Link>
-                  <div className="flex justify-between border-[#000] border-solid last:border-r-0">
-                    <p className=''>{career.division}</p>
-                    <p>{career?.yearofexperience} years of experience</p>
-                    <p>{career?.location}</p>
+                  <div className="text-center">
+                    <p className=''>{career.division} | {career?.yearofexperience} years of experience | {career?.location}</p>
                   </div>
 
                 </div>
@@ -80,33 +69,4 @@ export const getServerSideProps = async () => {
     }
   }
 }
-
-// export const getServerSideProps = async () => {
-//   const query = encodeURIComponent(`*[_type == "career"]{
-//   _id,
-//   _createdAt,
-//   title,
-//   slug,
-//   location,
-//   "division": division[]->title,
-// }`);
-
-
-//   const url = `https://2nwbip7f.api.sanity.io/v1/data/query/production?query=${query}`;
-//   try {
-//     const data = await fetch(url).then((res) => res.json());
-//     const careers = data.result
-
-//     return {
-//       props: {
-//         careers
-//       }
-//     }
-//   } catch (error) {
-//     return {
-//       props: {}
-//     }
-//   }
-
-// }
 
