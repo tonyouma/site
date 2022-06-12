@@ -1,6 +1,6 @@
-import type { NextPage } from 'next'
-import { investors, partners } from 'src/constants/partners'
+import type { NextPage } from 'next';
 import { FooterForm } from 'src/components/form';
+import { investors, partners } from 'src/constants/partners';
 
 
 const Partners: NextPage = () => {
@@ -15,7 +15,7 @@ const Partners: NextPage = () => {
     }
   }
 
-  
+
 
   return (
     <>
