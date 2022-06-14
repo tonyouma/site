@@ -28,8 +28,8 @@ const Team = () => {
     return (
         <div className='p-5 md:py-16'>
             <div className="mx-auto md:text-center md:max-w-2xl md:pb-12">
-                <h1 className='mb-4'>A team with conviction.</h1>
-                <p>
+                <h1 className='mb-2'>A team with conviction.</h1>
+                <p className='md:py-6'>
                     We started with a conviction that every single one in Africa should have access to great and easy payment solutions.From the mama selling fruits on the street to the finance manager working on the payroll.Say hello to a team that works hard on this goal every single day.</p>
             </div>
             <div className="container grid grid-cols-1 gap-6 md:grid-cols-3">

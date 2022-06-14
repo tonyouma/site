@@ -10,12 +10,12 @@ function FooterForm() {
   return (
 
     <div className='min-h-[300px] flex flex-col justify-center items-center gap-y-4 p-5'>
-      <div className="mx-auto text-center md:pt-12 md:max-w-xl">
+      <div className="mx-auto md:text-center md:pt-12 md:max-w-xl">
         <h2>Become a partner in growth. Request a demo</h2>
-        <p className=' md:my-6'>Seeing is believing. Reach out to us if you are interested to see our products in action. No obligations.</p>
+        <p className='py-4 md:my-8'>Seeing is believing. Reach out to us if you are interested to see our products in action. No obligations.</p>
       </div>
 
-      <div className="md:pb-12">
+      <div className="md:pb-8">
         <form>
           <input
             type="email"

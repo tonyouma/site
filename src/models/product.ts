@@ -3,5 +3,6 @@ export interface IProductProps {
   image: string;
   description: string;
   highlights: string[];
-  // href: string;
+  href?: string;
+  linkTitle?: string;
 }

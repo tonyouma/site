@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import type { NextPage } from 'next'
 import FooterForm from 'src/components/form/FooterForm'
@@ -15,7 +16,8 @@ const Product = (props: IProps) => {
             <img src={image} alt={title} />
             <div>
                 <h4 className='py-3 text-secondary'>{title}</h4>
-                <p>{description}</p>
+                <p className='pb-4'>{description}</p>
+                <a href="/products" className="text-lg text-secondary">Learn More</a>
             </div>
         </div>
     )
@@ -46,7 +48,7 @@ const Home: NextPage = () => {
                     <p className='text-[20px] pt-4'>From smart public transport solutions to retail payments to payroll management, our products cater to the growing everyday financial needs of African population.</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-x-3">
+                <div className="grid gap-5 md:grid-cols-2">
                     {productsItems.map((product, index) => (
                         <Product key={index} product={product} />
                     ))}

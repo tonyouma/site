@@ -1,5 +1,5 @@
 import { GetStaticProps } from "next"
-import { useState } from "react"
+import { ClassAttributes, HTMLAttributes, useState } from "react"
 import { sanityClient } from "../../../sanity"
 import { ICareer } from "src/models/careers"
 import PortableText from "react-portable-text"
@@ -28,7 +28,7 @@ const Career = ({ career }: Props) => {
                         projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
                         content={career.body}
                         serializers={{
-                            h3: (props: any) => (
+                            h3: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
                                 <h1 className="my-6 text-2xl capitalize" {...props} />
                             ),
                         }}
@@ -57,7 +57,7 @@ const Career = ({ career }: Props) => {
                                     type="text"
                                     placeholder=""
                                     id="name"
-                                    className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
+                                    className="w-full text-textPrimary outline-none border-b py-2.5 bg-transparent"
                                 />
                             </div>
                             <div>
@@ -68,12 +68,12 @@ const Career = ({ career }: Props) => {
                                     type="email"
                                     placeholder=""
                                     id="email"
-                                    className="w-full text-gray-500 outline-none border rounded-md bg-defaultWhite p-2.5"
+                                    className="w-full text-textPrimary outline-none border-b bg-transparent py-2.5"
                                 />
                             </div>
                             <div className="">
                                 <label htmlFor="message" className="block py-3 text-gray-500">Your cover letter</label>
-                                <textarea id="message" rows={4} className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Your message..."></textarea>
+                                <textarea id="message" rows={6} className="block py-2.5 w-full text-sm text-textPrimary bg-transparent border-b border-gray-200 outline-none  dark:bg-gray-700 dark:text-white" placeholder="Your message..."></textarea>
                             </div>
                             <p className="py-6 text-xs">By submitting this form, you agree that we may use the data you provide to contact you with information related to your submission.
                                 <br />Your data will be used subject to DIL&apos;s Privacy Policy.</p>
