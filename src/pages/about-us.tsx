@@ -9,9 +9,9 @@ const About: NextPage = () => {
   return (
     <>
       <div className="container py-8 mx-auto md:max-w-3xl md:py-16">
-        <h1 className='mb-2 md:mb-4 md:text-center'>We connect African streets to high finance.With deep local knowledge and a soulful approach.</h1>
+        <h1 className='p-5 mb-2 md:p-0 md:mb-4 md:text-center'>We connect African streets to high finance.With deep local knowledge and a soulful approach.</h1>
 
-        <p className='md:text-center'>
+        <p className='p-5 md:text-center md:p-0'>
           From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population.
         </p>
       </div>

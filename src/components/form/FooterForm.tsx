@@ -23,7 +23,7 @@ function FooterForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder='Enter you email address'
-            className='min-w-[250px] md:min-w-[300px]  h-[50px] p-3 rounded-tl-lg rounded-bl-lg text-textPrimary outline-none bg-[#0D3648]'
+            className='min-w-[250px] md:min-w-[300px] text-white h-[50px] p-3 rounded-tl-lg rounded-bl-lg outline-none bg-[#0D3648]'
             name="email" />
           <button
             onClick={requestDemo}

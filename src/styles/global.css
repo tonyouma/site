@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-sm  font-necoregular;
+  @apply text-sm text-textPrimary font-necoregular;
 }
 
 a:hover {
