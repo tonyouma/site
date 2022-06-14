@@ -1,5 +1,7 @@
+import type { NextPage } from 'next';
+import { FooterForm } from 'src/components/form';
+import { IProductProps } from 'src/models/product';
 import { productsItems } from "src/constants/products";
-import { IProductProps } from "src/models/product";
 
 interface IProps {
   product: IProductProps;
@@ -30,25 +32,26 @@ const ProductItem = (props: IProps) => {
     </div>
   )
 }
-const Products = () => {
 
+const Products: NextPage = () => {
   return (
-    <div className="container">
-      <div className="mx-auto text-center md:pb-12 md:pt-16 md:w-2/3">
-        <h1>Meaningful.Affordable.Easy.<br />Our solutions are for today’s Africa.</h1>
-
-        <p>From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population. </p>
-
+    <>
+      <div className='flex flex-col p-5 md:p-0'>
+        <div className='mx-auto md:max-w-2xl md:pt-16'>
+          <h1 className='mb-4 text-center'>Meaningful. Affordable. Easy. Our Solutions are for today&apos;s Africa.</h1>
+          <p className='py-8 mx-auto text-center md:max-w-2xl'>
+            From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population.</p>
+        </div>
       </div>
-      <div className="md:my-16">
+      <div className="container md:my-16">
         {productsItems.map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}
       </div>
+      <FooterForm />
+    </>
 
+  )
+}
 
-    </div>
-  );
-};
-
-export default Products;
+export default Products

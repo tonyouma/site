@@ -37,7 +37,7 @@ function Navbar() {
             <Link url='/news' name='News' />
             <Link url='/careers' name='Careers' />
             <Link url='/contact' name='Talk to Us' />
-            <Socials items='end' />
+            {/* <Socials items='end' /> */}
           </div>
         }
         <div className="pt-2 ">

@@ -1,21 +1,21 @@
-import type { NextPage } from 'next'
-import { investors, partners } from 'src/constants/partners'
+import type { NextPage } from 'next';
 import { FooterForm } from 'src/components/form';
+import { investors, partners } from 'src/constants/partners';
 
 
 const Partners: NextPage = () => {
 
-  const handleScroll = (item: string, e: any) => {
-    const element = document.getElementById("scroll")!;
-    if (item === 'forward') {
-      element.scrollLeft += 200;
-    }
-    if (item === 'back') {
-      element.scrollLeft -= 200;
-    }
-  }
+  // const handleScroll = (item: string, e: any) => {
+  //   const element = document.getElementById("scroll")!;
+  //   if (item === 'forward') {
+  //     element.scrollLeft += 200;
+  //   }
+  //   if (item === 'back') {
+  //     element.scrollLeft -= 200;
+  //   }
+  // }
 
-  
+
 
   return (
     <>
@@ -91,9 +91,9 @@ const Partners: NextPage = () => {
       <div className="relative flex flex-col justify-center p-6">
         <div className="flex justify-end items-center flex-col md:flex-row max-w-[1080px] mx-auto md:gap-24">
           <div className="flex w-[100%] justify-center mr-auto">
-            <p className='pb-3 md:max-w-lg'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
+            <p className='pb-3 text-center md:max-w-lg'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
           </div>
-          <div className="items-center justify-center hidden gap-3 p-3 md:flex md:p-0">
+          {/* <div className="items-center justify-center hidden gap-3 p-3 md:flex md:p-0">
             <button
               onClick={(e) => handleScroll("back", e)}
               className="rounded-[50%] h-[35px] w-[35px] border-2 border-textPrimary flex justify-center items-center">
@@ -105,10 +105,10 @@ const Partners: NextPage = () => {
               className="rounded-[50%] h-[35px] w-[35px] border-2 border-textPrimary flex justify-center items-center">
               <img src="/assets/forward-arrow.svg" alt=">" />
             </button>
-          </div>
+          </div> */}
         </div>
         {/* Testimonials */}
-        <div id='scroll' className="flex justify-start overflow-x-auto md:overflow-hidden">
+        {/* <div id='scroll' className="flex justify-start overflow-x-auto md:overflow-hidden">
           <div className="flex flex-col gap-4 p-8 min-w-[490px] m-6 rounded-[9px] shadow-[0_0_10px_10px_rgba(50,50,93,0.05)]">
             <div className="flex items-center justify-between">
               <div className='flex gap-3'>
@@ -163,7 +163,7 @@ const Partners: NextPage = () => {
             </div>
           </div>
 
-        </div>
+        </div> */}
       </div>
       {/* Partners footer */}
       <FooterForm />
