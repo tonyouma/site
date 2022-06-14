@@ -2,10 +2,15 @@ import type { NextPage } from 'next';
 import { FooterForm } from 'src/components/form';
 import { IProductProps } from 'src/models/product';
 import { productsItems } from "src/constants/products";
+import { Title } from 'src/components/title';
 
 interface IProps {
   product: IProductProps;
 }
+
+const pageTitle = "Meaningful. Affordable. Easy. Our Solutions are for today's Africa."
+const pageDescription = "From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population."
+
 const ProductItem = (props: IProps) => {
   const { title, image, description, highlights } = props.product
   return (
@@ -33,16 +38,12 @@ const ProductItem = (props: IProps) => {
   )
 }
 
+
+
 const Products: NextPage = () => {
   return (
     <>
-      <div className='flex flex-col p-5 md:p-0'>
-        <div className='mx-auto md:max-w-2xl md:pt-16'>
-          <h1 className='mb-4 text-center'>Meaningful. Affordable. Easy. Our Solutions are for today&apos;s Africa.</h1>
-          <p className='py-8 mx-auto text-center md:max-w-2xl'>
-            From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population.</p>
-        </div>
-      </div>
+      <Title title={pageTitle} description={pageDescription} />
       <div className="container md:my-16">
         {productsItems.map((product, index) => (
           <ProductItem key={index} product={product} />

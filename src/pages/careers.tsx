@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Title } from 'src/components/title'
 import { ICareer } from 'src/models/careers'
 import { sanityClient } from '../../sanity'
 interface Props {
@@ -6,16 +7,18 @@ interface Props {
 }
 
 const Careers = ({ careers }: Props) => {
-
+  const titleIntro = "A meaningful challenge to solve. A soulful company to work for."
+  const description = "“I never lose. I either win or learn”, says an African proverb. We go all-in when we try to come up with products that make a common man's life easy. And we do that by standing for and supporting each other."
   return (
     <div className='container'>
+      <Title title={titleIntro} description={description}/> 
 
-      <div className="p-5 md:pt-16 md:p-0">
+      {/* <div className="p-5 md:pt-16 md:p-0">
         <h1 className='mb-4 text-center'>A meaningful challenge to solve. A <br /> soulful company to work for.</h1>
 
         <p className='py-8 mx-auto text-center md:max-w-2xl'>
           “I never lose. I either win or learn”, says an African proverb. We go all-in when we try to come up with products that make a common man’s life easy. And we do that by standing for and supporting each other.</p>
-      </div>
+      </div> */}
 
       <div className='py-12 my-6'>
         <div className="container px-5 md:px-40">

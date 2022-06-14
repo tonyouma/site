@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { useState } from "react";
+import { Title } from "src/components/title";
 
 // type Contacts = {
 //   id: number;
@@ -7,6 +8,9 @@ import { useState } from "react";
 //   icon: string;
 //   content: string;
 // };
+
+const titleIntro = "Always within reach. Always with a smile."
+const description = "Whether it’s about learning about our growth plans or a technical glitch that you need to solve immediately or co-develop an idea that you think is brilliant for Africa, please do reach out to us. Our doors are always open. "
 
 const Contact: NextPage = () => {
 
@@ -16,13 +20,8 @@ const Contact: NextPage = () => {
   }
   return (
     <div className="">
-      <div className="md:pt-16 md:mx-auto md:max-w-4xl">
-        <div className='p-5 mb-4 md:text-center md:max-w-md md:mx-auto md:p-0'>
-          <h1 className=''>Always within reach. Always with a smile.</h1>
-        </div>
 
-        <p className='p-5 py-4 mx-auto md:text-center md:py-8 md:max-w-2xl md:p-0'>
-          Whether it’s about learning about our growth plans or a technical glitch that you need to solve immediately or co-develop an idea that you think is brilliant for Africa, please do reach out to us. Our doors are always open.  </p>    </div>
+      <Title title={titleIntro} description={description} className="max-w-md md:text-center md:mx-auto" />
       <div className="container p-5 py-5 md:p-0 md:py-5">
         <button className="text-2xl text-secondary" onClick={openClick}>Reach Out</button>
       </div>

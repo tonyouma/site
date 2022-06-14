@@ -1,5 +1,6 @@
 import type { NextPage } from 'next';
 import { FooterForm } from 'src/components/form';
+import { Title } from 'src/components/title';
 import { investors, partners } from 'src/constants/partners';
 
 
@@ -15,16 +16,13 @@ const Partners: NextPage = () => {
   //   }
   // }
 
-
+  const introTitle = "A growing list of people who believe in us."
+  const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
 
   return (
     <>
       <div className='flex flex-col p-5 md:p-0'>
-        <div className='mx-auto md:max-w-2xl md:pt-16'>
-          <h1 className='mb-4 text-center'>A growing list of people who believe in us.</h1>
-          <p className='max-w-2xl py-8 mx-auto text-center'>
-            From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
-        </div>
+        <Title title={introTitle} description={description} />
 
         <div className='py-5 my-5 '>
           <div className="container flex flex-wrap justify-center">
