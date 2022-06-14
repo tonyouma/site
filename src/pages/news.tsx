@@ -6,6 +6,7 @@ import { FooterForm } from "src/components/form";
 import Image from "next/image";
 import { INews } from "src/models/news";
 import { sanityClient, urlFor } from "../../sanity";
+import { Title } from "src/components/title";
 
 interface Props {
   news: [INews]
@@ -13,17 +14,12 @@ interface Props {
 
 const News = ({ news }: Props) => {
 
+  const introTitle = "Making headlines is good when you're truly doing good."
+  const description = "We genuinely believe we are creating payment solutions that affect the lives of millions of Africans.Sometimes we like to talk about what we do more openly.Sometimes, others do for us."
   return (
     <>
       <div className="container flex flex-col p-5 md:p-0">
-        <div className='mx-auto md:max-w-2xl md:pt-16'>
-          <h1 className='mb-4 text-center'>Making headlines is good when you’re truly doing good.</h1>
-          <p className='max-w-2xl py-8 mx-auto text-center'>
-            We genuinely believe we are creating payment solutions that
-            positively affect the lives of millions of Africans. Sometimes we like
-            to talk about what we do more openly. Sometimes, others do for us.
-          </p>
-        </div>
+        <Title title={introTitle} description={description}/>
 
         <div className="grid items-baseline grid-cols-1 gap-x-5 gap-y-8 md:grid-cols-3">
           {news.map((item) => (
