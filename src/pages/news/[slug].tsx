@@ -5,6 +5,7 @@ import { sanityClient, urlFor } from "../../../sanity";
 import { INews } from "src/models/news";
 import { GetStaticProps } from "next";
 import PortableText from "react-portable-text"
+import { ClassAttributes, HTMLAttributes } from "react";
 
 interface Props {
   news: INews
@@ -26,7 +27,7 @@ const News = ({ news }: Props) => {
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
               content={news.body}
               serializers={{
-                h1: (props: any) => (
+                h1: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLHeadingElement> & HTMLAttributes<HTMLHeadingElement>) => (
                   <h1 className="my-5 text-2xl font-bold" {...props} />
                 ),
                 h2: (props: any) => (
@@ -40,10 +41,10 @@ const News = ({ news }: Props) => {
                     {children}
                   </a>
                 ),
-                img: (props: any) => (
+                img: (props: { src: string; alt: string }) => (
                   <img src={props.src} className="w-full pt-5" alt={props.alt} />
                 ),
-                p: (props: any) => <p className="py-5" {...props} />,
+                p: (props: JSX.IntrinsicAttributes & ClassAttributes<HTMLParagraphElement> & HTMLAttributes<HTMLParagraphElement>) => <p className="py-5" {...props} />,
                 figure: (children: any) => (
                   <figure className="mt-5">
                     {children}

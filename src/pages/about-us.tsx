@@ -32,9 +32,8 @@ const About: NextPage = () => {
 
       <Team />
       <div className="container p-5">
-        <h1 className='text-center md:mb-4'>From Africa to the world.</h1>
-
-        <p className='py-8 mx-auto md:text-center md:py-8 md:max-w-2xl'>
+        <h1 className='mb-2 md:text-center'>From Africa to the world.</h1>
+        <p className='py-4 mx-auto md:text-center md:py-6 md:max-w-2xl'>
           Our homebase is in Kenya. Our immediate focus is Africa. At the same time, our solutions are relevant and modifiable to every growth market in the world. And that’s where we are headed too.</p>
         <img src="/assets/nairobi.png" alt="" className="object-cover w-full h-48 md:h-96" />
 

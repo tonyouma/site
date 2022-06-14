@@ -12,7 +12,7 @@ const pageTitle = "Meaningful. Affordable. Easy. Our Solutions are for today's A
 const pageDescription = "From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population."
 
 const ProductItem = (props: IProps) => {
-  const { title, image, description, highlights } = props.product
+  const { title, image, description, highlights, href } = props.product
   return (
     <div>
       <h2 className="mb-8 font-bold text-center">{title}</h2>
@@ -20,7 +20,7 @@ const ProductItem = (props: IProps) => {
         <div className="">
           <img src={image} alt="" className="" />
         </div>
-        <div className="pl-3 cols-span-1">
+        <div className="md:pl-10 cols-span-1">
           <h3>Highlights</h3>
           {highlights.map((highlight, index) => (
             <ul key={index} className="">
@@ -31,7 +31,8 @@ const ProductItem = (props: IProps) => {
 
         </div>
         <div className="">
-          <p>{description}</p>
+          <p className='pb-5'>{description}</p>
+          <a href={href} target="_blank" rel="noreferrer" className='text-lg text-secondary'>{href}</a>
         </div>
       </div>
     </div>
@@ -44,7 +45,7 @@ const Products: NextPage = () => {
   return (
     <>
       <Title title={pageTitle} description={pageDescription} />
-      <div className="container md:my-16">
+      <div className="container md:my-0">
         {productsItems.map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}

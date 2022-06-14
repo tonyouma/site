@@ -31,7 +31,7 @@ const News = ({ news }: Props) => {
                   alt={item.title}
                 />
                 <div className="pt-5 bg-white">
-                  <p>{item.headline}</p>
+                  <p className="font-bold">{item.headline}</p>
                 </div>
               </div>
             </Link>
