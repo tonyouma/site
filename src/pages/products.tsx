@@ -2,12 +2,17 @@ import type { NextPage } from 'next';
 import { FooterForm } from 'src/components/form';
 import { IProductProps } from 'src/models/product';
 import { productsItems } from "src/constants/products";
+import { Title } from 'src/components/title';
 
 interface IProps {
   product: IProductProps;
 }
+
+const pageTitle = "Meaningful. Affordable. Easy. Our Solutions are for today's Africa."
+const pageDescription = "From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population."
+
 const ProductItem = (props: IProps) => {
-  const { title, image, description, highlights } = props.product
+  const { title, image, description, highlights, href } = props.product
   return (
     <div>
       <h2 className="mb-8 font-bold text-center">{title}</h2>
@@ -15,7 +20,7 @@ const ProductItem = (props: IProps) => {
         <div className="">
           <img src={image} alt="" className="" />
         </div>
-        <div className="pl-3 cols-span-1">
+        <div className="md:pl-10 cols-span-1">
           <h3>Highlights</h3>
           {highlights.map((highlight, index) => (
             <ul key={index} className="">
@@ -26,24 +31,21 @@ const ProductItem = (props: IProps) => {
 
         </div>
         <div className="">
-          <p>{description}</p>
+          <p className='pb-5'>{description}</p>
+          <a href={href} target="_blank" rel="noreferrer" className='text-lg text-secondary'>{href}</a>
         </div>
       </div>
     </div>
   )
 }
 
+
+
 const Products: NextPage = () => {
   return (
     <>
-      <div className='flex flex-col p-5 md:p-0'>
-        <div className='mx-auto md:max-w-2xl md:pt-16'>
-          <h1 className='mb-4 text-center'>Meaningful. Affordable. Easy. Our Solutions are for today&apos;s Africa.</h1>
-          <p className='py-8 mx-auto text-center md:max-w-2xl'>
-            From smart public transport solutions to retail payments to payroll management, we make products catering to the growing everyday financial needs of African population.</p>
-        </div>
-      </div>
-      <div className="container md:my-16">
+      <Title title={pageTitle} description={pageDescription} />
+      <div className="container md:my-0">
         {productsItems.map((product, index) => (
           <ProductItem key={index} product={product} />
         ))}

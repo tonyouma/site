@@ -11,7 +11,8 @@ export const productsItems: IProductProps[] = [
             "Highlight Two",
             "Another highlight",
             "Highlight Three"
-        ]
+        ],
+        href: "https://mobitill-transit.co.ke"
     },
     {
         title: "Mobitill Cards",
@@ -22,7 +23,8 @@ export const productsItems: IProductProps[] = [
             "Highlight Two",
             "Another highlight",
             "Highlight Three"
-        ]
+        ],
+        href: "https://mobitill-cards.co.ke",
     },
     {
         title: "Mobitill POS",
@@ -33,7 +35,8 @@ export const productsItems: IProductProps[] = [
             "Highlight Two",
             "Another highlight",
             "Highlight Three"
-        ]
+        ],
+        href: "https://mobitill-pos.co.ke",
     },
     {
         title: "Mobitill Payroll",
@@ -44,6 +47,7 @@ export const productsItems: IProductProps[] = [
             "Highlight Two",
             "Another highlight",
             "Highlight Three"
-        ]
+        ],
+        href: "https://mobitill-payroll.co.ke",
     },
 ]
