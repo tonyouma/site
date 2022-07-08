@@ -20,7 +20,7 @@ const Team = () => {
                 <div className="my-auto ">
                     <h4 className='text-xl font-bold'>Irene Ngugi</h4>
                     <p className='my-2'>HR and Administration</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos porro dignissimos omnis distinctio dicta accusamus. </p>
+                    <p>Irene is the Human Resource Manager at DIL, she leads the team in building highly motivated and engaged teams. </p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
@@ -29,7 +29,7 @@ const Team = () => {
                 <div className="">
                     <h4 className='text-xl font-bold'>Mary Mwangi</h4>
                     <p className='my-2'>Founder and CEO</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos porro dignissimos omnis distinctio dicta accusamus. </p>
+                    <p>Mary is the Founder and CEO of Data Integrated Limited. She focuses on delievering value to the customers while soliving challenges faced by small and medium-sized enterprises (SMEs) in Africa. </p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
@@ -46,7 +46,7 @@ const Team = () => {
                 <div className="">
                     <h4 className='text-xl font-bold'>Abigael Chelimo</h4>
                     <p className='my-2'>In house legal counsel</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos porro dignissimos omnis distinctio dicta. </p>
+                    <p>Abigael oversees DIL's legal, regulatory and security compliance and also commercial litigation. </p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
@@ -55,7 +55,7 @@ const Team = () => {
                 <div className="">
                     <h4 className='text-xl font-bold'>Francis Kiarie</h4>
                     <p className='my-2'>Technology Lead</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos porro dignissimos omnis distinctio dicta accusamus. </p>
+                    <p>Francis is the Technical lead at DIL. He oversees DIL's engineering team and sets the technical vision for the company.</p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
