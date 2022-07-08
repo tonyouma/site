@@ -3,8 +3,8 @@ import type { NextPage } from "next";
 
 const Terms: NextPage = () => {
   return (
-    <div className="container flex flex-col px-20 py-5 mx-auto mb-40 md:w-2/3">
-      <div className="h-full ">
+    <div className="container py-5 px-20 mx-auto md:w-2/3 flex flex-col  mb-40">
+      <div className=" h-full">
         <h2 className="p-2">Terms of Use</h2>
         <span className="p-2">
           Last updated: -17th May 2022 (Version 1.1.0)
@@ -14,8 +14,8 @@ const Terms: NextPage = () => {
           INCORPORATES, THIS USER AGREEMENT (“Agreement”), THE INDIVIDUAL OR
           LEGAL ENTITY (“Customer”) AGREES THE TERMS AND CONDITIONS OF THIS
           AGREEMENT GOVERN CUSTOMER’S ACCESS TO AND USE OF THE SERVICES PROVIDED
-          BY DATA INTEGRATED LTD. (&quot;DIL). THIS AGREEMENT IS EFFECTIVE AS OF THE
-          DATE OF SUCH ACCEPTANCE OR EXECUTION (&quot;Effective Date). IF ANY TERMS
+          BY DATA INTEGRATED LTD. ("DIL"). THIS AGREEMENT IS EFFECTIVE AS OF THE
+          DATE OF SUCH ACCEPTANCE OR EXECUTION (“Effective Date”). IF ANY TERMS
           OR CONDITIONS IN THE DIL AGREEMENT SUPPLEMENT APPLY TO CUSTOMER (e.g.,
           if customer is a Kenyan government entity or educational institution)
           OR A SPECIFIC SERVICE (e.g., KE Gov or Event Reporting), THOSE TERMS
@@ -39,7 +39,7 @@ const Terms: NextPage = () => {
           <li>
             <span className="font-bold"> Services</span>
             <div className="ml-5 ">
-              <ol className="list-disc list-outside">
+              <ol className="list-outside list-disc">
                 <li className="p-2">
                   <p>
                     Right to Access and Use. Subject to the terms and conditions
@@ -70,7 +70,7 @@ const Terms: NextPage = () => {
             <span className="font-bold">Ownership and Proprietary rights</span>
           </li>
           <div className="ml-5 ">
-            <ol className="list-disc list-outside">
+            <ol className="list-outside list-disc">
               <li className="p-2">
                 <p>
                   <span className="font-bold">DIL.</span>As between the parties,
@@ -112,7 +112,7 @@ const Terms: NextPage = () => {
           <li className="">
             <span className="font-bold">Definitions:</span>
             <div className="ml-5 ">
-              <ol className="list-disc list-outside">
+              <ol className="list-outside list-disc">
                 <li className="p-2">
                   <p>
                     Capitalized terms used but not otherwise defined in this
@@ -127,7 +127,7 @@ const Terms: NextPage = () => {
           <li>
             <span className="font-bold">f</span>
             <div className="ml-5 ">
-              <ol className="list-disc list-outside">
+              <ol className="list-outside list-disc">
                 <li className="p-2">
                   <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Necessitatibus qui iure adipisci id earum fuga harum distinctio ut deleniti nostrum, tenetur vel, tempora praesentium! Non exercitationem autem quaerat fuga eum!
@@ -140,7 +140,7 @@ const Terms: NextPage = () => {
           <li>
             <span className="font-bold">f</span>
             <div className="ml-5 ">
-              <ol className="list-disc list-outside">
+              <ol className="list-outside list-disc">
                 <li className="p-2">
                   <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi sit animi rem temporibus at optio, quis ab sequi accusamus obcaecati saepe tenetur velit totam esse illo maiores quasi aliquid pariatur?
@@ -153,7 +153,7 @@ const Terms: NextPage = () => {
           <li>
             <span className="font-bold"> Security </span>
             <div className="ml-5 ">
-              <ol className="list-disc list-outside">
+              <ol className="list-outside list-disc">
                 <li className="p-2">
                   <p>
                     DIL has implemented and will maintain information security
@@ -175,7 +175,7 @@ const Terms: NextPage = () => {
           <li>
             <span className="font-bold">Definitions</span>
             <div className="ml-5 ">
-              <ol className="list-none list-outside">
+              <ol className="list-outside list-none">
                 <li className="p-2">
                   <p>
                     <span className="font-bold">“Affiliate”</span> means any

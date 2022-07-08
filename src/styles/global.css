@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply text-sm text-textPrimary font-necoregular;
+  @apply font-CeraRoundProNormal text-sm;
 }
 
 a:hover {
@@ -11,22 +11,22 @@ a:hover {
 }
 
 h1 {
-  @apply md:text-[42px] text-[40px] leading-[120%] text-secondary font-soraregular;
+  @apply md:text-5xl text-3xl font-SatoshiBlack leading-[120%];
 }
 
 h2 {
-  @apply text-[40px] leading-[120%] font-soraregular text-secondary;
+  @apply md:text-3xl text-xl font-SatoshiBlack;
 }
 
 h3 {
-  @apply text-2xl font-soraregular text-secondary;
+  @apply text-2xl font-SatoshiNormal text-secondary;
 }
 h4 {
-  @apply text-xl font-soraregular;
+  @apply text-xl font-SatoshiNormal;
 }
 
 p {
-  @apply text-base font-necoregular;
+  @apply font-CeraRoundProNormal text-sm leading-5 text-textPrimary opacity-90;
 }
 
 .hero-bg {
@@ -36,7 +36,6 @@ p {
 .play-button {
   filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.06))
     drop-shadow(0px 0px 40px rgba(0, 0, 0, 0.03));
-  @apply inline-flex items-center justify-center h-8 w-8 pl-[0.6px]   text-pink-100 transition-colors duration-150 bg-white rounded-full hover:bg-textPrimary;
 }
 
 .careers-intro {
@@ -46,7 +45,7 @@ p {
 
 .fore-ground::before {
   position: absolute;
-  height: 15%;
+  height: 35%;
   background-color: #fff;
   content: "";
   width: 100%;

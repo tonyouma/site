@@ -1,44 +1,65 @@
 
 export const partners = [
     {
-        name: 'Layers',
-        logo: 'assets/partners/logo-0.png'
+        name: 'Visa',
+        logo: 'assets/partners/visa.svg'
     },
     {
-        name: 'Quotients',
-        logo: 'assets/partners/logo-1.png'
+        name: 'AWS',
+        logo: 'assets/partners/aws.svg'
     },
     {
-        name: 'Sisphyus',
-        logo: 'assets/partners/logo-2.png'
+        name: 'Microsoft',
+        logo: 'assets/partners/microsoft.svg'
     },
     {
-        name: 'Circooles',
-        logo: 'assets/partners/logo-3.png'
+        name: 'DEG',
+        logo: 'assets/partners/deg_logo.svg'
+    },
+
+    {
+        name: 'Equity',
+        logo: 'assets/partners/equity.svg'
     },
     {
-        name: 'Hourglass',
-        logo: 'assets/partners/logo-4.png'
+        name: 'Interswitch',
+        logo: 'assets/partners/interswitch.svg'
     },
     {
-        name: 'Catalog',
-        logo: 'assets/partners/logo-5.png'
+        name: 'KRA',
+        logo: 'assets/partners/kra.svg'
+    },
+    {
+        name: 'Airtel',
+        logo: 'assets/partners/airtel.svg'
+    },
+    {
+        name: 'Safaricom',
+        logo: 'assets/partners/safaricom.svg'
+    },
+    {
+        name: 'Cooperative Bank',
+        logo: 'assets/partners/cooperative-bank.svg'
+    },
+    {
+        name: 'Mastercard',
+        logo: 'assets/partners/mastercard.svg'
     },
 ]
 
 export const investors = [
     {
-        name: 'Layers',
-        logo: 'assets/partners/logo-0.png'
+        name: 'Visa',
+        logo: 'assets/partners/visa.svg'
     },
     {
-        name: 'Quotients',
-        logo: 'assets/partners/logo-1.png'
+        name: 'DEG',
+        logo: 'assets/partners/deg_logo.svg'
     },
     {
-        name: 'Sisphyus',
-        logo: 'assets/partners/logo-2.png'
-    }
+        name: 'Ecobank',
+        logo: 'assets/partners/ecobank.svg'
+    },
 ]
 
 export const partnersInfo = [

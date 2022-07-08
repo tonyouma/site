@@ -12,7 +12,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({children}: LayoutProps) =
     <>
       <Header />
       <Navbar />
-      <div className='md:mt-[100px] mt-12'>
+      <div className='mt-[100px]'>
         {children}
       </div>
       

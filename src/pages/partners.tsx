@@ -1,30 +1,62 @@
-import type { NextPage } from 'next';
+import React from 'react'
+import type { NextPage } from 'next'
+import { investors, partners } from 'src/constants/partners'
 import { FooterForm } from 'src/components/form';
-import { Title } from 'src/components/title';
-import { investors, partners } from 'src/constants/partners';
+import { Hero } from 'src/components/hero';
+import { IReview, reviews } from 'src/constants/reviews';
 
+interface IProps {
+  review: Partial<IReview>
+}
+
+const Testimonial = (props: IProps) => {
+  const { name, comment, date, designation } = props.review;
+  return (
+    <div className="flex flex-col gap-4 p-8 min-w-[490px] m-6 rounded-[9px] shadow-[0_0_10px_10px_rgba(50,50,93,0.05)]">
+      <div className="flex items-center justify-between">
+        <div className='flex gap-3'>
+          <img src="/assets/partners/avatar.svg" alt="avatar" />
+          <div className="flex flex-col">
+            <h4>{name}</h4>
+            <p className='font-bold font-CeraRoundProNormal'>{designation}</p>
+          </div>
+        </div>
+        <img src="assets/partners/quotes.svg" alt="" />
+      </div>
+      <p>{comment}</p>
+      <div className="flex justify-start gap-3 mt-3">
+        <img src="assets/partners/calendar.svg" alt="calendar" />
+        <p className='font-bold font-CeraRoundProNormal'>{date}</p>
+      </div>
+    </div>
+  )
+}
 
 const Partners: NextPage = () => {
 
-  // const handleScroll = (item: string, e: any) => {
-  //   const element = document.getElementById("scroll")!;
-  //   if (item === 'forward') {
-  //     element.scrollLeft += 200;
-  //   }
-  //   if (item === 'back') {
-  //     element.scrollLeft -= 200;
-  //   }
-  // }
+  const handleScroll = (item: string, e: any) => {
+    const element = document.getElementById("scroll")!;
+    if (item === 'forward') {
+      element.scrollLeft += 200;
+    }
+    if (item === 'back') {
+      element.scrollLeft -= 200;
+    }
+  }
 
-  const introTitle = "A growing list of people who believe in us."
+  const intro = "Making headlines is good when you’re truly doing good."
   const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
 
   return (
     <>
       <div className='flex flex-col p-5 md:p-0'>
-        <Title title={introTitle} description={description} />
+        <div className="container">
+          <Hero title={intro} description={description} />
+        </div>
 
-        <div className='py-5 my-5 '>
+        <h3 className='text-center'>Solution Partners</h3>
+
+        <div className='py-5 my-5 bg-primary'>
           <div className="container flex flex-wrap justify-center">
             {partners.map((partner, i) => {
               return (
@@ -38,33 +70,34 @@ const Partners: NextPage = () => {
         </div>
         <div className="container">
           <h3 className='text-center'>Client Partners</h3>
-          <div className="flex flex-col justify-between py-3 mx-5 my-3 md:mx-0 md:flex-row">
+          <div className="flex flex-col justify-between py-3 mx-20 my-3 md:mx-0 md:flex-row">
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2 text-secondary'>SACCOs:</h4>
+              <h4 className='pb-2'>Saccos:</h4>
               <ul>
-                <li className=''>City Shuttle Sacco</li>
-                <li className=''>Obamana Sacco</li>
-                <li className=''>44 owners Sacco</li>
-                <li className=''>Globology Limited</li>
-                <li className=''>Mwiki Sacco</li>
+                <li className='p-1'>City Shuttle Sacco</li>
+                <li className='p-1'>Obamana Sacco</li>
+                <li className='p-1'>44 owners Sacco</li>
+                <li className='p-1'>Globology Limited</li>
+                <li className='p-1'>Mwiki Sacco</li>
               </ul>
             </div>
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2 text-secondary'>GOVERNMENTS</h4>
+              <h4 className='pb-2'>Government Agencies:</h4>
               <ul>
-                <li className=''>Kenya Revenue Authority</li>
-                <li className=''>Rwanda Revenue Authority</li>
+                <li className='p-1'>Kenya Revenue Authority</li>
+                <li className='p-1'>Rwanda Revenue Authority</li>
+                <li className='p-1'>National Transport and Safety Authority (NTSA)</li>
               </ul>
             </div>
 
             <div className="flex flex-col gap-2">
-              <h4 className='pb-2 text-secondary'>BANKS:</h4>
+              <h4 className='pb-2'>Banks:</h4>
               <ul>
-                <li className=''>Equity Bank</li>
-                <li className=''>Ecobank</li>
-                <li className=''>Interswitch</li>
-                <li className=''>Spire Bank</li>
-                <li className=''>United Bank of Africa</li>
+                <li className='p-1'>Equity Bank</li>
+                <li className='p-1'>Ecobank</li>
+                <li className='p-1'>Interswitch</li>
+                <li className='p-1'>Spire Bank</li>
+                <li className='p-1'>United Bank of Africa</li>
               </ul>
             </div>
 
@@ -72,7 +105,7 @@ const Partners: NextPage = () => {
         </div>
         <h3 className='text-center'>Investors</h3>
         <div className="container flex flex-wrap justify-center">
-          <p className='max-w-2xl p-3 md:text-center md:p-6'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
+          <p className='max-w-2xl p-3 md:p-6'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
           <div className="flex flex-wrap justify-center my-3 md:py-2">
             {investors.map((investor, i) => {
               return (
@@ -89,33 +122,28 @@ const Partners: NextPage = () => {
       <div className="relative flex flex-col justify-center p-6">
         <div className="flex justify-end items-center flex-col md:flex-row max-w-[1080px] mx-auto md:gap-24">
           <div className="flex w-[100%] justify-center mr-auto">
-            <p className='pb-3 text-center md:max-w-lg'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
+            <p className='pb-3 md:max-w-lg'>From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can.</p>
+          </div>
+          <div className="items-center justify-center hidden gap-3 p-3 md:flex md:p-0">
+            <button
+              onClick={(e) => handleScroll("back", e)}
+              className="rounded-[50%] h-[35px] w-[35px] border-2 border-textPrimary flex justify-center items-center">
+              <img src="/assets/back-arrow.svg" alt="<" />
+            </button>
+
+            <button
+              onClick={(e) => handleScroll("forward", e)}
+              className="rounded-[50%] h-[35px] w-[35px] border-2 border-textPrimary flex justify-center items-center">
+              <img src="/assets/forward-arrow.svg" alt=">" />
+            </button>
           </div>
         </div>
+        {/* Testimonials */}
+        <div id='scroll' className="flex justify-start overflow-x-auto md:overflow-hidden">
+          {reviews.map((review, i) => (
+            <Testimonial review={review} key={i}/>
+          ))}
 
-        <div className="container">
-          <div className='grid grid-cols-1 md:grid-cols-2'>
-            <div className="bg-[#EE3D4E]">
-              <img src="/assets/cardholder.png" alt="" className="" />
-            </div>
-            {/* <div> */}
-            <div className="bg-[#0D3648] top-6 md:py-8 py-4 md:pl-5 md:mt-24 p-5">
-              <h3 className='pb-3 text-secondary'>
-                Data Integrated knows the financial
-                complexities of a demanding market
-                like Kenya. Their solutions are rele-
-                vant, affordable and scalable. This is a
-                team that walks the talk.
-                Secretary of Transport
-              </h3>
-              <div className="text-white">
-                <p>Secretary of Transport</p>
-                <p>National Transport Council, Kenya</p>
-              </div>
-
-              {/* </div> */}
-            </div>
-          </div>
         </div>
       </div>
       {/* Partners footer */}

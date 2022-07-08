@@ -6,7 +6,7 @@ export interface ICareer {
         current: string;
     };
     division: [];
-    createdAt: string;
+    _createdAt: string;
     location: string;
     yearofexperience: string;
     publishedAt: Date,
