@@ -46,7 +46,7 @@ const Team = () => {
                 <div className="">
                     <h4 className='text-xl font-bold'>Abigael Chelimo</h4>
                     <p className='my-2'>In house legal counsel</p>
-                    <p>Abigael oversees DIL's legal, regulatory and security compliance and also commercial litigation. </p>
+                    <p>Abigael oversees DIL&apos;s legal, regulatory and security compliance and also commercial litigation. </p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
@@ -55,7 +55,7 @@ const Team = () => {
                 <div className="">
                     <h4 className='text-xl font-bold'>Francis Kiarie</h4>
                     <p className='my-2'>Technology Lead</p>
-                    <p>Francis is the Technical lead at DIL. He oversees DIL's engineering team and sets the technical vision for the company.</p>
+                    <p>Francis is the Technical lead at DIL. He oversees DIL&apos;s engineering team and sets the technical vision for the company.</p>
                     <div className="flex items-center mt-4 gap-x-4">
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
                         <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
