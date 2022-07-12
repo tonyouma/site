@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <nav id='nav' className=" fixed w-[100%] bg-white z-20 top-0  ">
       <div id="navbar" className="container flex items-center justify-between p-5 ease-in md:px-0">
-        <div className="pt-2">
+        <div className="">
           <Socials items='end' />
         </div>
         <div id="navbar_links" className="hidden space-x-6 transition-300 md:flex">
