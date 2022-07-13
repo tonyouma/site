@@ -13,7 +13,7 @@ const News = ({ news }: Props) => {
   return (
     <div className="container">
       <div className=" md:pt-16">
-        <img src={urlFor(news.mainImage).url()!} alt={news.title} className="object-cover w-full h-72" />
+        <img src={urlFor(news.mainImage).url()!} alt={news.title} className="object-cover w-full h-full" />
       </div>
 
       <div className="">
@@ -58,7 +58,6 @@ const News = ({ news }: Props) => {
           </article>
         </div>
       </div>
-      <FooterForm />
     </div>
   )
 }

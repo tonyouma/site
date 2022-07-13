@@ -28,10 +28,10 @@ function Navbar() {
   return (
     <nav id='nav' className=" fixed w-[100%] bg-white z-20 top-0  ">
       <div id="navbar" className="container flex items-center justify-between p-5 ease-in md:px-0">
-        <div className="">
+        <div className="hidden md:block">
           <Socials items='end' />
         </div>
-        <div id="navbar_links" className="hidden space-x-6 transition-300 md:flex">
+        <div id="navbar_links" className="hidden space-x-6 transition-all ease-in delay-200 md:flex">
           <Link url='/' name='Who we are' />
           <Link url='/products' name='Products & Solutions' />
           <Link url='/partners' name='Partners' />
@@ -39,7 +39,7 @@ function Navbar() {
           <Link url='/careers' name='Careers' />
           <Link url='/contact' name='Talk to Us' />
         </div>
-        <div className="hidden md:block">
+        <div className="">
           <Link id={'logo'} name={"Logo"} url={"/"} image={"/assets/logo.svg"} />
 
         </div>
