@@ -1,12 +1,14 @@
-/* eslint-disable @next/next/no-img-element */
-import type { NextPage } from "next";
-import FooterForm from "src/components/form/FooterForm";
-import Team from "src/components/team";
-import { partnersInfo } from "src/constants/partners";
-import { productsItems } from "src/constants/products";
-import { stats } from "src/constants/stats";
-import { IProductProps } from "src/models/product";
-import { formatCount } from "src/utils/formatCount";
+// eslint-disable @next/next/no-img-element
+import React from 'react' 
+import type { NextPage } from 'next'
+import FooterForm from 'src/components/form/FooterForm'
+import Team from 'src/components/team'
+import { partnersInfo } from 'src/constants/partners'
+import { productsItems } from 'src/constants/products'
+import { stats } from 'src/constants/stats'
+import { IProductProps } from 'src/models/product'
+import { formatCount } from 'src/utils/formatCount'
+import DemoModal from "src/components/DemoModal"
 import Link from "next/link";
 import Image from "next/image";
 import heroImage from "../../public/assets/hero.png";
@@ -18,9 +20,9 @@ interface IProps {
 const Product = (props: IProps) => {
   const { image, title, description } = props.product;
   return (
-    <div className="flex flex-col md:p-0">
-      <img src={image} alt={title} />
-      <div>
+    <div className="flex hover:shadow-xl p-6 transition-all delay-100 ease-out flex-col">
+      <img className='h-1/2' src={image} alt={title} />
+      <div className='h-1/2'>
         <h3 className="py-3">{title}</h3>
         <p className="pb-4">{description}</p>
         <Link href="/products">
@@ -32,8 +34,10 @@ const Product = (props: IProps) => {
 };
 
 const Home: NextPage = () => {
+  const [show, setShow] = React.useState<boolean>(false)
+
   return (
-    <>
+    <div className="overflow-hidden">
       <div className="">
         <div className="container px-5 md:px-0 md:py-14">
           <div className="max-w-3xl">
@@ -45,23 +49,16 @@ const Home: NextPage = () => {
               to high finance
             </h1>
             <div className="pb-10 md:max-w-xl">
-              <p className="pb-4">
-                Our solutions are developed to be compatible with public,
-                banking and regulatory platforms as well as people on the
-                ground. We strive to have financial inclusion for all.
-              </p>
-              <p>
-                Have any questions?{" "}
-                <span className="font-bold">Contact sales</span>{" "}
-              </p>
+              <p className='pb-4'>Our solutions are developed to be compatible with public, banking and regulatory platforms as well as people on the ground. We strive to have financial inclusion for all.</p>
+              <p>Have any questions? <a href='mailto:sales@dataintegrated.co.ke' className='font-bold'>Contact sales</a> </p>
             </div>
           </div>
           <div className="flex items-center justify-between mb-6">
-            <button className="py-3 border-none rounded-full px-9 bg-[#BADDEE] text-slate-900 font-bold focus:outline-none">
+            <button onClick={()=>setShow(true)} className='py-3 border-none rounded-full px-9 btn-bg text-slate-900 font-bold focus:outline-none'>
               Request a Demo
             </button>
             <div className="flex items-center gap-x-2">
-              <p>Products Demo</p>{" "}
+              <p>Products Demo</p> 
               <button className=" play-button">
                 <img src="/assets/play-button.svg" alt="" />
               </button>
@@ -111,9 +108,9 @@ const Home: NextPage = () => {
       </div>
 
       <div className="container p-5">
-        <div className="max-w-xl py-12 mx-auto">
-          <h1 className="mb-4">Products and Solutions</h1>
-          <p>
+        <div className=" py-12 mx-auto">
+          <h1 className="md:max-w-xl mx-auto mb-4">Products and Solutions</h1>
+          <p className='md:max-w-2xl mx-auto'>
             From smart public transport solutions to retail payments to payroll
             management, our products cater to the growing everyday financial
             needs of African population.
@@ -139,9 +136,11 @@ const Home: NextPage = () => {
               maintain a secure environment. Data Integrated Limited is now
               proudly PCI DSS certified.
             </p>
-            <button className="py-3 border-[#093749] border  rounded px-9 text-slate-900 font-bold focus:outline-none">
-              Read More on PIC/DSS
-            </button>
+            <Link href={'https://www.pcisecuritystandards.org/'}>
+              <a target={'_blank'} className="py-3 border-[#093749] border  rounded px-9 text-slate-900 font-bold focus:outline-none">
+                Read More on PIC/DSS
+              </a>
+            </Link>
           </div>
         </div>
         <div className="w-full md:w-1/2">
@@ -156,10 +155,10 @@ const Home: NextPage = () => {
       <div className="py-16 mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div className="relative z-10 lg:py-16">
-            <div className="relative h-40 sm:h-80 lg:h-full">
+            <div className="relative h-100 lg:h-full">
               <img
                 className="absolute inset-0 object-cover w-full h-full"
-                src="/assets/limiter_1.webp"
+                src="/assets/landing/home_hero.jpg"
                 alt="Card Holder"
               />
             </div>
@@ -185,10 +184,15 @@ const Home: NextPage = () => {
         </div>
       </div>
 
+      <DemoModal setShowModal={setShow} showModal={show} />
+
       <Team />
-      <FooterForm />
-    </>
-  );
-};
+      <FooterForm 
+        setShowModal={setShow}
+      />
+      
+    </div>
+  )
+}
 
 export default Home;

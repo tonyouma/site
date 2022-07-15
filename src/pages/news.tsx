@@ -13,6 +13,14 @@ interface Props {
 
 const News = ({ news }: Props) => {
 
+  const downloadAssets = async() =>{
+    //To download assets
+  }
+
+  const downloadRelease = async() =>{
+    //To download press release
+  }
+
   const intro = "Making headlines is good when you’re truly doing good."
   const description = "From government authorities to banks and credit providers, we work with a growing number of partners with a single aim - give African SMEs a competitive edge that no one else can."
 
@@ -91,8 +99,8 @@ const News = ({ news }: Props) => {
         </div>
 
 
-        <div className="grid items-baseline grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:pt-12">
-          <div className="md:px-5 md:py-12">
+        <div className="grid items-stretch justify-center grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 md:pt-12">
+          <div className="md:px-5 flex flex-col h-full justify-center md:py-12">
             <h3 className="pb-4">Featured On</h3>
             <p className="">Recently, Data Integrated Limited got featured in the Business Today segment in one of the major media houses in Kenya, KTN. Have a look: <span><a href="https://www.youtube.com/watch?v=IWOhzDoRkJo" target="_blank" className="text-secondary">Link here</a>
             </span>
@@ -151,7 +159,7 @@ const News = ({ news }: Props) => {
             <div className="w-1/2 p-4 rounded-md shadow-md md:py-6 md:px-6 bg-primary">
               <img src="/assets/news/folder.svg" alt="" />
               <h5 className="pt-3 font-bold uppercase">Press Kit</h5>
-              <p className="py-1">Official images</p>
+              <p className="py-1">Official Release</p>
               <a href="http://" className="text-secondary">Download</a>
             </div>
           </div>

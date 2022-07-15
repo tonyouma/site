@@ -43,6 +43,18 @@ p {
   transform: translate(-50%, -50%);
 }
 
+.btn-bg {
+  background: linear-gradient(to left, #BADDEE 50%, #EE3F4F 50%) right;
+  background-size: 210%;
+  transition: .5s ease-out;
+}
+
+.btn-bg:hover {
+  background-position: left;
+  @apply text-white
+
+}
+
 .fore-ground::before {
   position: absolute;
   height: 35%;

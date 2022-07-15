@@ -1,8 +1,12 @@
+import React from 'react'
 import { Hero } from "src/components/hero";
 import { Link } from "../components/link";
+import { FooterForm } from 'src/components/form';
+import DemoModal from "src/components/DemoModal"
 
 
 const products = () => {
+  const [show, setShow] = React.useState<boolean>(false)
   const title =
     "Meaningful. Affordable. Easy. Our solutions are of today's Africa";
   const description =
@@ -246,6 +250,8 @@ const products = () => {
           </div>
         </div>
       </div> */}
+      <DemoModal setShowModal={setShow} showModal={show} />
+      <FooterForm setShowModal={setShow} />
     </div>
   );
 };

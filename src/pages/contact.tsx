@@ -47,7 +47,7 @@ const Contact: NextPage = () => {
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7977.565822130652!2d36.830210427383534!3d-1.3053485430429546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11928f70ae4f%3A0xb6bc8a5c0ae76740!2sData%20Integrated%20Limited!5e0!3m2!1sen!2ske!4v1652443479893!5m2!1sen!2ske"
           className="w-full h-full"
-          style={{ border: 0, height: 300 }}
+          style={{ border: 0, height: 450 }}
           //allowfullscreen=""
           loading="lazy"
         //referrerpolicy="no-referrer-when-downgrade"

@@ -4,28 +4,30 @@ import { investors, partners } from 'src/constants/partners'
 import { FooterForm } from 'src/components/form';
 import { Hero } from 'src/components/hero';
 import { IReview, reviews } from 'src/constants/reviews';
+import DemoModal from "src/components/DemoModal"
 
 interface IProps {
   review: Partial<IReview>
 }
 
 const Testimonial = (props: IProps) => {
-  const { name, comment, date, designation } = props.review;
+  const { name, avatar, comment, date, designation } = props.review;
+   
   return (
     <div className="flex flex-col gap-4 p-8 min-w-[490px] m-6 rounded-[9px] shadow-[0_0_10px_10px_rgba(50,50,93,0.05)]">
       <div className="flex items-center justify-between">
         <div className='flex gap-3'>
-          <img src="/assets/partners/avatar.svg" alt="avatar" />
+          <img className='w-16 h-16 rounded-[50%] object-cover' src={avatar} alt="avatar" />
           <div className="flex flex-col">
             <h4>{name}</h4>
             <p className='font-bold font-CeraRoundProNormal'>{designation}</p>
           </div>
         </div>
-        <img src="assets/partners/quotes.svg" alt="" />
+        <img src="/assets/partners/quotes.svg" alt="" />
       </div>
       <p>{comment}</p>
       <div className="flex justify-start gap-3 mt-3">
-        <img src="assets/partners/calendar.svg" alt="calendar" />
+        <img src="/assets/partners/calendar.svg" alt="calendar" />
         <p className='font-bold font-CeraRoundProNormal'>{date}</p>
       </div>
     </div>
@@ -33,7 +35,7 @@ const Testimonial = (props: IProps) => {
 }
 
 const Partners: NextPage = () => {
-
+  const [show, setShow] = React.useState<boolean>(false)
   const handleScroll = (item: string, e: any) => {
     const element = document.getElementById("scroll")!;
     if (item === 'forward') {
@@ -147,7 +149,8 @@ const Partners: NextPage = () => {
         </div>
       </div>
       {/* Partners footer */}
-      <FooterForm />
+      <DemoModal setShowModal={setShow} showModal={show} />
+      <FooterForm setShowModal={setShow} />
     </>
 
   )

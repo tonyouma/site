@@ -3,7 +3,7 @@ import { IProductProps } from "src/models/product";
 export const productsItems: IProductProps[] = [
     {
         title: "mEPESI Passenger App",
-        image: "/assets/placeholder.png",
+        image: "/assets/products/mobitill_booking.png",
         description: "mEpesi is a mobile application for public transportation that enables users to view and access real-time vehicle availability on the route they wish to take, pay for their travels, view and publish real-time traffic updates, and view and reserve available seats in the vehicles.",
         highlights: [
             "Highlight One",
@@ -15,7 +15,7 @@ export const productsItems: IProductProps[] = [
     },
     {
         title: "Speed Limiters",
-        image: "/assets/placeholder.png",
+        image: "/assets/limiter_1.webp",
         description: "It integrates both a speed limiter and a tracking device that is configured to the Mobitil Epesi dashboard where owners can access relevant information including real-time location viewing on map and speed information. The Speed Limiter type is iTracMT2 and is compliant to KEBS standards.",
         highlights: [
             "GPS real time tracking",
@@ -28,7 +28,7 @@ export const productsItems: IProductProps[] = [
 
     {
         title: "Mapato Payroll",
-        image: "/assets/placeholder.png",
+        image: "/assets/products/mapato.svg",
         description: "A simple, convenient, affordable and customizable payroll system designed for small businesses. Payroll consists of; employee information, hours worked, time off, salaries & wedges, overtime pay, deductions, payroll taxes, net and gross pay.",
         highlights: [
             "Instant Pay slips accessible on mobile",
