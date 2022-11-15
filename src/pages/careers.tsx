@@ -96,7 +96,7 @@ const careers = ({ careers }: Props) => {
 
                 <div className="flex items-center justify-between">
                   <p>{career.title}</p>
-                  <Link href="/careers/[id]" as={`/careers/${career.slug.current}`} passHref ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></Link>
+                  <a href={`/careers/${career.slug.current}`} ><div className='flex text-[#0645AD] cursor-pointer gap-x-2'>View job<img src="/assets/link.svg" alt="" className="" /></div></a>
                 </div>
                 <div className="flex">
                   <p>{career?.location}</p>
