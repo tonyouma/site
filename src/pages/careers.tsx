@@ -88,7 +88,7 @@ const careers = ({ careers }: Props) => {
         <div className="container px-5 md:px-40">
           <h4 className='text-center'>Currently Open Roles</h4>
           <div className='flex flex-col py-5 gap-y-5'>
-            {careers.length === 0 ? <p className='p-5 text-lg text-center rounded-lg bg-defaultWhite'>No careers available at the moment</p> : careers.map(career => (
+            {!careers.length ? <p className='p-5 text-lg text-center rounded-lg bg-defaultWhite'>No careers available at the moment</p> : careers.map(career => (
               <div className='p-5 rounded-lg bg-defaultWhite' key={career._id}>
 
                 <p className='mb-2 font-extrabold uppercase' >{career.division}</p>
