@@ -1,5 +1,6 @@
-import Link from 'next/link'
-
+// import Link from 'next/link'
+import Image from 'next/image'
+import { Link } from 'src/components/link'
 import { ICareer } from 'src/models/careers'
 import { sanityClient } from '../../sanity'
 
@@ -31,6 +32,56 @@ const careers = ({ careers }: Props) => {
         <p><span className='my-4 font-bold'>Our motto</span>  says a lot on what we believe in, which is connecting “the street” to “high finance”. </p>
         <p>Over the years, DIL has mastered the African market and offers niche solutions that are customized to the unique African experience. We are committed to giving efficient services, seamless customers experience and user friendly person-to-person payments.<br />
           Our solutions are developed to be compatible with most payments solutions and platforms. DIL strives to have financial inclusion for all, by increasing payment efficiency through liable, secure, fast and easy to use devices at an affordable price.</p>
+      </div>
+      
+      <h1 className='my-5 text-center'>A team with conviction.</h1>
+
+      <div className="container grid grid-cols-1 gap-6 md:grid-cols-3">
+        <div className='relative'>
+          <div className="cursor-pointer grayscale hover:grayscale-0">
+            <Image src="/assets/mary_ceo.png" alt="" width="100%" height="100%" layout="responsive" objectFit="contain" />
+          </div>
+          <div className="mt-2">
+            <h4 className='text-xl font-bold'>Mary Mwangi</h4>
+            <p className='my-2'>Founder and CEO</p>
+            <p>Mary is the Founder and CEO of Data Integrated Limited. She focuses on delievering value to the customers while soliving challenges faced by small and medium-sized enterprises (SMEs) in Africa. </p>
+            <div className="flex items-center mt-4 gap-x-4">
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
+            </div>
+          </div>
+        </div>
+
+        <div className='relative'>
+          <div className="cursor-pointer grayscale hover:grayscale-0">
+            <Image src="/assets/irene_hr.jpg" alt="" width="100%" height="100%" layout="responsive" objectFit="cover" />
+          </div>
+          <div className="mt-2">
+            <h4 className='text-xl font-bold'>Irene Ngugi</h4>
+            <p className='my-2'>HR and Administration</p>
+            <p>Irene is the Human Resource Manager at DIL, she leads the team in building highly motivated and engaged teams. </p>
+            <div className="flex items-center mt-4 gap-x-4">
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
+            </div>
+          </div>
+        </div>
+
+        <div className='relative'>
+          <div className="cursor-pointer grayscale hover:grayscale-0">
+            <Image src="/assets/francis-kiarie.jpeg" alt="" width="100%" height="100%" layout="responsive" objectFit="contain" />
+          </div>
+          <div className="mt-2">
+            <h4 className='text-xl font-bold'>Francis Kiarie</h4>
+            <p className='my-2'>Technology Lead</p>
+            <p>Francis is the Technical lead at DIL. He oversees DIL&apos;s engineering team and sets the technical vision for the company.</p>
+            <div className="flex items-center mt-4 gap-x-4">
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/linkedin.svg'} />
+              <Link blank url='https://linked.com' name='LinkedIn' image={'/assets/twitter.svg'} />
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div className='py-12 my-6 bg-primary'>
