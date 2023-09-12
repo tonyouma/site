@@ -1,255 +1,152 @@
-import React from 'react'
+import Image from "next/image";
+import React from "react";
+import DemoModal from "src/components/DemoModal";
+import { FooterForm } from "src/components/form";
 import { Hero } from "src/components/hero";
-import { Link } from "../components/link";
-import { FooterForm } from 'src/components/form';
-import DemoModal from "src/components/DemoModal"
-
 
 const products = () => {
-  const [show, setShow] = React.useState<boolean>(false)
+  const [show, setShow] = React.useState<boolean>(false);
   const title =
     "Meaningful. Affordable. Easy. Our solutions are of today's Africa";
   const description =
     "We genuinely believe we are creating payment solutions that positively affect the lives of millions of Africans. Sometimes we like to talk about what we do more openly. Sometimes, others do for us.";
+
+  const products = [
+    {
+      title: "Accounting system",
+      description:
+        "Accounting system developed to compliment Mobitill Epesi application. This is to enable transaction posted in the dashboard have flexibility to have a financial approach through an accounting and book keeping for SMEs",
+      features: ["Delivers chart of accounts"],
+      image: "/assets/products/accounting.png",
+    },
+    {
+      title: "Loans & Savings",
+      description:
+        "This is an application that automates Sacco loans and savings processes. It helps the Sacco collect, manage and monitor their member’s savings and loan applications.",
+      features: [
+        " Documentation of members savings",
+        "Secured data of loans applied for",
+        "Automated process that is efficient in running the loans and savings process within a Sacco",
+        "Frees time spent on manual applications ",
+        "Quicker decision making during loan applications",
+        "Automated reports",
+        " Sacco transparency",
+      ],
+      image: "/assets/products/passenger.png",
+    },
+    {
+      title: "Mepesi",
+      description:
+        "mEpesi is a mobile based application for the public transport sector that allows passengers to: -view and access in real time the availability of vehicles on the road on which they intend to travel -view and book the available seats on the vehicles -pay for their trips -view and post real-time traffic updates.",
+      features: [
+        "Offering payment options such as MPESA, VISA, or mobile wallet",
+        "Enabling you to share and view traffic updates and service ratings with other users",
+        "Allowing you to travel within or across cities",
+        "Showing you routes, vehicles, fares, and maps",
+      ],
+      image: "/assets/products/passenger_app.png",
+    },
+    {
+      title: "Mapato Payroll",
+      description:
+        "A simple, convenient, affordable and customizable payroll system for small businesses. It covers employee information, hours, time off, salaries, wedges, overtime, deductions, taxes, and net and gross pay.",
+      features: [
+        "Mobile pay slips",
+        "Accurate paychecks",
+        "Automatic payroll taxes",
+        "Fast direct deposits",
+        "NHIF and NSSF collection",
+        "Bank connections and reconciliation",
+        "Tax penalty protection",
+        "SMS and email alerts",
+      ],
+      image: "/assets/products/passenger.png",
+    },
+    {
+      title: "Trip Scheduling/Planner",
+      description:
+        "Fleet Scheduling system basically ques the vehicles and helps develop the schedules of the vehicles operating within a Sacco or the bus stop. Scheduling system has a geofencing feature which tracks the vehicle movement and automatically schedules the vehicles according to the time at which the vehicle enters the desired boundary.",
+      features: [
+        "Real-time insights on stage operations",
+        "Prior planning for orderly stage activities",
+        "Custom reports for efficient operations",
+        "Traffic control in bus stops",
+        "Streamlined vehicle and pedestrian interaction",
+        "Predictive analytics for mobility planning",
+      ],
+      image: "/assets/products/passenger.png",
+    },
+    {
+      title: "Speed Limiters",
+      description:
+        "MobiTill Speed Limiter is a product by Data Integrated Limited that controls the speed of buses/matatus and sends data to NTSA. It follows the KS 2295-2018 standards and reduces compliance risks.",
+      features: [
+        "GPS real time tracking",
+        "Track Playback function",
+        "Geo- Fencing function",
+        "Data printing function",
+        "SMS function and remote configuration",
+      ],
+      image: "/assets/products/passenger.png",
+    },
+  ];
   return (
     <div>
-
       <div className="container pt-8">
         <Hero title={title} description={description} />
       </div>
 
-      <div className="bg-primary">
-        <div className="container px-5 md:py-12 md:px-0">
-          <div className="flex flex-col items-center gap-x-7 md:flex-row">
-            <div className="py-6 md:w-7/12">
-              <h4 className="py-2 font-bold">mEpesi Passenger App</h4>
-              <p className="md:w-10/12">
-                mEpesi is a mobile application for public transportation that enables users to view and access real-time vehicle availability on the route they wish to take, pay for their travels, view and publish real-time traffic updates, and view and reserve available seats in the vehicles.
-              </p>
-
-              <h5 className="pt-5 pb-2 text-lg">Product Features</h5>
-              <div className="grid grid-cols-1 md:grid-cols-2">
-                <div className="">
-                  <ol className="pl-5 list-disc md:pl-5">
-                    <li className="">
-                      <p>Real-time traffic updates</p>
-                    </li>
-                    <li className="">
-                      <p>Bookings and service ratings</p>
-                    </li>
-                  </ol>
-                </div>
-                <div className="pl-5 md:pr-5">
-                  <ol className="list-disc">
-                    <li className="">
-                      <p>In-app payments including MPESA, VISA, and the mobile wallet</p>
-                    </li>
-                    <li className="">
-                      <p>Vehicle movement monitoring together with a map for visual aid.</p>
-                    </li>
-                  </ol>
+      <div className="flex flex-col">
+        {products.map((item, index) => (
+          <div
+            key={index}
+            className={`relative ${
+              index % 2 === 0 ? "bg-primary" : "bg-transparent"
+            }`}
+          >
+            <div className="container flex py-6 mx-auto">
+              <div
+                className={`p-4 w-1/2 ${
+                  index % 2 === 0
+                    ? "order-2 rounded-r-lg"
+                    : "order-1 rounded-l-lg"
+                }`}
+              >
+                <h4 className="py-2 font-bold">{item.title}</h4>
+                <p className="">{item.description}</p>
+                <h5 className="pt-5 pb-2 text-lg">Product Features</h5>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3">
+                  <div className="">
+                    <ol className="list-disc md:pl-5">
+                      {item.features.map((feature, index) => (
+                        <li className="" key={index}>
+                          <p>{feature}</p>
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
                 </div>
               </div>
-              <div className="flex mt-10">
-                <a>
-                  <img
-                    className="inline w-32 mr-4"
-                    src="/assets/appstore.svg"
-                    alt=""
-                  />
-                </a>
-                <Link
-                  name="Play Store"
-                  blank
-                  url="#"
-                  image={"/assets/playstore.svg"}
+              <div
+                className={`p-4 w-1/2 ${
+                  index % 2 === 0
+                    ? "order-1 rounded-l-lg"
+                    : "order-2 rounded-r-lg"
+                }`}
+              >
+                <Image
+                  src={item.image}
+                  alt="Product Item"
+                  width={600}
+                  height={600}
+                  className="object-cover"
                 />
-              </div>
-            </div>
-            <div className="md:w-5/12">
-              <img
-                src="/assets/products/mepesi.svg"
-                alt=""
-                className="w-full h-96"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container px-5 md:px-0 md:py-12">
-        <div className="flex flex-col items-center gap-x-7 md:flex-row">
-          <div className="order-2 md:w-5/12 md:order-1">
-            <img
-              src="/assets/limiter_1.webp"
-              alt=""
-
-            />
-          </div>
-
-          <div className="order-1 py-6 md:w-7/12 md:order-2">
-            <h4 className="py-2 font-bold">Speed Limiters</h4>
-            <p className="md:w-10/12">
-              It integrates both a speed limiter and a tracking device that is configured to the Mobitil Epesi dashboard where owners can access relevant information including real-time location viewing on map and speed information. The Speed Limiter type is iTracMT2 and is compliant to KEBS standards.
-            </p>
-            <h5 className="pt-5 pb-2 text-lg">Product Features</h5>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3">
-              <div className="">
-                <ol className="list-disc md:pl-5">
-                  <li className="">
-                    <p>GPS real time tracking</p>
-                  </li>
-                  <li className="">
-                    <p>Track Playback function</p>
-                  </li>
-                </ol>
-              </div>
-              <div className="pl-5 md:pr-5">
-                <ol className="list-disc">
-                  <li className="">
-                    <p>Geo-Fencing function</p>
-                  </li>
-                  <li className="">
-                    <p>SMS function and remote configuration</p>
-                  </li>
-                </ol>
+                {/* Content of the second column */}
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
-
-      <div className="bg-primary">
-        <div className="container px-5 md:px-0">
-          <div className="flex flex-col items-center gap-x-7 md:flex-row">
-            <div className="py-7 md:py-14 md:w-7/12">
-              <h4 className="py-2 font-bold">MAPATO PAYROLL</h4>
-              <p className="md:w-9/12">
-                Mapato Payroll system is designed for small businesses. It’s
-                simple, convenient, affordable and customizable to your needs.
-                From do-it-yourself payroll to human capital management.
-              </p>
-              <h5 className="pt-5 pb-2 text-lg">Product Features</h5>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3">
-                <div className="">
-                  <ol className="list-disc md:pl-5">
-                    <li className="">
-                      <p>Instant Pay slips accessible on mobile</p>
-                    </li>
-                    <li className="">
-                      <p>Calculate paychecks accurately</p>
-                    </li>
-                    <li className="">
-                      <p>NHIF and NSSF collection</p>
-                    </li>
-                    <li className="">
-                      <p>SMS & email notifications on payments</p>
-                    </li>
-                  </ol>
-                </div>
-                <div className="pl-5 md:pr-5">
-                  <ol className="list-disc">
-                    <li className="">
-                      <p>Faster direct deposits processing</p>
-                    </li>
-                    <li className="">
-                      <p>Calculate payroll taxes automatically</p>
-                    </li>
-                    <li className="">
-                      <p>Bank Connections & Reconciliation</p>
-                    </li>
-                  </ol>
-                </div>
-              </div>
-              {/* <a href="#" className="text-blue-700 ">
-                Learn more about Mapato Payroll ....
-              </a> */}
-            </div>
-            <div className="md:w-5/12">
-              <img
-                src="/assets/products/mapato.svg"
-                alt=""
-
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="">
-        <div className="container px-5 md:py-12 md:px-0">
-          <div className="flex flex-col items-center gap-x-7 md:flex-row">
-            <div className="md:w-5/12">
-              <img
-                src="/assets/products/mobitill_booking.png"
-                alt=""
-
-              />
-            </div>
-
-            <div className="py-6 md:w-7/12">
-              <h4 className="py-2 font-bold">Mobitill Booking Portal</h4>
-              <p className="mb-4 md:mb-8 md:w-10/12">
-                Mobitill Epesi Booking is an application for booking and paying for trips by passengers or the SACCO cashiers. The application is a web application with a mobile application version called mEpesi Booking, which can be found on Google Play Store.
-              </p>
-              <a href="https://booking.mobitill.com" target="_blank" className="text-secondary ">
-                Learn more about Mobitill Booking Portal
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* <div className="container py-5">
-        <h5 className="pr-5 font-bold">LOANS AND SAVINGS</h5>
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          <div className="">
-            <p className="p-2">
-              This is an application that automates Sacco loans and savings
-              processes. It helps the Sacco collect, manage and monitor their
-              member’s savings and loan applications.
-            </p>
-            <h6 className="p-2 font-bold">Product Features</h6>
-            <ol className="list-inside">
-              <li className="">
-                <p>Admin Dashboard</p>
-              </li>
-              <li className="">
-                <p>Member Dashboard</p>
-              </li>
-            </ol>
-          </div>
-
-          <div className="pl-5 md:pr-5">
-            <h6 className="font-bold">Benfit</h6>
-            <ol className="list-disc">
-              <li className="">
-                <p>Documentation of members savings</p>
-              </li>
-              <li className="">
-                <p>Secured data of loans applied for</p>
-              </li>
-              <li className="">
-                <p>
-                  Automated process that is efficient in running the loans and
-                  savings process within a Sacco
-                </p>
-              </li>
-              <li className="">
-                <p> Frees time spent on manual applications</p>
-              </li>
-              <li className="">
-                <p> Quicker decision making during loan applications</p>
-              </li>
-              <li className="">
-                <p> Automated reports</p>
-              </li>
-              <li className="">
-                <p> Sacco transparency</p>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div> */}
       <DemoModal setShowModal={setShow} showModal={show} />
       <FooterForm setShowModal={setShow} />
     </div>

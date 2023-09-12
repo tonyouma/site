@@ -26,41 +26,58 @@ function Navbar() {
   }
 
   return (
-    <nav id='nav' className=" fixed w-[100%] bg-white z-20 top-0  ">
-      <div id="navbar" className="container flex items-center justify-between p-5 ease-in md:px-0">
+    <nav id="nav" className=" fixed w-[100%] bg-white z-20 top-0  ">
+      <div
+        id="navbar"
+        className="container flex items-center justify-between p-5 ease-in md:px-0"
+      >
         <div className="hidden md:block">
-          <Socials items='end' />
+          <Socials items="end" />
         </div>
-        <div id="navbar_links" className="hidden space-x-6 transition-all ease-in delay-200 md:flex">
-          <Link url='/' name='Who we are' />
-          <Link url='/products' name='Products & Solutions' />
-          <Link url='/partners' name='Partners' />
-          <Link url='/news' name='News' />
-          <Link url='/careers' name='Careers' />
-          <Link url='/contact' name='Talk to Us' />
+        <div
+          id="navbar_links"
+          className="hidden space-x-6 transition-all ease-in delay-200 md:flex"
+        >
+          <Link url="/" name="About Us" />
+          <Link url="/products" name="Our Solutions" />
+          {/* <Link url='/partners' name='Partners' /> */}
+          <Link url="/news" name="Media" />
+          <Link url="/careers" name="Work With Us" />
+          <Link url="/contact" name="Talk to Us" />
         </div>
         <div className="">
-          <Link id={'logo'} name={"Logo"} url={"/"} image={"/assets/logo.svg"} />
-
+          <Link
+            id={"logo"}
+            name={"Logo"}
+            url={"/"}
+            image={"/assets/logo.svg"}
+          />
         </div>
 
-        <button onClick={() => setOpen(!open)} id="menu-btn" className="block hamburger md:hidden">
+        <button
+          onClick={() => setOpen(!open)}
+          id="menu-btn"
+          className="block hamburger md:hidden"
+        >
           <img src="/assets/menu.svg" alt="" />
         </button>
-        {open &&
-          <div id='menu' className="absolute flex flex-col items-end self-end px-8 py-8 mt-10 space-y-6 font-bold bg-white md:hidden top-12 w-max md:w-auto right-5 md:right-6 md:left-6 drop-shadow-md">
-            <Link url='/' name='Who we are' />
-            <Link url='/products' name='Products & Solutions' />
-            <Link url='/partners' name='Partners' />
-            <Link url='/news' name='News' />
-            <Link url='/careers' name='Careers' />
-            <Link url='/contact' name='Talk to Us' />
-            <Socials items='end' />
+        {open && (
+          <div
+            id="menu"
+            className="absolute flex flex-col items-end self-end px-8 py-8 mt-10 space-y-6 font-bold bg-white md:hidden top-12 w-max md:w-auto right-5 md:right-6 md:left-6 drop-shadow-md"
+          >
+            <Link url="/" name="About Us" />
+            <Link url="/products" name="Our Solutions" />
+            {/* <Link url='/partners' name='Partners' /> */}
+            <Link url="/news" name="Media" />
+            <Link url="/careers" name="Work With Us" />
+            <Link url="/contact" name="Talk to Us" />
+            <Socials items="end" />
           </div>
-        }
+        )}
       </div>
     </nav>
-  )
+  );
 }
 
 export default Navbar
